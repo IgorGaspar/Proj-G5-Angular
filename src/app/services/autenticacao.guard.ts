@@ -9,7 +9,8 @@ export class AutenticacaoGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return true;
+    console.log("Carregado o Guard")
+      return true;
   }
   
 }

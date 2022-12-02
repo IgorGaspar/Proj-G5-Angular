@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -8,10 +9,10 @@ import { FormsModule } from '@angular/forms';
 import { ClientesComponent } from './pages/clientes/clientes.component';
 import { PedidosComponent } from './pages/pedidos/pedidos.component';
 import { ProdutosComponent } from './pages/produtos/produtos.component';
-import { ModalClientesComponent } from './pages/modal-clientes/modal-clientes.component';
-import { ModalProdutosComponent } from './pages/modal-produtos/modal-produtos.component';
-import { ModalPedidosComponent } from './pages/modal-pedidos/modal-pedidos.component';
 import { CadastrapedidoComponent } from './pages/cadastrapedido/cadastrapedido.component';
+import { ClienteObservableComponent } from './pages/observables/cliente-observable/cliente-observable.component';
+import { ProdutoObservableComponent } from './pages/observables/produto-observable/produto-observable.component';
+import { PedidoObservableComponent } from './pages/observables/pedido-observable/pedido-observable.component';
 
 @NgModule({
   declarations: [
@@ -21,15 +22,16 @@ import { CadastrapedidoComponent } from './pages/cadastrapedido/cadastrapedido.c
     ClientesComponent,
     PedidosComponent,
     ProdutosComponent,
-    ModalClientesComponent,
-    ModalProdutosComponent,
-    ModalPedidosComponent,
-    CadastrapedidoComponent
+    CadastrapedidoComponent,
+    ClienteObservableComponent,
+    ProdutoObservableComponent,
+    PedidoObservableComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,17 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClientesComponent implements OnInit {
 
-  constructor() { 
-   
-  }
+  constructor() { }
 
   exibeForm:boolean = false
 
   ngOnInit(): void {
   }
-  
-  
 
-  static exibeCadastroCliente() {
-  }
 }
+

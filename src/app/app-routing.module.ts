@@ -6,21 +6,15 @@ import { LoginComponent } from './pages/login/login.component';
 import { PedidosComponent } from './pages/pedidos/pedidos.component';
 import { ProdutosComponent } from './pages/produtos/produtos.component';
 import { ClientesComponent } from './pages/clientes/clientes.component';
-import { ModalClientesComponent } from './pages/modal-clientes/modal-clientes.component';
-import { ModalPedidosComponent } from './pages/modal-pedidos/modal-pedidos.component';
-import { ModalProdutosComponent } from './pages/modal-produtos/modal-produtos.component';
+import { AutenticacaoGuard } from './services/autenticacao.guard';
 
 const routes: Routes = [
   {path:'', component:HomeComponent},
   {path:'login', component:LoginComponent},
-  {path:'home', component:HomeComponent},
-  {path:'clientes', component:ClientesComponent},
-  {path:'pedidos', component:PedidosComponent},
-  {path:'produtos', component:ProdutosComponent},
-  {path:'modalClientes', component:ModalClientesComponent},
-  {path:'modalPedidos', component:ModalPedidosComponent},
-  {path:'modalProdutos', component:ModalProdutosComponent}
-  
+  {path:'home', component:HomeComponent, canActivate: [AutenticacaoGuard]},
+  {path:'clientes', component:ClientesComponent, canActivate: [AutenticacaoGuard]},
+  {path:'pedidos', component:PedidosComponent, canActivate: [AutenticacaoGuard]},
+  {path:'produtos', component:ProdutosComponent, canActivate: [AutenticacaoGuard]}
   
 
 ];

@@ -6,13 +6,16 @@
           </div>
     
           <div class="form-label-group">
-            <input type="email" id="inputEmail" class="form-control" placeholder="Email" required="" autofocus="">
+            <input type="email" id="user" name="user" class="form-control" placeholder="Email" required="" autofocus="" [(ngModel)]="user">
           </div>
     
           <div class="form-label-group">
-            <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required="">
+            <input type="password" id="password" name="password" class="form-control" placeholder="Senha" required=""[(ngModel)]="password">
           </div>
-          <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+          <div *ngIf="alertMessage" class="alert alert-danger" role="alert">
+            {{alertMessage}}
+          </div>
+          <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="logar()">Entrar</button>
           <p class="mt-5 mb-3 text-muted text-center">©Radar G3 - 2022</p>
         </form>
       </div>
