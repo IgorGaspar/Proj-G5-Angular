@@ -11,6 +11,7 @@ import { ModalPedidosComponent } from './pages/modal-pedidos/modal-pedidos.compo
 import { ModalProdutosComponent } from './pages/modal-produtos/modal-produtos.component';
 
 const routes: Routes = [
+  {path:'', component:HomeComponent},
   {path:'login', component:LoginComponent},
   {path:'home', component:HomeComponent},
   {path:'clientes', component:ClientesComponent},

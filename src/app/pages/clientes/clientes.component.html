@@ -1,101 +1,55 @@
 <br>
 <div class="container-fluid" tabindex="0">
-<div class="container-fluid">
-  <button type="submit" class="btn btn-success mb-3"  data-bs-toggle="modal" data-bs-target="#modalAddCliente">Cadastrar</button>
-</div>
-<hr>
-<!-- <div class="container-fluid">
-  <form class="row g-3">
-    <div class="col-auto">
-      <label for="nome">Nome</label>
-      <input type="text" readonly class="form-control" id="nome">
-    </div><br>
-    <div class="col-auto">
-      <label for="telefone">Telefone</label>
-      <input type="number" readonly class="form-control" id="telefone">
-    </div><br>
-    <div class="col-auto">
-      <label for="email">E-mail</label>
-      <input type="email" class="form-control" id="email">
-    </div><br>
-    <div class="col-auto">
-      <label for="cpf">CPF</label>
-      <input type="number" readonly class="form-control" id="cpf">
-    </div><br>
-    <div class="col-auto">
-      <label for="cep">CEP</label>
-      <input type="text" readonly class="form-control" id="cep">
-    </div><br>
-    <div class="col-auto">
-      <label for="logradouro">Logradouro</label>
-      <input type="text" readonly class="form-control" id="logradouro">
-    </div><br>
-    <div class="col-auto">
-      <label for="numero">Numero</label>
-      <input type="text" readonly class="form-control" id="numero">
-    </div><br>
-    <div class="col-auto">
-      <label for="bairro">Bairro</label>
-      <input type="text" readonly class="form-control" id="bairro">
-    </div><br>
-    <div class="col-auto">
-      <label for="cidade">Cidade</label>
-      <input type="text" readonly class="form-control" id="cidade">
-    </div><br>
-    <div class="col-auto">
-      <label for="estado">Estado</label>
-      <input type="text" readonly class="form-control" id="estado">
-    </div><br>
-    <div class="col-auto">
-      <label for="complemento">Complemento</label>
-      <input type="text" readonly class="form-control" id="complemento">
-    </div><br>
-    <div class="row-auto">
-      <button type="submit" class="btn btn-primary mb-3">Enviar</button>
-    </div>
-  </form>
-</div> -->
-<div class="container-fluid">
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Nome</th>
-        <th scope="col">Telefone</th>
-        <th scope="col">E-mail</th>
-        <th scope="col">CPF</th>
-        <th scope="col">Ações</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td class="col-4">José Silva</td>
-        <td>(11) 98765-4321</td>
-        <td class="col-2">jose@email.com</td>
-        <td>123.456.789-10</td>
-        <td>
-          <div class="btn-toolbar" role="toolbar" aria-label="Toolbar com grupos de botões">
-            <div class="btn-group mr-2" role="group" >
-              <button type="button" class="btn btn-primary" style="margin: 2px;"data-bs-toggle="modal" data-bs-target="#modalViewCliente"><i class="fa-solid fa-eye"></i></button>
-              <button type="button" class="btn btn-warning" style="margin: 2px;"data-bs-toggle="modal" data-bs-target="#modalEditCliente"><i class="fa-solid fa-pen-to-square"></i></button>
-              <button type="button" class="btn btn-danger" style="margin: 2px;" data-bs-toggle="modal" data-bs-target="#modalDeleteCliente"><i class="fa-solid fa-trash-can"></i></button>
+  <div class="container-fluid">
+    <button type="submit" class="btn btn-success mb-3" data-bs-toggle="modal"
+      data-bs-target="#modalAddCliente">Cadastrar</button>
+  </div>
+  <hr>
+
+  <div class="container-fluid">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Telefone</th>
+          <th scope="col">E-mail</th>
+          <th scope="col">CPF</th>
+          <th scope="col">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td class="col-4">José Silva</td>
+          <td>(11) 98765-4321</td>
+          <td class="col-2">jose@email.com</td>
+          <td>123.456.789-10</td>
+          <td>
+            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar com grupos de botões">
+              <div class="btn-group mr-2" role="group">
+                <button type="button" class="btn btn-primary" style="margin: 2px;" data-bs-toggle="modal"
+                  data-bs-target="#modalViewCliente"><i class="fa-solid fa-eye"></i></button>
+                <button type="button" class="btn btn-warning" style="margin: 2px;" data-bs-toggle="modal"
+                  data-bs-target="#modalEditCliente"><i class="fa-solid fa-pen-to-square"></i></button>
+                <button type="button" class="btn btn-danger" style="margin: 2px;" data-bs-toggle="modal"
+                  data-bs-target="#modalDeleteCliente"><i class="fa-solid fa-trash-can"></i></button>
+              </div>
             </div>
-            </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 <!-- Modais-->
 
 <!-- Modal Adicionar Cliente -->
 <div class="modal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" id="modalAddCliente">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Cadastrar Cliente</h5>
+        <h3 class="modal-title">Cadastrar Cliente</h3>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -156,25 +110,33 @@
 
 <!-- Modal Visualizar Cliente -->
 <div class="modal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" id="modalViewCliente">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Dados do Cliente</h5>
+        <h3 class="modal-title">Dados do Cliente</h3>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div>
-          <p><b>Nome:</b> José Silva</p>
-          <p><b>Telefone:</b> (11) 98765-4321</p>
-          <p><b>E-mail:</b> jose@email.com</p>
-          <p><b>CPF:</b> 123.456.789-10</p>
-          <p><b>CEP:</b> 01234-567</p>
-          <p><b>Logradouro:</b> Rua Bela Cintra</p>
-          <p><b>Número:</b> 123</p>
-          <p><b>Bairro:</b> Consolação</p>
-          <p><b>Cidade:</b> São Paulo</p>
-          <p><b>Estado:</b> SP</p>
-          <p><b>Complemento:</b> Apartamento 13</p>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-9">
+              <div class="col-8 col-sm-6">
+                <p><b>Nome:</b> José Silva</p>
+                <p><b>Telefone:</b> (11) 98765-4321</p>
+                <p><b>E-mail:</b> jose@email.com</p>
+                <p><b>CPF:</b> 123.456.789-10</p>
+              </div>
+              <div class="col-8 col-sm-6">
+                <p><b>CEP:</b> 01234-567</p>
+                <p><b>Logradouro:</b> Rua Bela Cintra</p>
+                <p><b>Número:</b> 123</p>
+                <p><b>Bairro:</b> Consolação</p>
+                <p><b>Cidade:</b> São Paulo</p>
+                <p><b>Estado:</b> SP</p>
+                <p><b>Complemento:</b> Apartamento 13</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="modal-footer">
@@ -186,10 +148,10 @@
 
 <!-- Modal Editar Cliente -->
 <div class="modal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" id="modalEditCliente">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Editar Cliente</h5>
+        <h3 class="modal-title">Editar Cliente</h3>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -250,10 +212,10 @@
 
 <!-- Modal Excluir Cliente -->
 <div class="modal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" id="modalDeleteCliente">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Excluir Cliente</h5>
+        <h3 class="modal-title">Excluir Cliente</h3>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">

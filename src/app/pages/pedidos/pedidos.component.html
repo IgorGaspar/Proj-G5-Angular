@@ -45,14 +45,14 @@
 
 <!-- Modal Adicionar Pedido -->
 <div class="modal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" id="modalAddPedido">
-  <div class="modal-dialog modal-xl">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Cadastrar Pedido</h5>
+        <h3 class="modal-title">Cadastrar Pedido</h3>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="row">
+        <div class="col m-2">
           <!-- <button class="btn btn-primary col" type="button" style="margin: 2px;">Adicionar Cliente</button>
           <button class="btn btn-primary col" type="button" style="margin: 2px;">Adicionar Produtos</button> -->
           <form autocomplete="off" action="/action_page.php">
@@ -62,11 +62,21 @@
             <input type="submit">
           </form>
         </div>
+        <div class="col m-2">
+          <!-- <button class="btn btn-primary col" type="button" style="margin: 2px;">Adicionar Cliente</button>
+          <button class="btn btn-primary col" type="button" style="margin: 2px;">Adicionar Produtos</button> -->
+          <form autocomplete="off" action="/action_page.php">
+            <div class="autocomplete" style="width:300px;">
+              <input id="addProdutoPedido" type="text" name="addProdutoPedido" placeholder="Produtos">
+            </div>
+            <input type="submit">
+          </form>
+        </div>
         <hr>
-        <h4>Cliente:</h4>
+        <h5>Cliente:</h5>
         <h6>José Silva</h6>
         <hr>
-        <h4>Produtos:</h4>
+        <h5>Produtos:</h5>
         <div class="container-fluid">
           <table class="table">
             <tr>
@@ -81,25 +91,32 @@
               <th>Paracetamol</th>
               <th>2</th>
               <th>R$ 5,00</th>
-              <th>Ações</th>
+              <th><button type="button" class="btn btn-warning" style="margin: 2px;" data-bs-toggle="modal"
+                data-bs-target="#modalEditPedido"><i class="fa-solid fa-pen-to-square"></i></button>
+              <button type="button" class="btn btn-danger" style="margin: 2px;" data-bs-toggle="modal"
+                data-bs-target="#modalDeletePedido"><i class="fa-solid fa-trash-can"></i></button></th>
             </tr>
             <tr>
               <th>2</th>
               <th>AAS</th>
               <th>3</th>
               <th>R$ 2,00</th>
-              <th>Ações</th>
+              <th><button type="button" class="btn btn-warning" style="margin: 2px;" data-bs-toggle="modal"
+                data-bs-target="#modalEditPedido"><i class="fa-solid fa-pen-to-square"></i></button>
+              <button type="button" class="btn btn-danger" style="margin: 2px;" data-bs-toggle="modal"
+                data-bs-target="#modalDeletePedido"><i class="fa-solid fa-trash-can"></i></button></th>
             </tr>
             <tr>
               <th>3</th>
               <th>Dipirona</th>
               <th>1</th>
               <th>R$ 3,50</th>
-              <th>Ações</th>
+              <th><button type="button" class="btn btn-warning" style="margin: 2px;"><i class="fa-solid fa-pen-to-square"></i></button>
+              <button type="button" class="btn btn-danger" style="margin: 2px;"><i class="fa-solid fa-trash-can"></i></button></th>
             </tr>
           </table>
           <hr>
-          <p><b>Total: </b> R$ 19,50</p>
+          <h4 style="text-align: right;"><b>Total: </b> R$ 19,50</h4>
         </div>
       </div>
       <div class="modal-footer">
@@ -112,10 +129,10 @@
 
 <!-- Modal Visualizar Pedido -->
 <div class="modal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" id="modalViewPedido">
-  <div class="modal-dialog modal-xl">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Visualizar Pedido</h5>
+        <h3 class="modal-title">Visualizar Pedido</h3>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -131,10 +148,10 @@
 
 <!-- Modal Editar Pedido -->
 <div class="modal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" id="modalEditPedido">
-  <div class="modal-dialog modal-xl">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Editar Pedido</h5>
+        <h3 class="modal-title">Editar Pedido</h3>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -150,10 +167,10 @@
 
 <!-- Modal Excluir Pedido -->
 <div class="modal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" id="modalDeletePedido">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Excluir Pedido</h5>
+        <h3 class="modal-title">Excluir Pedido</h3>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -167,7 +184,7 @@
   </div>
 </div>
 
-<script>
+<!-- <script>
   function autocomplete(inp, arr) {
     /*the autocomplete function takes two arguments,
     the text field element and an array of possible autocompleted values:*/
@@ -270,5 +287,5 @@
   
   /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
   autocomplete(document.getElementById("addClientePedido"), countries);
-  </script>
+  </script> -->
   
