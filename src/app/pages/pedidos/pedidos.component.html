@@ -1,189 +1,269 @@
-<br>
+
 <div class="container-fluid">
-  <button type="submit" class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#modalAddPedido">Novo
-    Pedido</button>
-</div>
+  <br>
+  <div class="container-fluid">
+    <button type="submit" class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#modalAddPedido">Novo
+      Pedido</button>
+  </div>
 
 
-<!-- Tabela Exibição Geral de Pedidos -->
-<hr>
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Cliente</th>
-      <th scope="col">Qtd. Itens</th>
-      <th scope="col">Valor total</th>
-      <th scope="col">Data</th>
-      <th scope="col">Ações</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td class="col-6">José Silva</td>
-      <td>2</td>
-      <td>R$ 10,00</td>
-      <td>01/01/2022</td>
-      <td>
-        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar com grupos de botões">
-          <div class="btn-group mr-2" role="group">
-            <button type="button" class="btn btn-primary" style="margin: 2px;" data-bs-toggle="modal"
-              data-bs-target="#modalViewPedido"><i class="fa-solid fa-eye"></i></button>
-            <button type="button" class="btn btn-warning" style="margin: 2px;" data-bs-toggle="modal"
-              data-bs-target="#modalEditPedido"><i class="fa-solid fa-pen-to-square"></i></button>
-            <button type="button" class="btn btn-danger" style="margin: 2px;" data-bs-toggle="modal"
-              data-bs-target="#modalDeletePedido"><i class="fa-solid fa-trash-can"></i></button>
+  <!-- Tabela Exibição Geral de Pedidos -->
+  <hr>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Cliente</th>
+        <th scope="col">Qtd. Itens</th>
+        <th scope="col">Valor total</th>
+        <th scope="col">Data</th>
+        <th scope="col">Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td class="col-6">José Silva</td>
+        <td>2</td>
+        <td>R$ 10,00</td>
+        <td>01/01/2022</td>
+        <td>
+          <div class="btn-toolbar" role="toolbar" aria-label="Toolbar com grupos de botões">
+            <div class="btn-group mr-2" role="group">
+              <button type="button" class="btn btn-primary" style="margin: 2px;" data-bs-toggle="modal"
+                data-bs-target="#modalViewPedido"><i class="fa-solid fa-eye"></i></button>
+              <button type="button" class="btn btn-warning" style="margin: 2px;" data-bs-toggle="modal"
+                data-bs-target="#modalEditPedido"><i class="fa-solid fa-pen-to-square"></i></button>
+              <button type="button" class="btn btn-danger" style="margin: 2px;" data-bs-toggle="modal"
+                data-bs-target="#modalDeletePedido"><i class="fa-solid fa-trash-can"></i></button>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Modais-->
+
+  <!-- Modal Adicionar Pedido -->
+  <div class="modal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" id="modalAddPedido">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">Cadastrar Pedido</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="col m-2">
+            <!-- <button class="btn btn-primary col" type="button" style="margin: 2px;">Adicionar Cliente</button>
+          <button class="btn btn-primary col" type="button" style="margin: 2px;">Adicionar Produtos</button> -->
+            <form autocomplete="off" action="/action_page.php">
+              <div class="autocomplete" style="width:300px;">
+                <input id="addClientePedido" type="text" name="addClientePedido" placeholder="Cliente">
+              </div>
+              <input type="submit">
+            </form>
+          </div>
+          <div class="col m-2">
+            <!-- <button class="btn btn-primary col" type="button" style="margin: 2px;">Adicionar Cliente</button>
+          <button class="btn btn-primary col" type="button" style="margin: 2px;">Adicionar Produtos</button> -->
+            <form autocomplete="off" action="/action_page.php">
+              <div class="autocomplete" style="width:300px;">
+                <input id="addProdutoPedido" type="text" name="addProdutoPedido" placeholder="Produtos">
+              </div>
+              <input type="submit">
+            </form>
+          </div>
+          <hr>
+          <h5>Cliente:</h5>
+          <h6>José Silva</h6>
+          <hr>
+          <h5>Produtos:</h5>
+          <div class="container-fluid">
+            <table class="table">
+              <tr>
+                <th>ID</th>
+                <th>Produto</th>
+                <th>Qtd</th>
+                <th>Valor</th>
+                <th>Ações</th>
+              </tr>
+              <tr>
+                <th>1</th>
+                <th>Paracetamol</th>
+                <th>2</th>
+                <th>R$ 5,00</th>
+                <th>
+                  <button type="button" class="btn btn-warning" style="margin: 2px;"><i class="fa-solid fa-pen-to-square"></i></button>
+                  <button type="button" class="btn btn-danger" style="margin: 2px;" data-bs-toggle="modal"
+                    data-bs-target="#modalDeletePedido"><i class="fa-solid fa-trash-can"></i></button>
+                </th>
+              </tr>
+              <tr>
+                <th>2</th>
+                <th>AAS</th>
+                <th>3</th>
+                <th>R$ 2,00</th>
+                <th><button type="button" class="btn btn-warning" style="margin: 2px;" data-bs-toggle="modal"
+                    data-bs-target="#modalEditPedido"><i class="fa-solid fa-pen-to-square"></i></button>
+                  <button type="button" class="btn btn-danger" style="margin: 2px;" data-bs-toggle="modal"
+                    data-bs-target="#modalDeletePedido"><i class="fa-solid fa-trash-can"></i></button>
+                </th>
+              </tr>
+              <tr>
+                <th>3</th>
+                <th>Dipirona</th>
+                <th>1</th>
+                <th>R$ 3,50</th>
+                <th><button type="button" class="btn btn-warning" style="margin: 2px;"><i
+                      class="fa-solid fa-pen-to-square"></i></button>
+                  <button type="button" class="btn btn-danger" style="margin: 2px;"><i
+                      class="fa-solid fa-trash-can"></i></button>
+                </th>
+              </tr>
+            </table>
+            <hr>
+            <h4 style="text-align: right;"><b>Total: </b> R$ 19,50</h4>
           </div>
         </div>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-<!-- Modais-->
-
-<!-- Modal Adicionar Pedido -->
-<div class="modal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" id="modalAddPedido">
-  <div class="modal-dialog modal-dialog-centered modal-xl">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title">Cadastrar Pedido</h3>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-success">Salvar</button>
+        </div>
       </div>
-      <div class="modal-body">
-        <div class="col m-2">
-          <!-- <button class="btn btn-primary col" type="button" style="margin: 2px;">Adicionar Cliente</button>
-          <button class="btn btn-primary col" type="button" style="margin: 2px;">Adicionar Produtos</button> -->
-          <form autocomplete="off" action="/action_page.php">
-            <div class="autocomplete" style="width:300px;">
-              <input id="addClientePedido" type="text" name="addClientePedido" placeholder="Cliente">
+    </div>
+  </div>
+
+  <!-- Modal Visualizar Pedido -->
+  <div class="modal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" id="modalViewPedido">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">Visualizar Pedido</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="card-body">
+            <div>
+              <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap5">
+                <div class="row">
+                </div>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <table class="table table-bordered dataTable" id="dataTable" cellspacing="2" role="grid"
+                      aria-describedby="dataTable_info" style="width: 100%;">
+                      <thead>
+                        <tr role="row">
+                          <th rowspan="1" colspan="5" style="text-align: right;">Pedido N.</th>
+                          <th rowspan="1" colspan="1" style="text-align: center;">001</th>
+                        </tr>
+                      </thead>
+                      <thead>
+                        <tr role="row" style="text-align: center;">
+                          <th rowspan="1" colspan="1">1</th>
+                          <th rowspan="1" colspan="3">José Silva</th>
+                          <th rowspan="1" colspan="1">Data</th>
+                          <th rowspan="1" colspan="1">01/01/2022</th>
+                        </tr>
+                      </thead>
+                      <thead>
+                        <tr role="row">
+                          <th class="sorting sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1"
+                            aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 50px;">ID
+                          </th>
+                          <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1"
+                            style="width: 450px;">Produto</th>
+                          <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1"
+                            style="width: 20px;">Quantidade</th>
+                          <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1"
+                            style="width: 80px;">Valor Unit</th>
+                          <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1"
+                            style="width: 80px;">Total</th>
+                          <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1"
+                            style="width: 80px;">Ações</th>
+                        </tr>
+                      </thead>
+        
+        
+                      <tbody>
+                        <tr class="odd">
+                          <td>1</td>
+                          <td>Paracetamol</td>
+                          <td>2</td>
+                          <td>R$ 5,00</td>
+                          <td>R$ 10,00</td>
+                          <td>
+                            <ul class="list-inline m-0" style="text-align: center;">
+                              <li class="list-inline-item">
+                                <button class="btn btn-warning btn-sm rounded-0" type="button" data-toggle="tooltip"
+                                  data-placement="top" title="Editar"><i class="fa fa-edit"></i></button>
+                              </li>
+                              <li class="list-inline-item">
+                                <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip"
+                                  data-placement="top" title="Deletar"><i class="fa fa-trash"></i></button>
+                              </li>
+                            </ul>
+                        </tr>
+                      </tbody>
+                      <tfoot>
+                      <tr>
+                        <th rowspan="1" colspan="5" style="text-align: right;">Valor Total</th>
+                        <th rowspan="1" colspan="1">R$ 10,00</th>
+                      </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                </div>
+              </div>
             </div>
-            <input type="submit">
-          </form>
+          </div>
         </div>
-        <div class="col m-2">
-          <!-- <button class="btn btn-primary col" type="button" style="margin: 2px;">Adicionar Cliente</button>
-          <button class="btn btn-primary col" type="button" style="margin: 2px;">Adicionar Produtos</button> -->
-          <form autocomplete="off" action="/action_page.php">
-            <div class="autocomplete" style="width:300px;">
-              <input id="addProdutoPedido" type="text" name="addProdutoPedido" placeholder="Produtos">
-            </div>
-            <input type="submit">
-          </form>
-        </div>
-        <hr>
-        <h5>Cliente:</h5>
-        <h6>José Silva</h6>
-        <hr>
-        <h5>Produtos:</h5>
-        <div class="container-fluid">
-          <table class="table">
-            <tr>
-              <th>ID</th>
-              <th>Produto</th>
-              <th>Qtd</th>
-              <th>Valor</th>
-              <th>Ações</th>
-            </tr>
-            <tr>
-              <th>1</th>
-              <th>Paracetamol</th>
-              <th>2</th>
-              <th>R$ 5,00</th>
-              <th><button type="button" class="btn btn-warning" style="margin: 2px;" data-bs-toggle="modal"
-                data-bs-target="#modalEditPedido"><i class="fa-solid fa-pen-to-square"></i></button>
-              <button type="button" class="btn btn-danger" style="margin: 2px;" data-bs-toggle="modal"
-                data-bs-target="#modalDeletePedido"><i class="fa-solid fa-trash-can"></i></button></th>
-            </tr>
-            <tr>
-              <th>2</th>
-              <th>AAS</th>
-              <th>3</th>
-              <th>R$ 2,00</th>
-              <th><button type="button" class="btn btn-warning" style="margin: 2px;" data-bs-toggle="modal"
-                data-bs-target="#modalEditPedido"><i class="fa-solid fa-pen-to-square"></i></button>
-              <button type="button" class="btn btn-danger" style="margin: 2px;" data-bs-toggle="modal"
-                data-bs-target="#modalDeletePedido"><i class="fa-solid fa-trash-can"></i></button></th>
-            </tr>
-            <tr>
-              <th>3</th>
-              <th>Dipirona</th>
-              <th>1</th>
-              <th>R$ 3,50</th>
-              <th><button type="button" class="btn btn-warning" style="margin: 2px;"><i class="fa-solid fa-pen-to-square"></i></button>
-              <button type="button" class="btn btn-danger" style="margin: 2px;"><i class="fa-solid fa-trash-can"></i></button></th>
-            </tr>
-          </table>
-          <hr>
-          <h4 style="text-align: right;"><b>Total: </b> R$ 19,50</h4>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-success">Salvar</button>
         </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-success">Salvar</button>
+    </div>
+  </div>
+
+  <!-- Modal Editar Pedido -->
+  <div class="modal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" id="modalEditPedido">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">Editar Pedido</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-success">Salvar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Excluir Pedido -->
+  <div class="modal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" id="modalDeletePedido">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">Excluir Pedido</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Tem certeza que deseja excluir esse pedido?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-danger">Excluir</button>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
-<!-- Modal Visualizar Pedido -->
-<div class="modal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" id="modalViewPedido">
-  <div class="modal-dialog modal-dialog-centered modal-xl">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title">Visualizar Pedido</h3>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-success">Salvar</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal Editar Pedido -->
-<div class="modal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" id="modalEditPedido">
-  <div class="modal-dialog modal-dialog-centered modal-xl">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title">Editar Pedido</h3>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-success">Salvar</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal Excluir Pedido -->
-<div class="modal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" id="modalDeletePedido">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title">Excluir Pedido</h3>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p>Tem certeza que deseja excluir esse pedido?</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-danger">Excluir</button>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- <script>
   function autocomplete(inp, arr) {
     /*the autocomplete function takes two arguments,
@@ -288,4 +368,3 @@
   /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
   autocomplete(document.getElementById("addClientePedido"), countries);
   </script> -->
-  
