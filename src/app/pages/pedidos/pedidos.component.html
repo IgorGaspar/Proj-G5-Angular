@@ -52,6 +52,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
+ 
           <div class="container-fluid">
             <!-- Criar dois inputs com AutoComplete -->
             <form action='' autocomplete='off'>
@@ -77,10 +78,29 @@
               </div>
             </form>
           </div>
-          <!-- Primeiro deve aparecer somente o autocomplete do cliente. Após escolhido o cliente, o autocomplete muda para o de Produtos. -->
           <hr>
-          <h5>Cliente:</h5>
-          <h6>José Silva</h6>
+          <!-- Primeiro deve aparecer somente o autocomplete do cliente. Após escolhido o cliente, o autocomplete muda para o de Produtos. -->
+          <div class="container">
+            <div class="row">
+              <div class="col-11">
+                <h5>Cliente:</h5>
+              </div>
+              <div class="col-sm" style="text-align: center;">
+                <h6>Ações:</h6>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-11">
+                <h6>José Silva</h6>
+              </div>
+              <div class="col-sm" style="text-align: center;">
+                <ul class="list-inline m-0">
+                  <button class="btn btn-warning btn-sm rounded-0" type="button" data-toggle="tooltip"
+                  data-placement="top" title="Editar"><i class="fa fa-edit"></i></button>
+                </ul>
+              </div>
+            </div>
+          </div>
           <hr>
           <h5>Produtos:</h5>
           <div class="container-fluid">
@@ -273,7 +293,6 @@
           </div>
           <!-- Primeiro deve aparecer somente o autocomplete do cliente. Após escolhido o cliente, o autocomplete muda para o de Produtos. -->
           <hr>
-
           <div class="container">
             <div class="row">
               <div class="col-11">
