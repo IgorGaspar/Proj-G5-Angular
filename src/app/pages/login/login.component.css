@@ -30,9 +30,6 @@ body {
   margin: 0 auto;
   text-align: center;
 }
-.form-signin .checkbox {
-  font-weight: 400;
-}
 .form-signin .form-control {
   position: relative;
   box-sizing: border-box;
@@ -44,7 +41,7 @@ body {
   z-index: 2;
 }
 .form-signin input[type="email"] {
-  margin-bottom: -1px;
+  margin-bottom: 2px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
