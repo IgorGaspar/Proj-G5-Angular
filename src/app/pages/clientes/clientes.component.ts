@@ -1,4 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Cliente } from 'src/app/modules/clientes.module';
+import { ClientesService } from 'src/app/services/clientes.service';
 
 @Component({
   selector: 'app-clientes',
@@ -7,11 +11,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClientesComponent implements OnInit {
 
-  constructor() { }
-
-  exibeForm:boolean = false
+  constructor(
+    private http:HttpClient,
+    private router:Router
+  ) { }
 
   ngOnInit(): void {
+    this.listarClientes()
+  }
+
+  public clientes:Cliente[] | undefined = []
+
+  public async listarClientes(){
+    this.clientes = await new ClientesService(this.http).lista();
   }
 
 }

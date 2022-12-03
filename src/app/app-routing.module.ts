@@ -7,6 +7,7 @@ import { PedidosComponent } from './pages/pedidos/pedidos.component';
 import { ProdutosComponent } from './pages/produtos/produtos.component';
 import { ClientesComponent } from './pages/clientes/clientes.component';
 import { AutenticacaoGuard } from './services/autenticacao.guard';
+import { ClienteObservableComponent } from './pages/observables/cliente-observable/cliente-observable.component';
 
 const routes: Routes = [
   {path:'', component:HomeComponent},
@@ -15,8 +16,6 @@ const routes: Routes = [
   {path:'clientes', component:ClientesComponent, canActivate: [AutenticacaoGuard]},
   {path:'pedidos', component:PedidosComponent, canActivate: [AutenticacaoGuard]},
   {path:'produtos', component:ProdutosComponent, canActivate: [AutenticacaoGuard]}
-  
-
 ];
 
 @NgModule({
