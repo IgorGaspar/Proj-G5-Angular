@@ -10,3 +10,13 @@ import { CommonModule } from '@angular/common';
   ]
 })
 export class ProdutosModule { }
+
+export interface Produto {
+  id:number 
+  nome:string
+  descricao:string  
+  valor:number
+  qtd_estoque:number
+}
+
+

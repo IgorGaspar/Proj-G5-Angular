@@ -26,5 +26,6 @@ export class ClientesComponent implements OnInit {
     this.clientes = await new ClientesService(this.http).lista();
   }
 
+
 }
 

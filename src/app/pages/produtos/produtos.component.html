@@ -7,7 +7,10 @@
   <hr>
 
   <div class="container-fluid">
-    <table class="table table-striped  table-hover">
+    <div class="container-fluid text-center" *ngIf="produtos && produtos.length == 0">
+      <h5>Não há clientes cadastrados.</h5>
+    </div>
+    <table class="table table-striped  table-hover" *ngIf="produtos && produtos.length > 1">
       <thead>
         <tr>
           <th scope="col">ID</th>
@@ -19,12 +22,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td class="col-3">Paracetamol</td>
-          <td class="col-4">Analgésico</td>
-          <td>R$ 5,00</td>
-          <td>10</td>
+        <tr *ngFor="let produto of produtos">
+          <th scope="row">{{produto.id}}</th>
+          <td class="col-3">{{produto.nome}}</td>
+          <td class="col-4">{{produto.descricao}}</td>
+          <td>{{produto.valor | currency}}</td>
+          <td>{{produto.qtd_estoque}}</td>
           <td>
             <div class="btn-toolbar" role="toolbar" aria-label="Toolbar com grupos de botões">
               <div class="btn-group mr-2" role="group">
