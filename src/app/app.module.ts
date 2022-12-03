@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import ptBR from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 
-
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -19,6 +18,19 @@ import { ProdutoObservableComponent } from './pages/observables/produto-observab
 import { PedidoObservableComponent } from './pages/observables/pedido-observable/pedido-observable.component';
 import { TelefonePipe } from './pipes/telefone.pipe';
 import { CpfPipe } from './pipes/cpf.pipe';
+import { CepPipe } from './pipes/cep.pipe';
+import { ClienteModalComponent } from './pages/modals/cliente-modal/view-cliente-modal.component';
+import { EditClienteModalComponent } from './pages/modals/cliente-modal/edit-cliente-modal/edit-cliente-modal.component';
+import { CreateClienteModalComponent } from './pages/modals/cliente-modal/create-cliente-modal.component';
+import { DeleteClienteModalComponent } from './pages/modals/cliente-modal/delete-cliente-modal.component';
+import { DeleteProdutoModalComponent } from './pages/modals/produto-modal/delete-produto-modal.component';
+import { CreateProdutoModalComponent } from './pages/modals/produto-modal/create-produto-modal.component';
+import { EditProdutoModalComponent } from './pages/modals/produto-modal/edit-produto-modal.component';
+import { ViewProdutoModalComponent } from './pages/modals/produto-modal/view-produto-modal.component';
+import { ViewPedidoModalComponent } from './pages/modals/pedido-modal/view-pedido-modal.component';
+import { EditPedidoModalComponent } from './pages/modals/pedido-modal/edit-pedido-modal.component';
+import { CreatePedidoModalComponent } from './pages/modals/pedido-modal/create-pedido-modal.component';
+import { DeletePedidoModalComponent } from './pages/modals/pedido-modal/delete-pedido-modal.component';
 
 //Define o padrão para brasileiro
 registerLocaleData(ptBR)
@@ -36,7 +48,20 @@ registerLocaleData(ptBR)
     ProdutoObservableComponent,
     PedidoObservableComponent,
     TelefonePipe,
-    CpfPipe
+    CpfPipe,
+    CepPipe,
+    ClienteModalComponent,
+    EditClienteModalComponent,
+    CreateClienteModalComponent,
+    DeleteClienteModalComponent,
+    DeleteProdutoModalComponent,
+    CreateProdutoModalComponent,
+    EditProdutoModalComponent,
+    ViewProdutoModalComponent,
+    ViewPedidoModalComponent,
+    CreatePedidoModalComponent,
+    EditPedidoModalComponent,
+    DeletePedidoModalComponent
   ],
   imports: [
     BrowserModule,

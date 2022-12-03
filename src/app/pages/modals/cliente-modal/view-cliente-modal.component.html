@@ -1,0 +1,40 @@
+<!-- <div class="modal" tabindex="-1" id="modalViewCliente">-->
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Dados do Cliente</h3>
+        <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss()"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+              <div class="col">
+                <div class="container" style="text-align:center;">
+                  <h5>Contato:</h5><hr>
+                </div>                
+                <p><b>Nome:</b> {{cliente.nome}}</p>
+                <p><b>Telefone:</b> {{cliente.telefone | telefone}}</p>
+                <p><b>E-mail:</b> {{cliente.email}}</p>
+                <p><b>CPF:</b> {{cliente.cpf | cpf}}</p>
+              </div>
+            <div class="col">
+              <div class="container" style="text-align:center;">
+                <h5>Endereço:</h5><hr>
+              </div>
+                <p><b>CEP:</b> {{cliente.cep | cep}}</p>
+                <p><b>Logradouro:</b> {{cliente.logradouro}}</p>
+                <p><b>Número:</b> {{cliente.numero}}</p>
+                <p><b>Bairro:</b> {{cliente.bairro}}</p>
+                <p><b>Cidade:</b> {{cliente.cidade}}</p>
+                <p><b>Estado:</b> {{cliente.estado}}</p>
+                <p><b>Complemento:</b> {{cliente.complemento}}</p>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" (click)="activeModal.close()">Ok</button>
+      </div>
+  </div>
+  </div>
+<!--   </div> -->

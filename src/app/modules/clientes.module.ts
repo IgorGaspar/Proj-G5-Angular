@@ -17,7 +17,7 @@ export interface Cliente {
   telefone:number 
   email:string  
   cpf:number 
-  cep:string 
+  cep:number 
   logradouro:string 
   numero:number 
   bairro:string 
