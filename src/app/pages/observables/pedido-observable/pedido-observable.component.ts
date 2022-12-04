@@ -30,3 +30,5 @@ export class PedidoObservableComponent implements OnInit {
 /*   public async listaCadastrados(){
     let lista = await new PedidosService(this.http).lista();
     this.pedidosCadastrados = lista ? lista.length : 0;
+} */
+}
