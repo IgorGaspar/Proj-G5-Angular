@@ -26,8 +26,8 @@
         <th scope="row">{{pedido.id}}</th>
         <td class="col-6">{{pedido.cliente_id}}</td>
         <td>{{pedido.qtd_item}}</td>
-        <td>{{pedido.valor_total}}</td>
-        <td>{{pedido.data}}</td>
+        <td>{{pedido.valor_total | currency}}</td>
+        <td>{{pedido.data | date:'shortDate'}}</td>
         <td>
           <div class="btn-toolbar" role="toolbar" aria-label="Toolbar com grupos de botões">
             <div class="btn-group mr-2" role="group">

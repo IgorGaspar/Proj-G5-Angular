@@ -16,4 +16,9 @@ export class ProdutosService {
     let produtos:Produto[] | undefined = await firstValueFrom(this.http.get<Produto[]>(`${environment.api}/produtos`))
     return  produtos;
   }
+
+  public async adiciona(produto:Produto): Promise<Produto | undefined> {
+    let produtoAdd:Produto | undefined = await firstValueFrom(this.http.post<Produto>(`${environment.api}/produtos/`, produto))
+    return produtoAdd;
+  }
 }

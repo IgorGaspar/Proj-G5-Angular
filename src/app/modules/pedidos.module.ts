@@ -18,7 +18,7 @@ export interface Pedido {
   id:Number,
   cliente_id:String,
   qtd_item:Number,
-  valor_total:Number,
+  valor_total:any,
   data:Date
 
 

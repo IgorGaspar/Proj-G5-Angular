@@ -7,7 +7,7 @@
     <form class="modal-form container container-fluid row g-3">
       <div class="col-auto">
         <label for="nome">Nome</label>
-        <input type="text" class="form-control" id="nome">
+        <input type="text" class="form-control" id="nome" [(ngModel)]="produto.nome" value="{{produto.nome}}">
       </div><br>
       <div class="col-auto">
         <label for="descricao">Tipo</label>

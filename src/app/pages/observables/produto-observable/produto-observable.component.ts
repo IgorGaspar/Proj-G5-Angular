@@ -18,12 +18,13 @@ export class ProdutoObservableComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.listarProdutos()
+    this.produtosCadastrados()
   }
 
-  public produtosCadastrados:Produto[] | undefined = []
+  public qtdProdutosCadastrados:number = 0
 
-  public async listarProdutos(){
-    this.produtosCadastrados = await new ProdutosService(this.http).lista();
+  public async produtosCadastrados(){
+    let conta = await new ProdutosService(this.http).lista()
+    this.qtdProdutosCadastrados = conta ? conta.length : 0;
   }
 }
