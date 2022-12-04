@@ -3,11 +3,6 @@
   <div class="container-fluid">
     <button type="submit" class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#modalAddPedido">Novo
       Pedido</button>
-
-      <input class="form-control basicAutoComplete" type="text" autocomplete="off">
-      <select class="form-control basicAutoSelect" name="simple_select"
-    placeholder="type to search..."
-    data-url="http://192.168.18.6:3000/clientes" autocomplete="off"></select>
   </div>
 
   <!-- Tabela Exibição Geral de Pedidos -->
@@ -36,8 +31,7 @@
         <td>
           <div class="btn-toolbar" role="toolbar" aria-label="Toolbar com grupos de botões">
             <div class="btn-group mr-2" role="group">
-              <button type="button" class="btn btn-primary" style="margin: 2px;" data-bs-toggle="modal"
-                data-bs-target="#modalViewPedido"><i class="fa-solid fa-eye"></i></button>
+              <button type="button" class="btn btn-primary" style="margin: 2px;" (click)="modalViewPedido(pedido)"><i class="fa-solid fa-eye"></i></button>
               <button type="button" class="btn btn-warning" style="margin: 2px;" data-bs-toggle="modal"
                 data-bs-target="#modalEditPedido"><i class="fa-solid fa-pen-to-square"></i></button>
               <button type="button" class="btn btn-danger" style="margin: 2px;" data-bs-toggle="modal"
@@ -188,84 +182,6 @@
       </div>
     </div>
   </div>
-
- <!-- Modal Visualizar Pedido -->
-  <!--  <div class="modal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" id="modalViewPedido">
-    <div class="modal-dialog modal-dialog-centered modal-xl">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3 class="modal-title">Visualizar Pedido</h3>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="card-body">
-            <div>
-              <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap5">
-                <div class="row">
-                </div>
-                <div class="row">
-                  <div class="col-sm-12">
-                    <table class="table table-bordered dataTable" id="dataTable" cellspacing="2" role="grid"
-                      aria-describedby="dataTable_info" style="width: 100%;">
-                      <thead>
-                        <tr role="row">
-                          <th rowspan="1" colspan="5" style="text-align: right;">Pedido N.</th>
-                          <th rowspan="1" colspan="1" style="text-align: center;">001</th>
-                        </tr>
-                      </thead>
-                      <thead>
-                        <tr role="row" style="text-align: center;">
-                          <th rowspan="1" colspan="1">1</th>
-                          <th rowspan="1" colspan="3">José Silva</th>
-                          <th rowspan="1" colspan="1">Data</th>
-                          <th rowspan="1" colspan="1">01/01/2022</th>
-                        </tr>
-                      </thead>
-                      <thead>
-                        <tr role="row">
-                          <th class="sorting sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1"
-                            aria-sort="ascending" aria-label="Name: activate to sort column descending"
-                            style="width: 50px;">ID
-                          </th>
-                          <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="2"
-                            style="width: 450px;">Produto</th>
-                          <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1"
-                            style="width: 20px;">Quantidade</th>
-                          <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1"
-                            style="width: 100px;">Valor Unit</th>
-                          <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1"
-                            style="width: 80px;">Total</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr class="odd">
-                          <td>1</td>
-                          <td colspan="2">Paracetamol</td>
-                          <td>2</td>
-                          <td>R$ 5,00</td>
-                          <td>R$ 10,00</td>
-                        </tr>
-                      </tbody>
-                      <tfoot>
-                        <tr>
-                          <th rowspan="1" colspan="5" style="text-align: right;">Valor Total</th>
-                          <th rowspan="1" colspan="1">R$ 10,00</th>
-                        </tr>
-                      </tfoot>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-success">Salvar</button>
-        </div>
-      </div>
-    </div>
-  </div> -->
 
   <!-- Modal Editar Pedido -->
   <div class="modal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" id="modalEditPedido">

@@ -1,1 +1,73 @@
-<p>view-pedido-modal works!</p>
+<div class="modal-xl">
+<div class="modal-content">
+  <div class="modal-header">
+    <h3 class="modal-title">Visualizar Pedido</h3>
+    <button type="button" class="btn-close" (click)="activeModal.dismiss()" aria-label="Close"></button>
+  </div>
+  <div class="modal-body">
+    <div class="card-body">
+      <div>
+        <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap5">
+          <div class="row">
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <table class="table table-bordered dataTable" id="dataTable" cellspacing="2" role="grid"
+                aria-describedby="dataTable_info" style="width: 100%;">
+                <thead>
+                  <tr role="row">
+                    <th rowspan="1" colspan="5" style="text-align: right;">Pedido N.</th>
+                    <th rowspan="1" colspan="1" style="text-align: center;">{{pedido.id}}</th>
+                  </tr>
+                </thead>
+                <thead>
+                  <tr role="row" style="text-align: center;">
+                    <th rowspan="1" colspan="1">00</th>
+                    <th rowspan="1" colspan="3">{{pedido.cliente_id}}</th>
+                    <th rowspan="1" colspan="1">Data</th>
+                    <th rowspan="1" colspan="1">{{pedido.data | date:'shortDate'}}</th>
+                  </tr>
+                </thead>
+                <thead>
+                  <tr role="row">
+                    <th class="sorting sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1"
+                      aria-sort="ascending" aria-label="Name: activate to sort column descending"
+                      style="width: 50px;">ID
+                    </th>
+                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="2"
+                      style="width: 450px;">Produto</th>
+                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1"
+                      style="width: 20px;">Quantidade</th>
+                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1"
+                      style="width: 100px;">Valor Unit</th>
+                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1"
+                      style="width: 80px;">Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="odd">
+                    <td>1</td>
+                    <td colspan="2">Paracetamol</td>
+                    <td>2</td>
+                    <td>R$ 5,00</td>
+                    <td>R$ 10,00</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <th rowspan="1" colspan="5" style="text-align: right;">Valor Total</th>
+                    <th rowspan="1" colspan="1">R$ 10,00</th>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-success" data-bs-dismiss="modal" (click)="activeModal.close()">Ok</button>
+  </div>
+</div>
+</div>
