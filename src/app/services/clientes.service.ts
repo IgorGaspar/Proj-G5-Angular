@@ -1,12 +1,13 @@
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
 // import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Cliente } from '../modules/clientes.module';
 
-/* @Injectable({
+@Injectable({
   providedIn: 'root'
-}) */
+}) 
 export class ClientesService {
 
   constructor(private http:HttpClient) {}

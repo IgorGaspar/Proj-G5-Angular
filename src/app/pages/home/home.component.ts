@@ -55,8 +55,6 @@ export class HomeComponent implements OnInit {
    });
     } 
     
-    
-      public qtdClientes = "trazer da API"
   }
     
   
