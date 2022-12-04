@@ -17,8 +17,21 @@ export class ProdutosService {
     return  produtos;
   }
 
-  public async adiciona(produto:Produto): Promise<Produto | undefined> {
+  public async adicionar(produto:Produto): Promise<Produto | undefined> {
     let produtoAdd:Produto | undefined = await firstValueFrom(this.http.post<Produto>(`${environment.api}/produtos/`, produto))
     return produtoAdd;
   }
+
+  public async atualizar(produto:Produto): Promise<Produto | undefined> {
+    let produtoUpd:Produto | undefined = await firstValueFrom(this.http.put<Produto>(`${environment.api}/produtos/${produto.id}`, produto))
+    return produtoUpd;
+}
+
+public async buscar(id:Number): Promise<Produto | undefined> {
+    return await firstValueFrom(this.http.get<Produto | undefined>(`${environment.api}/produtos/${id}`))
+}
+
+public excluir(id:Number) {
+    firstValueFrom(this.http.delete(`${environment.api}/produtos/${id}`))
+}
 }

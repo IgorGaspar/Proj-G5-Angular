@@ -39,7 +39,6 @@ export class ProdutosComponent implements OnInit {
 
   modalCreateProduto(){
     const modalRef = this.modalService.open(CreateProdutoModalComponent);
-    modalRef.componentInstance.produto = '' 
   }
 
   modalEditProduto(produto:Produto){
@@ -49,7 +48,7 @@ export class ProdutosComponent implements OnInit {
 
   modalDeleteProduto(produto:Produto){
     const modalRef = this.modalService.open(DeleteProdutoModalComponent);
-    modalRef.componentInstance.produto = produto;  
+    modalRef.componentInstance.produto = produto;
   }
 
 }
