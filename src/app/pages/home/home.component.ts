@@ -20,20 +20,42 @@ export class HomeComponent implements OnInit {
   }
   
   @ViewChild("meuCanvas", {static: true}) elemento: ElementRef | undefined;
+  @ViewChild("meuCanvas2", {static: true}) elementos: ElementRef | undefined;
   ngOnInit() {
     
       new Chart(this.elemento?.nativeElement, {
-        type: 'line',
+        type: 'bar',
         data: {
           labels: ["janeiro","fevereiro","marco","abril"],
           datasets: [
             {
-              data:[65,43,65,43]
+              data:[65,43,65,43],
+              backgroundColor:'#FFCC00',
+            },{
+              data:[65,54,43,32],
+              backgroundColor:'#00AEFF' ,
             }
           ]
-        }
-        });
-      } 
+        },
+     });
+     new Chart(this.elementos?.nativeElement, {
+      type: 'bar',
+      data: {
+        labels: ["janeiro","fevereiro","marco","abril"],
+        datasets: [
+          {
+            data:[65,43,65,43],
+            backgroundColor:'#FFCC00',
+          },{
+            data:[65,54,43,32],
+            backgroundColor:'#00AEFF' ,
+          }
+        ]
+      },
+   });
+    } 
+    
+    
       public qtdClientes = "trazer da API"
   }
     

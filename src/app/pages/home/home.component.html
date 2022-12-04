@@ -12,7 +12,9 @@
     <div class="card">
       <h5 class="card-header">Produtos Cadastrados</h5>
       <div class="card-body">
-        <h4 class="card-text"><app-produto-observable></app-produto-observable></h4>
+        <h4 class="card-text">
+          <app-produto-observable></app-produto-observable>
+        </h4>
       </div>
     </div>
   </div>
@@ -28,8 +30,19 @@
   <br>
   <hr>
   <!-- Gráfico -->
-  <div class="container-fluid">
-    <canvas #meuCanvas></canvas>
+  
+  <div class="container-fluid  text-center" style="margin-top: 2em;">
+    <div class="card">
+    <div class="card-grafic row">
+    <div class="col-lg">
+      
+        <canvas #meuCanvas></canvas>
+      </div>
+
+    <div class="col-lg">
+      <canvas #meuCanvas2></canvas>
+      
+    </div>
+    </div>
   </div>
 </div>
-
