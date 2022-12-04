@@ -1,10 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Cliente } from 'src/app/modules/clientes.module';
 import { ClientesService } from 'src/app/services/clientes.service';
-import { ClienteModalComponent } from '../modals/cliente-modal/view-cliente-modal.component';
+import { ViewClienteModalComponent } from 'src/app/pages/modals/cliente-modal/view-cliente-modal.component';
+import { CreateClienteModalComponent } from 'src/app/pages/modals/cliente-modal/create-cliente-modal.component';
+import { EditClienteModalComponent } from 'src/app/pages/modals/cliente-modal/edit-cliente-modal.component';
+import { DeleteClienteModalComponent } from 'src/app/pages/modals/cliente-modal/delete-cliente-modal.component';
 
 @Component({
   selector: 'app-clientes',
@@ -29,9 +32,25 @@ export class ClientesComponent implements OnInit {
     this.clientes = await new ClientesService(this.http).lista();
   }
 
-  abrirModalCliente(cliente:Cliente){
-    const modalRef = this.modalService.open(ClienteModalComponent);
+  modalViewCliente(cliente:Cliente){
+    const modalRef = this.modalService.open(ViewClienteModalComponent);
     modalRef.componentInstance.cliente = cliente;  
   }
+
+  modalCreateCliente(){
+    const modalRef = this.modalService.open(CreateClienteModalComponent);
+    modalRef.componentInstance.cliente = '' 
+  }
+
+  modalEditCliente(cliente:Cliente){
+    const modalRef = this.modalService.open(EditClienteModalComponent);
+    modalRef.componentInstance.cliente = cliente;  
+  }
+
+  modalDeleteCliente(cliente:Cliente){
+    const modalRef = this.modalService.open(DeleteClienteModalComponent);
+    modalRef.componentInstance.cliente = cliente;  
+  }
+
 }
 

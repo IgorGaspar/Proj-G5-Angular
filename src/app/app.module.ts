@@ -19,8 +19,7 @@ import { PedidoObservableComponent } from './pages/observables/pedido-observable
 import { TelefonePipe } from './pipes/telefone.pipe';
 import { CpfPipe } from './pipes/cpf.pipe';
 import { CepPipe } from './pipes/cep.pipe';
-import { ClienteModalComponent } from './pages/modals/cliente-modal/view-cliente-modal.component';
-import { EditClienteModalComponent } from './pages/modals/cliente-modal/edit-cliente-modal/edit-cliente-modal.component';
+import { EditClienteModalComponent } from './pages/modals/cliente-modal/edit-cliente-modal.component';
 import { CreateClienteModalComponent } from './pages/modals/cliente-modal/create-cliente-modal.component';
 import { DeleteClienteModalComponent } from './pages/modals/cliente-modal/delete-cliente-modal.component';
 import { DeleteProdutoModalComponent } from './pages/modals/produto-modal/delete-produto-modal.component';
@@ -31,6 +30,7 @@ import { ViewPedidoModalComponent } from './pages/modals/pedido-modal/view-pedid
 import { EditPedidoModalComponent } from './pages/modals/pedido-modal/edit-pedido-modal.component';
 import { CreatePedidoModalComponent } from './pages/modals/pedido-modal/create-pedido-modal.component';
 import { DeletePedidoModalComponent } from './pages/modals/pedido-modal/delete-pedido-modal.component';
+import { ViewClienteModalComponent } from './pages/modals/cliente-modal/view-cliente-modal.component';
 
 //Define o padrão para brasileiro
 registerLocaleData(ptBR)
@@ -50,7 +50,7 @@ registerLocaleData(ptBR)
     TelefonePipe,
     CpfPipe,
     CepPipe,
-    ClienteModalComponent,
+    ViewClienteModalComponent,
     EditClienteModalComponent,
     CreateClienteModalComponent,
     DeleteClienteModalComponent,
@@ -61,7 +61,7 @@ registerLocaleData(ptBR)
     ViewPedidoModalComponent,
     CreatePedidoModalComponent,
     EditPedidoModalComponent,
-    DeletePedidoModalComponent
+    DeletePedidoModalComponent,
   ],
   imports: [
     BrowserModule,

@@ -14,7 +14,9 @@ export class ProdutosModule { }
 export interface Produto {
   id:number 
   nome:string
-  descricao:string  
+  tipo:string
+  descricao:string
+  composicao:string  
   valor:number
   qtd_estoque:number
 }

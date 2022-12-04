@@ -3,11 +3,19 @@
   <div class="container-fluid">
     <button type="submit" class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#modalAddPedido">Novo
       Pedido</button>
+
+      <input class="form-control basicAutoComplete" type="text" autocomplete="off">
+      <select class="form-control basicAutoSelect" name="simple_select"
+    placeholder="type to search..."
+    data-url="http://192.168.18.6:3000/clientes" autocomplete="off"></select>
   </div>
 
   <!-- Tabela Exibição Geral de Pedidos -->
   <hr>
-  <table class="table table-striped table-hover">
+  <div class="container-fluid text-center" *ngIf="pedidos && pedidos.length == 0">
+    <h5>Não há pedidos cadastrados.</h5>
+  </div>
+  <table class="table table-striped table-hover" *ngIf="pedidos && pedidos.length > 1">
     <thead>
       <tr>
         <th scope="col">ID</th>
@@ -19,12 +27,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td class="col-6">José Silva</td>
-        <td>2</td>
-        <td>R$ 10,00</td>
-        <td>01/01/2022</td>
+      <tr *ngFor="let pedido of pedidos">
+        <th scope="row">{{pedido.id}}</th>
+        <td class="col-6">{{pedido.cliente_id}}</td>
+        <td>{{pedido.qtd_item}}</td>
+        <td>{{pedido.valor_total}}</td>
+        <td>{{pedido.data}}</td>
         <td>
           <div class="btn-toolbar" role="toolbar" aria-label="Toolbar com grupos de botões">
             <div class="btn-group mr-2" role="group">
@@ -55,7 +63,7 @@
  
           <div class="container-fluid">
             <!-- Criar dois inputs com AutoComplete -->
-            <form action='' autocomplete='off'>
+         <!--    <form action='' autocomplete='off'>
               <div class='input-group mb-3'>
                 <input aria-describedby='button-addon2' aria-label='Country' class='form-control autocomplete'
                   id='myInput' name='myCountry' placeholder='Pesquisar Cliente' type='text'>
@@ -76,7 +84,9 @@
                   <button class='btn btn-outline-success' id='button-addon2' type='button'>Adicionar</button>
                 </div>
               </div>
-            </form>
+            </form> -->
+              <input type="search" name="simple_select_text" placeholder="type to search..." autocomplete="off" class="form-control basicModalAutoSelect"><input type="hidden" name="simple_select">
+              <code class="basicModalAutoSelectSelected"></code>
           </div>
           <hr>
           <!-- Primeiro deve aparecer somente o autocomplete do cliente. Após escolhido o cliente, o autocomplete muda para o de Produtos. -->
@@ -179,8 +189,8 @@
     </div>
   </div>
 
-  <!-- Modal Visualizar Pedido -->
-  <div class="modal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" id="modalViewPedido">
+ <!-- Modal Visualizar Pedido -->
+  <!--  <div class="modal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" id="modalViewPedido">
     <div class="modal-dialog modal-dialog-centered modal-xl">
       <div class="modal-content">
         <div class="modal-header">
@@ -255,7 +265,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <!-- Modal Editar Pedido -->
   <div class="modal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" id="modalEditPedido">
@@ -412,3 +422,7 @@
     </div>
   </div>
 </div>
+
+<script>
+
+</script>

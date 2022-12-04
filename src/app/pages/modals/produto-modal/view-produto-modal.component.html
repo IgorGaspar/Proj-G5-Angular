@@ -1,1 +1,19 @@
-<p>view-produto-modal works!</p>
+<div class="modal-content">
+  <div class="modal-header">
+    <h3 class="modal-title">Informações do Produto</h3>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="activeModal.dismiss()"></button>
+  </div>
+  <div class="modal-body">
+    <div class="container">
+          <p><b>Nome:</b> {{this.produto.nome}}</p>
+          <p><b>Tipo:</b> {{produto.tipo}}</p>
+          <p><b>Descrição:</b> {{produto.descricao}}</p>
+          <p><b>Composição:</b> {{produto.composicao}}</p>
+          <p><b>Valor:</b> {{produto.valor | currency}}</p>
+          <p><b>Estoque:</b> {{produto.qtd_estoque}}</p>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-success" data-bs-dismiss="modal" (click)="activeModal.close()">Ok</button>
+  </div>
+</div>

@@ -1,1 +1,58 @@
-<p>create-cliente-modal works!</p>
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3 class="modal-title">Cadastrar Cliente</h3>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="activeModal.dismiss()"></button>
+    </div>
+    <div class="modal-body">
+      <form class="row g-3">
+        <div class="col-auto">
+          <label for="nome">Nome</label>
+          <input type="text" class="form-control" id="nome">
+        </div><br>
+        <div class="col-auto">
+          <label for="telefone">Telefone</label>
+          <input type="tel" maxlength="11" class="form-control" id="telefone">
+        </div><br>
+        <div class="col-auto">
+          <label for="email">E-mail</label>
+          <input type="email" class="form-control" id="email">
+        </div><br>
+        <div class="col-auto">
+          <label for="cpf">CPF</label>
+          <input type="number" maxlength="11" class="form-control" id="cpf">
+        </div><br>
+        <div class="col-auto">
+          <label for="cep">CEP</label>
+          <input type="text" maxlength="8" class="form-control" id="cep">
+        </div><br>
+        <div class="col-auto">
+          <label for="logradouro">Logradouro</label>
+          <input type="text" class="form-control" id="logradouro">
+        </div><br>
+        <div class="col-auto">
+          <label for="numero">Numero</label>
+          <input type="text" class="form-control" id="numero">
+        </div><br>
+        <div class="col-auto">
+          <label for="bairro">Bairro</label>
+          <input type="text" class="form-control" id="bairro">
+        </div><br>
+        <div class="col-auto">
+          <label for="cidade">Cidade</label>
+          <input type="text" class="form-control" id="cidade">
+        </div><br>
+        <div class="col-auto">
+          <label for="estado">Estado</label>
+          <input type="text" class="form-control" id="estado">
+        </div><br>
+        <div class="col-auto">
+          <label for="complemento">Complemento</label>
+          <input type="text" class="form-control" id="complemento">
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-warning" data-bs-dismiss="modal" (click)="activeModal.close()">Cancelar</button>
+      <button type="button" class="btn btn-success">Salvar</button>
+    </div>
+  </div>

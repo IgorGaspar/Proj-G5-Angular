@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { Cliente } from 'src/app/modules/clientes.module';
 
 @Component({
   selector: 'app-delete-cliente-modal',
@@ -6,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./delete-cliente-modal.component.css']
 })
 export class DeleteClienteModalComponent implements OnInit {
-
-  constructor() { }
+  @Input() cliente!:Cliente;
+  
+  constructor(public activeModal:NgbActiveModal) { }
 
   ngOnInit(): void {
   }

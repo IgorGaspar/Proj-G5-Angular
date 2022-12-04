@@ -1,1 +1,38 @@
-<p>create-produto-modal works!</p>
+<div class="modal-content">
+  <div class="modal-header">
+    <h3 class="modal-title">Cadastrar Produto</h3>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="activeModal.dismiss()"></button>
+  </div>
+  <div class="modal-body">
+    <form class="modal-form container container-fluid row g-3">
+      <div class="col-auto">
+        <label for="nome">Nome</label>
+        <input type="text" class="form-control" id="nome">
+      </div><br>
+      <div class="col-auto">
+        <label for="descricao">Tipo</label>
+        <input type="text" class="form-control" id="descricao">
+      </div><br>
+      <div class="col-auto">
+        <label for="descricao">Descrição</label>
+        <input type="text" class="form-control" id="descricao">
+      </div><br>
+      <div class="col-auto">
+        <label for="descricao">Composição</label>
+        <input type="text" class="form-control" id="descricao">
+      </div><br>
+      <div class="col-auto">
+        <label for="valor">Valor</label>
+        <input type="number" class="form-control" id="valor">
+      </div><br>
+      <div class="col-auto">
+        <label for="estoque">Estoque</label>
+        <input type="number" class="form-control" id="estoque">
+      </div><br>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-warning" data-bs-dismiss="modal" (click)="activeModal.close()">Cancelar</button>
+    <button type="button" class="btn btn-success">Salvar</button>
+  </div>
+</div>

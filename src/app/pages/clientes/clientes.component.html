@@ -1,8 +1,7 @@
 <br>
 <div class="container-fluid" tabindex="0">
   <div class="container-fluid">
-    <button type="submit" class="btn btn-success mb-3" data-bs-toggle="modal"
-      data-bs-target="#modalAddCliente">Cadastrar</button>
+    <button type="submit" class="btn btn-success mb-3" (click)="modalCreateCliente()">Cadastrar</button>
   </div>
   <hr>
 
@@ -31,208 +30,14 @@
           <td>
             <div class="btn-toolbar" role="toolbar" aria-label="Toolbar com grupos de botões">
               <div class="btn-group mr-2" role="group">
-                <!-- <button type="button" class="btn btn-primary" style="margin: 2px;" data-bs-toggle="modal"
-                  data-bs-target="#modalViewCliente"><i class="fa-solid fa-eye"></i></button> -->
-                  <button type="button" class="btn btn-primary" style="margin: 2px;" (click)="abrirModalCliente(cliente)"><i class="fa-solid fa-eye"></i></button>
-                <button type="button" class="btn btn-warning" style="margin: 2px;" data-bs-toggle="modal"
-                  data-bs-target="#modalEditCliente"><i class="fa-solid fa-pen-to-square"></i></button>
-                <button type="button" class="btn btn-danger" style="margin: 2px;" data-bs-toggle="modal"
-                  data-bs-target="#modalDeleteCliente"><i class="fa-solid fa-trash-can"></i></button>
+                <button type="button" class="btn btn-primary" style="margin: 2px;" (click)="modalViewCliente(cliente)"><i class="fa-solid fa-eye"></i></button>
+                <button type="button" class="btn btn-warning" style="margin: 2px;" (click)="modalEditCliente(cliente)"><i class="fa-solid fa-pen-to-square"></i></button>
+                <button type="button" class="btn btn-danger" style="margin: 2px;" (click)="modalDeleteCliente(cliente)"><i class="fa-solid fa-trash-can"></i></button>
               </div>
             </div>
           </td>
         </tr>
       </tbody>
     </table>
-  </div>
-</div>
-<!-- Modais-->
-
-<!-- Modal Adicionar Cliente -->
-<div class="modal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" id="modalAddCliente">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title">Cadastrar Cliente</h3>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form class="row g-3">
-          <div class="col-auto">
-            <label for="nome">Nome</label>
-            <input type="text" readonly class="form-control" id="nome">
-          </div><br>
-          <div class="col-auto">
-            <label for="telefone">Telefone</label>
-            <input type="number" readonly class="form-control" id="telefone">
-          </div><br>
-          <div class="col-auto">
-            <label for="email">E-mail</label>
-            <input type="email" class="form-control" id="email">
-          </div><br>
-          <div class="col-auto">
-            <label for="cpf">CPF</label>
-            <input type="number" readonly class="form-control" id="cpf">
-          </div><br>
-          <div class="col-auto">
-            <label for="cep">CEP</label>
-            <input type="text" readonly class="form-control" id="cep">
-          </div><br>
-          <div class="col-auto">
-            <label for="logradouro">Logradouro</label>
-            <input type="text" readonly class="form-control" id="logradouro">
-          </div><br>
-          <div class="col-auto">
-            <label for="numero">Numero</label>
-            <input type="text" readonly class="form-control" id="numero">
-          </div><br>
-          <div class="col-auto">
-            <label for="bairro">Bairro</label>
-            <input type="text" readonly class="form-control" id="bairro">
-          </div><br>
-          <div class="col-auto">
-            <label for="cidade">Cidade</label>
-            <input type="text" readonly class="form-control" id="cidade">
-          </div><br>
-          <div class="col-auto">
-            <label for="estado">Estado</label>
-            <input type="text" readonly class="form-control" id="estado">
-          </div><br>
-          <div class="col-auto">
-            <label for="complemento">Complemento</label>
-            <input type="text" readonly class="form-control" id="complemento">
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-success">Salvar</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal Visualizar Cliente -->
-<!-- <div class="modal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" id="modalViewCliente">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title">Dados do Cliente</h3>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="container">
-          <div class="row" *ngFor="let cliente of clientes">
-              <div class="col">
-                <div class="container" style="text-align:center;">
-                  <h5>Contato:</h5><hr>
-                </div>                
-                <p><b>Nome:</b> {{cliente.nome}}</p>
-                <p><b>Telefone:</b> {{cliente.telefone}}</p>
-                <p><b>E-mail:</b> {{cliente.email}}</p>
-                <p><b>CPF:</b> {{cliente.cpf}}</p>
-              </div>
-            <div class="col">
-              <div class="container" style="text-align:center;">
-                <h5>Endereço:</h5><hr>
-              </div>
-                <p><b>CEP:</b> {{cliente.cep}}</p>
-                <p><b>Logradouro:</b> {{cliente.logradouro}}</p>
-                <p><b>Número:</b> {{cliente.numero}}</p>
-                <p><b>Bairro:</b> {{cliente.bairro}}</p>
-                <p><b>Cidade:</b> {{cliente.cidade}}</p>
-                <p><b>Estado:</b> {{cliente.estado}}</p>
-                <p><b>Complemento:</b> {{cliente.complemento}}</p>
-          </div>
-        </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Ok</button>
-      </div>
-    </div>
-  </div>
-</div> -->
-
-<!-- Modal Editar Cliente -->
-<div class="modal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" id="modalEditCliente">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title">Editar Cliente</h3>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form class="row g-3">
-          <div class="col-auto">
-            <label for="nome">Nome</label>
-            <input type="text" readonly class="form-control" id="nome">
-          </div><br>
-          <div class="col-auto">
-            <label for="telefone">Telefone</label>
-            <input type="number" readonly class="form-control" id="telefone">
-          </div><br>
-          <div class="col-auto">
-            <label for="email">E-mail</label>
-            <input type="email" class="form-control" id="email">
-          </div><br>
-          <div class="col-auto">
-            <label for="cpf">CPF</label>
-            <input type="number" readonly class="form-control" id="cpf">
-          </div><br>
-          <div class="col-auto">
-            <label for="cep">CEP</label>
-            <input type="text" readonly class="form-control" id="cep">
-          </div><br>
-          <div class="col-auto">
-            <label for="logradouro">Logradouro</label>
-            <input type="text" readonly class="form-control" id="logradouro">
-          </div><br>
-          <div class="col-auto">
-            <label for="numero">Numero</label>
-            <input type="text" readonly class="form-control" id="numero">
-          </div><br>
-          <div class="col-auto">
-            <label for="bairro">Bairro</label>
-            <input type="text" readonly class="form-control" id="bairro">
-          </div><br>
-          <div class="col-auto">
-            <label for="cidade">Cidade</label>
-            <input type="text" readonly class="form-control" id="cidade">
-          </div><br>
-          <div class="col-auto">
-            <label for="estado">Estado</label>
-            <input type="text" readonly class="form-control" id="estado">
-          </div><br>
-          <div class="col-auto">
-            <label for="complemento">Complemento</label>
-            <input type="text" readonly class="form-control" id="complemento">
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-success">Salvar</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal Excluir Cliente -->
-<div class="modal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" id="modalDeleteCliente">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title">Excluir Cliente</h3>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p>Tem certeza que deseja excluir esse cliente?</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-danger">Excluir</button>
-      </div>
-    </div>
   </div>
 </div>
