@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { Chart, registerables } from 'chart.js';
 
 
 @Component({
@@ -9,17 +10,35 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  
 
   constructor(
     private http:HttpClient,
     private router:Router,
-  ) { }
+  ) { 
+    Chart.register(...registerables);
+  }
   
-  ngOnInit(): void {
+  @ViewChild("meuCanvas", {static: true}) elemento: ElementRef | undefined;
+  ngOnInit() {
+    
+      new Chart(this.elemento?.nativeElement, {
+        type: 'line',
+        data: {
+          labels: ["janeiro","fevereiro","marco","abril"],
+          datasets: [
+            {
+              data:[65,43,65,43]
+            }
+          ]
+        }
+        });
+      } 
+      public qtdClientes = "trazer da API"
   }
     
-   public qtdClientes = "trazer da API"
+  
 
 
 
-}
+
