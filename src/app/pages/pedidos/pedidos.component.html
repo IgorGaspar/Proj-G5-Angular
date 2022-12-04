@@ -4,7 +4,7 @@
     <button type="submit" class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#modalAddPedido">Novo
       Pedido</button>
   </div>
-
+ 
   <!-- Tabela Exibição Geral de Pedidos -->
   <hr>
   <div class="container-fluid text-center" *ngIf="pedidos && pedidos.length == 0">
@@ -31,7 +31,8 @@
         <td>
           <div class="btn-toolbar" role="toolbar" aria-label="Toolbar com grupos de botões">
             <div class="btn-group mr-2" role="group">
-              <button type="button" class="btn btn-primary" style="margin: 2px;" (click)="modalViewPedido(pedido)"><i class="fa-solid fa-eye"></i></button>
+              <button type="button" class="btn btn-primary" style="margin: 2px;" (click)="modalViewPedido(pedido)"><i
+                  class="fa-solid fa-eye"></i></button>
               <button type="button" class="btn btn-warning" style="margin: 2px;" data-bs-toggle="modal"
                 data-bs-target="#modalEditPedido"><i class="fa-solid fa-pen-to-square"></i></button>
               <button type="button" class="btn btn-danger" style="margin: 2px;" data-bs-toggle="modal"
@@ -44,7 +45,6 @@
   </table>
 
   <!-- Modais-->
-
   <!-- Modal Adicionar Pedido -->
   <div class="modal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" id="modalAddPedido">
     <div class="modal-dialog modal-dialog-centered modal-xl">
@@ -54,10 +54,9 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
- 
           <div class="container-fluid">
             <!-- Criar dois inputs com AutoComplete -->
-         <!--    <form action='' autocomplete='off'>
+            <!--    <form action='' autocomplete='off'>
               <div class='input-group mb-3'>
                 <input aria-describedby='button-addon2' aria-label='Country' class='form-control autocomplete'
                   id='myInput' name='myCountry' placeholder='Pesquisar Cliente' type='text'>
@@ -79,8 +78,9 @@
                 </div>
               </div>
             </form> -->
-              <input type="search" name="simple_select_text" placeholder="type to search..." autocomplete="off" class="form-control basicModalAutoSelect"><input type="hidden" name="simple_select">
-              <code class="basicModalAutoSelectSelected"></code>
+            <input type="search" name="simple_select_text" placeholder="type to search..." autocomplete="off"
+              class="form-control basicModalAutoSelect"><input type="hidden" name="simple_select">
+            <code class="basicModalAutoSelectSelected"></code>
           </div>
           <hr>
           <!-- Primeiro deve aparecer somente o autocomplete do cliente. Após escolhido o cliente, o autocomplete muda para o de Produtos. -->
@@ -100,7 +100,7 @@
               <div class="col-sm" style="text-align: center;">
                 <ul class="list-inline m-0">
                   <button class="btn btn-warning btn-sm rounded-0" type="button" data-toggle="tooltip"
-                  data-placement="top" title="Editar"><i class="fa fa-edit"></i></button>
+                    data-placement="top" title="Editar"><i class="fa fa-edit"></i></button>
                 </ul>
               </div>
             </div>
@@ -217,7 +217,6 @@
               </div>
             </form>
           </div>
-          <!-- Primeiro deve aparecer somente o autocomplete do cliente. Após escolhido o cliente, o autocomplete muda para o de Produtos. -->
           <hr>
           <div class="container">
             <div class="row">
@@ -235,7 +234,7 @@
               <div class="col-sm" style="text-align: center;">
                 <ul class="list-inline m-0">
                   <button class="btn btn-warning btn-sm rounded-0" type="button" data-toggle="tooltip"
-                  data-placement="top" title="Editar"><i class="fa fa-edit"></i></button>
+                    data-placement="top" title="Editar"><i class="fa fa-edit"></i></button>
                 </ul>
               </div>
             </div>
