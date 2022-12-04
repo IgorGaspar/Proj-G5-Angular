@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
-
-
 @NgModule({
   declarations: [],
   imports: [
@@ -15,10 +13,10 @@ import { HttpClientModule } from '@angular/common/http';
 export class PedidosModule { }
 
 export interface Pedido {
-  id:Number,
-  cliente_id:String,
-  qtd_item:Number,
-  valor_total:any,
+  id:number,
+  cliente_id:string,
+  qtd_item:number,
+  valor_total:number,
   data:Date
 
 
