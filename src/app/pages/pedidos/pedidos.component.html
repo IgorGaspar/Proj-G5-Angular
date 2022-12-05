@@ -35,8 +35,7 @@
                   class="fa-solid fa-eye"></i></button>
               <button type="button" class="btn btn-warning" style="margin: 2px;" data-bs-toggle="modal"
                 data-bs-target="#modalEditPedido"><i class="fa-solid fa-pen-to-square"></i></button>
-              <button type="button" class="btn btn-danger" style="margin: 2px;" data-bs-toggle="modal"
-                data-bs-target="#modalDeletePedido"><i class="fa-solid fa-trash-can"></i></button>
+              <button type="button" class="btn btn-danger" style="margin: 2px;" (click)="modalDeletePedido(pedido)"><i class="fa-solid fa-trash-can"></i></button>
             </div>
           </div>
         </td>
@@ -318,25 +317,7 @@
     </div>
   </div>
 
-  <!-- Modal Excluir Pedido -->
-  <div class="modal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" id="modalDeletePedido">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3 class="modal-title">Excluir Pedido</h3>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p>Tem certeza que deseja excluir esse pedido?</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-danger">Excluir</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+ 
 
 <script>
 

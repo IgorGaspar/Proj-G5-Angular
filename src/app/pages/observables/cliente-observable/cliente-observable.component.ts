@@ -1,9 +1,11 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 import { ClientesService } from 'src/app/services/clientes.service';
 import { Router } from '@angular/router';
 
-
+@Injectable({
+  providedIn: 'root'
+})
 
 @Component({
   selector: 'app-cliente-observable',

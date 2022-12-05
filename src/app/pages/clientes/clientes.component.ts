@@ -39,7 +39,7 @@ export class ClientesComponent implements OnInit {
 
   modalCreateCliente(){
     const modalRef = this.modalService.open(CreateClienteModalComponent);
-    modalRef.componentInstance.cliente = '' 
+
   }
 
   modalEditCliente(cliente:Cliente){
