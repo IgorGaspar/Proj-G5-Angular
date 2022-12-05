@@ -16,4 +16,4 @@ export class PedidosService {
     let pedidos:Pedido[] | undefined = await firstValueFrom(this.http.get<Pedido[]>(`${environment.api}/pedidos`))
     return  pedidos;
   }
-}
+} 
