@@ -52,7 +52,8 @@
       </form>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-warning" data-bs-dismiss="modal" (click)="activeModal.close()">Cancelar</button>
-      <button type="button" class="btn btn-success"routerLink="/Clientes" (click)="cadastrarCliente">Salvar</button>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-bs-dismiss="modal" (click)="activeModal.close()">Cancelar</button>
+        <button type="button" class="btn btn-success" routerLink="/" (click)="cadastrarCliente()">Salvar</button>
     </div>
   </div>

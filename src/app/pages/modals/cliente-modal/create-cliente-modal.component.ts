@@ -48,7 +48,9 @@ export class CreateClienteModalComponent implements OnInit {
       cidade: this.cliente.cidade,
       estado: this.cliente.estado,
       complemento: this.cliente.complemento
-    })    
+    })  
+    this.activeModal.close() //Fecha o Modal
+    window.location.replace('/clientes') // Redireciona novamente para a página, fazendo o refresh  
   }
   
 }
