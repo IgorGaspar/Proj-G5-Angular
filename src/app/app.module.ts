@@ -16,9 +16,9 @@ import { CadastrapedidoComponent } from './pages/cadastrapedido/cadastrapedido.c
 import { ClienteObservableComponent } from './pages/observables/cliente-observable/cliente-observable.component';
 import { ProdutoObservableComponent } from './pages/observables/produto-observable/produto-observable.component';
 import { PedidoObservableComponent } from './pages/observables/pedido-observable/pedido-observable.component';
-import { TelefonePipe } from './pipes/telefone.pipe';
 import { CpfPipe } from './pipes/cpf.pipe';
 import { CepPipe } from './pipes/cep.pipe';
+import { TelefonePipe } from './pipes/telefone.pipe';
 import { EditClienteModalComponent } from './pages/modals/cliente-modal/edit-cliente-modal.component';
 import { CreateClienteModalComponent } from './pages/modals/cliente-modal/create-cliente-modal.component';
 import { DeleteClienteModalComponent } from './pages/modals/cliente-modal/delete-cliente-modal.component';
@@ -31,6 +31,8 @@ import { EditPedidoModalComponent } from './pages/modals/pedido-modal/edit-pedid
 import { CreatePedidoModalComponent } from './pages/modals/pedido-modal/create-pedido-modal.component';
 import { DeletePedidoModalComponent } from './pages/modals/pedido-modal/delete-pedido-modal.component';
 import { ViewClienteModalComponent } from './pages/modals/cliente-modal/view-cliente-modal.component';
+import { HeaderComponent } from './pages/header/header.component';
+import { FooterComponent } from './pages/footer/footer.component';
 
 //Define o padrão para brasileiro
 registerLocaleData(ptBR)
@@ -47,9 +49,9 @@ registerLocaleData(ptBR)
     ClienteObservableComponent,
     ProdutoObservableComponent,
     PedidoObservableComponent,
-    TelefonePipe,
     CpfPipe,
     CepPipe,
+    TelefonePipe,
     ViewClienteModalComponent,
     EditClienteModalComponent,
     CreateClienteModalComponent,
@@ -62,6 +64,8 @@ registerLocaleData(ptBR)
     CreatePedidoModalComponent,
     EditPedidoModalComponent,
     DeletePedidoModalComponent,
+    HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

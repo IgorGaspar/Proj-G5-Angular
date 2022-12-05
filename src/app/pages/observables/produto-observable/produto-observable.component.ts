@@ -1,4 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { createInjectableType } from '@angular/compiler';
+import { Component, Injectable, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Produto } from 'src/app/modules/produtos.module';
+import { ProdutosService } from 'src/app/services/produtos.service';
+
+@Injectable({
+  providedIn: 'root'
+})
+
 
 @Component({
   selector: 'app-produto-observable',
@@ -7,10 +17,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProdutoObservableComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private http:HttpClient,
+    private router: Router,
+    private produtosService:ProdutosService
+  ) { }
 
   ngOnInit(): void {
+    this.produtosCadastrados()
   }
 
-  public produtosCadastrados = 1
+  public qtdProdutosCadastrados:number = 0
+
+  public async produtosCadastrados(){
+    let conta = await new ProdutosService(this.http).lista()
+    this.qtdProdutosCadastrados = conta ? conta.length : 0;
+  }
 }
