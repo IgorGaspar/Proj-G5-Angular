@@ -31,6 +31,7 @@ export class ViewPedidoModalComponent implements OnInit {
   public async listarPedidos(){
     this.pedidos = await new PedidosService(this.http).lista();
   }
+
   /*public Produtos:Produto[] | undefined = []
 
   public async listarProdutos(){

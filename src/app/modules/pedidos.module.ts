@@ -19,7 +19,6 @@ export interface Pedido {
   valor_total:number,
   data:Date
 
-
 }
 
 
