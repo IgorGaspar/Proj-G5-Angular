@@ -30,25 +30,19 @@ export class HomeComponent implements OnInit {
           datasets: [
             {
               data:[65,43,65,43],
-              backgroundColor:'#FFCC00',
-            },{
-              data:[65,54,43,32],
-              backgroundColor:'#00AEFF' ,
+              backgroundColor:'rgb(80, 42, 110)',
             }
           ]
         },
      });
      new Chart(this.elementos?.nativeElement, {
-      type: 'bar',
+      type: 'pie',
       data: {
-        labels: ["janeiro","fevereiro","marco","abril"],
+        labels: ["2017","2018","2019","2020","2021"],
         datasets: [
           {
-            data:[65,43,65,43],
-            backgroundColor:'#FFCC00',
-          },{
-            data:[65,54,43,32],
-            backgroundColor:'#00AEFF' ,
+            data:[400,43,65,43,100],
+            backgroundColor: ['rgb(255, 99, 132)', 'rgb(255, 199, 132)', 'rgb(55, 99, 132)','rgb(80, 42, 110)','rgb(10, 42, 110)'],
           }
         ]
       },
