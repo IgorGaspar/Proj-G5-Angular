@@ -31,6 +31,8 @@ import { EditPedidoModalComponent } from './pages/modals/pedido-modal/edit-pedid
 import { CreatePedidoModalComponent } from './pages/modals/pedido-modal/create-pedido-modal.component';
 import { DeletePedidoModalComponent } from './pages/modals/pedido-modal/delete-pedido-modal.component';
 import { ViewClienteModalComponent } from './pages/modals/cliente-modal/view-cliente-modal.component';
+import { HeaderComponent } from './pages/header/header.component';
+import { FooterComponent } from './pages/footer/footer.component';
 
 //Define o padrão para brasileiro
 registerLocaleData(ptBR)
@@ -62,6 +64,8 @@ registerLocaleData(ptBR)
     CreatePedidoModalComponent,
     EditPedidoModalComponent,
     DeletePedidoModalComponent,
+    HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

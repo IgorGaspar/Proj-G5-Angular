@@ -11,7 +11,7 @@
           <div class="row">
           </div>
           <div>
-          <div class="row" *ngFor="let pedido of pedidos">
+          <div class="row">
             <div class="col-sm-12">
               <table class="table table-bordered dataTable" id="dataTable" cellspacing="2" role="grid"
                 aria-describedby="dataTable_info" style="width: 100%;">
@@ -23,14 +23,14 @@
                 </thead>
                 <thead>
                   <tr role="row" style="text-align: center;">
-                    <th rowspan="1" colspan="1">***</th>
-                    <th rowspan="1" colspan="3">{{pedido.cliente_id}}</th>
+                    <th rowspan="1" colspan="1">{{pedido.cliente_id}}</th>
+                    <th rowspan="1" colspan="3">{{pedido.cliente_nome}}</th>
                     <th rowspan="1" colspan="1">Data</th>
                     <th rowspan="1" colspan="1">{{pedido.data | date:'shortDate'}}</th>
                   </tr>
                 </thead>
                 <thead>
-                  <tr role="row" >
+                  <tr role="row">
                     <th class="sorting sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1"
                       aria-sort="ascending" aria-label="Name: activate to sort column descending"
                       style="width: 50px;">ID
@@ -46,18 +46,18 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr class="odd">
-                    <td>1</td>
-                    <td colspan="2">Paracetamol</td>
-                    <td>2</td>
+                  <tr class="odd" *ngFor="let pedidoProduto of pedido.pedidosProdutos">
+                    <td>{{pedidoProduto.produto_id}}</td>
+                    <td colspan="2">nome do produto</td>
+                    <td>{{pedidoProduto.quantidade}}</td>
                     <td>R$ 5,00</td>
-                    <td>R$ 10,00</td>
+                    <td>{{pedidoProduto.valor | currency}}</td>
                   </tr>
                 </tbody>
                 <tfoot>
                   <tr>
                     <th rowspan="1" colspan="5" style="text-align: right;">Valor Total</th>
-                    <th rowspan="1" colspan="1">{{pedido.valor_total}}</th>
+                    <th rowspan="1" colspan="1">{{pedido.valor_total | currency}}</th>
                   </tr>
                 </tfoot>
               </table>

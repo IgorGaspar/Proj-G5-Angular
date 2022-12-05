@@ -24,17 +24,15 @@
     <tbody>
       <tr *ngFor="let pedido of pedidos">
         <th scope="row">{{pedido.id}}</th>
-        <td class="col-6">{{pedido.cliente_id}}</td>
+        <td class="col-6"></td>
         <td>{{pedido.qtd_item}}</td>
         <td>{{pedido.valor_total | currency}}</td>
         <td>{{pedido.data | date:'shortDate'}}</td>
         <td>
           <div class="btn-toolbar" role="toolbar" aria-label="Toolbar com grupos de botões">
             <div class="btn-group mr-2" role="group">
-              <button type="button" class="btn btn-primary" style="margin: 2px;" (click)="modalViewPedido(pedido)"><i
-                  class="fa-solid fa-eye"></i></button>
-              <button type="button" class="btn btn-warning" style="margin: 2px;" data-bs-toggle="modal"
-                data-bs-target="#modalEditPedido"><i class="fa-solid fa-pen-to-square"></i></button>
+              <button type="button" class="btn btn-primary" style="margin: 2px;" (click)="modalViewPedido(pedido)"><i class="fa-solid fa-eye"></i></button>
+              <button type="button" class="btn btn-warning" style="margin: 2px;" (click)="modalEditPedido(pedido)"><i class="fa-solid fa-pen-to-square"></i></button>
               <button type="button" class="btn btn-danger" style="margin: 2px;" (click)="modalDeletePedido(pedido)"><i class="fa-solid fa-trash-can"></i></button>
             </div>
           </div>
@@ -316,9 +314,3 @@
       </div>
     </div>
   </div>
-
- 
-
-<script>
-
-</script>

@@ -24,7 +24,7 @@ export class PedidoObservableComponent implements OnInit {
   public qtdPedidosCadastrados:number = 0
 
   public async pedidosCadastrados(){
-    let conta = await new PedidosService(this.http).lista()
+    let conta = await this.PedidosService.listaPedidos()
     this.qtdPedidosCadastrados = conta ? conta.length : 0;
   }
 }

@@ -23,7 +23,7 @@ export class DeletePedidoModalComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    this.pedidosService = new PedidosService(this.http)
+    //this.pedidosService = new PedidosService(this.http)
   }
   private pedidosService:PedidosService = {} as PedidosService
   public pedidos:Pedido[] | undefined = []
@@ -34,7 +34,7 @@ export class DeletePedidoModalComponent implements OnInit {
 
 async excluir(pedido:Pedido){
     await this.pedidosService.excluirPedido(pedido.id)
-    this.pedidos = await this.pedidosService.lista()
+    this.pedidos = await this.pedidosService.listaPedidos()
     this.activeModal.close()
     window.location.replace('/pedidos')
 }
