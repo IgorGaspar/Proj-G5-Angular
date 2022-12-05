@@ -11,7 +11,7 @@ import { ProdutoObservableComponent } from '../../observables/produto-observable
   styleUrls: ['./create-produto-modal.component.css']
 })
 export class CreateProdutoModalComponent implements OnInit {
-  // @Input() produto!: Produto;
+ 
 
   cadastros = 0
 
