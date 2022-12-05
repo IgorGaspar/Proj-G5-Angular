@@ -1,1 +1,14 @@
-<p>delete-pedido-modal works!</p>
+ <!-- Modal Excluir Pedido -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">Excluir Pedido</h3>
+          <button type="button" class="btn-close" (click)="activeModal.dismiss()" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Tem certeza que deseja excluir esse pedido?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-warning" (click)="activeModal.close()">Cancelar</button>
+          <button type="button" class="btn btn-danger" (click)="excluir(pedido)">Excluir</button>
+        </div>
+      </div>

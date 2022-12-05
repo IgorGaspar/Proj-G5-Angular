@@ -10,7 +10,8 @@
         <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap5">
           <div class="row">
           </div>
-          <div class="row">
+          <div>
+          <div class="row" *ngFor="let pedido of pedidos">
             <div class="col-sm-12">
               <table class="table table-bordered dataTable" id="dataTable" cellspacing="2" role="grid"
                 aria-describedby="dataTable_info" style="width: 100%;">
@@ -22,14 +23,14 @@
                 </thead>
                 <thead>
                   <tr role="row" style="text-align: center;">
-                    <th rowspan="1" colspan="1">00</th>
+                    <th rowspan="1" colspan="1">***</th>
                     <th rowspan="1" colspan="3">{{pedido.cliente_id}}</th>
                     <th rowspan="1" colspan="1">Data</th>
                     <th rowspan="1" colspan="1">{{pedido.data | date:'shortDate'}}</th>
                   </tr>
                 </thead>
                 <thead>
-                  <tr role="row">
+                  <tr role="row" >
                     <th class="sorting sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1"
                       aria-sort="ascending" aria-label="Name: activate to sort column descending"
                       style="width: 50px;">ID
@@ -56,7 +57,7 @@
                 <tfoot>
                   <tr>
                     <th rowspan="1" colspan="5" style="text-align: right;">Valor Total</th>
-                    <th rowspan="1" colspan="1">R$ 10,00</th>
+                    <th rowspan="1" colspan="1">{{pedido.valor_total}}</th>
                   </tr>
                 </tfoot>
               </table>
