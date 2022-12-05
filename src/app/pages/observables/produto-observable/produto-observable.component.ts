@@ -1,8 +1,14 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { createInjectableType } from '@angular/compiler';
+import { Component, Injectable, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Produto } from 'src/app/modules/produtos.module';
 import { ProdutosService } from 'src/app/services/produtos.service';
+
+@Injectable({
+  providedIn: 'root'
+})
+
 
 @Component({
   selector: 'app-produto-observable',
