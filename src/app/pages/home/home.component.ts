@@ -24,6 +24,7 @@ export class HomeComponent implements OnInit {
 
   @ViewChild("meuCanvas", { static: true }) elemento: ElementRef | undefined;
   @ViewChild("meuCanvas2", { static: true }) elementos: ElementRef | undefined;
+  
   ngOnInit() {
     new Chart(this.elemento?.nativeElement, {
       type: 'bar',

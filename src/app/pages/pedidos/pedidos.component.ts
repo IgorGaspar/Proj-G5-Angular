@@ -8,7 +8,7 @@ import { ViewPedidoModalComponent } from '../modals/pedido-modal/view-pedido-mod
 import { CreatePedidoModalComponent } from 'src/app/pages/modals/pedido-modal/create-pedido-modal.component';
 import { EditPedidoModalComponent } from 'src/app/pages/modals/pedido-modal/edit-pedido-modal.component';
 import { DeletePedidoModalComponent } from 'src/app/pages/modals/pedido-modal/delete-pedido-modal.component';
-import { PedidoProduto, PedidosProdutosModule } from 'src/app/modules/pedidosProdutos.module';
+import { PedidoProduto } from 'src/app/modules/pedidosProdutos.module';
 @Component({
   selector: 'app-pedidos',
   templateUrl: './pedidos.component.html',
