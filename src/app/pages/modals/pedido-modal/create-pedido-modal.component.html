@@ -1,7 +1,7 @@
 <div class="modal-content">
   <div class="modal-header">
-    <h3 class="modal-title">Editar Pedido</h3>
-    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <h3 class="modal-title">Cadastrar Pedido</h3>
+    <button type="button" class="btn-close" (click)="activeModal.dismiss()" aria-label="Close"></button>
   </div>
   <div class="modal-body">
     <div class="container-fluid">
@@ -123,7 +123,7 @@
     </div>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancelar</button>
+    <button type="button" class="btn btn-warning" (click)="activeModal.close()">Cancelar</button>
     <button type="button" class="btn btn-success">Salvar</button>
   </div>
 </div>

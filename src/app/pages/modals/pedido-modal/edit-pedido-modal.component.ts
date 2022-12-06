@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { Cliente } from 'src/app/modules/clientes.module';
+import { ClientesService } from 'src/app/services/clientes.service';
 
 @Component({
   selector: 'app-edit-pedido-modal',
@@ -6,8 +9,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./edit-pedido-modal.component.css']
 })
 export class EditPedidoModalComponent implements OnInit {
+  @Input() cliente!:Cliente;
 
-  constructor() { }
+  constructor(
+    public activeModal:NgbActiveModal,
+    public clienteService: ClientesService
+  ) { }
 
   ngOnInit(): void {
   }
