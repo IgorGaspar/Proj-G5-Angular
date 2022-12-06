@@ -29,7 +29,7 @@
 
 <br>
 <h2> 👨🏻‍💻 Sobre projeto</h2>
-<p>Este projeto visa o desenvolvimento um sistema para gerenciar o Fluxo de caixa do lojista fazendo com que o mesmo tenha a possibilidade de fazer o gerenciamento do fluxo de entrada e saída do seu negócio, utilizando Angular e Rest API</p>
+<p>Este projeto visa o desenvolvimento de um sistema para gerenciar o Fluxo de caixa do lojista, fazendo com que o mesmo, tenha a possibilidade de fazer o gerenciamento do fluxo de entrada e saída do seu negócio, utilizando Angular e Rest API.</p>
 <br>
 
 ##
@@ -61,8 +61,19 @@
   <img align="center" alt="HTML" height="40" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
   <img align="center" alt="CSS" height="40" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
   <img align="center" alt="NodeJs" height="40" width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-plain.svg">
-  <img align="center" alt="NodeJs" height="40" width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-plain.svg">
+  <img align="center" alt="Angular" height="40" width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-plain.svg">
+  <img align="center" alt="Git" height="40" width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg">
+  <img align="center" alt="GitHub" height="40" width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg">
+  <img align="center" alt="Trello" height="40" width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-plain-wordmark.svg">
 </div>
+
+##
+
+<h2> ✍️ Organização do Projeto </h2>
+
+<p>Para a organização do projeto e melhor desenvolvimento, utilizamos metodologia ágil Kaban através da ferramento Trello, onde fragmentamos o projeto para melhor visualização em tarefas. Separamos como Tarefas 'A fazer', 'Em Andamento' e 'Concluído'. <a href="https://trello.com/invite/b/G8Pb9G9K/ATTIabf3f1461de567dea8a77db70eae780dFCA6F1B4/projeto-integrador-radar-g3">Clique aqui para visualizar o quadro</a></p>
+
+![Trello](https://user-images.githubusercontent.com/84486574/205979493-e89c7b52-e6da-4245-9d93-962469c53fed.png)
 
 ##
 
