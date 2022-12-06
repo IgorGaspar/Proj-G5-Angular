@@ -24,7 +24,7 @@
     - [Modal - Editar Produtos](#modal-editar-produto)
   - [Tela de Pedidos](#tela-de-pedidos)
     - [Modal - Informações do Pedido](#modal-de-informações-do-pedido)
-    
+- [Agradecimentos](#--agradecimentos)
 
 
 ##
