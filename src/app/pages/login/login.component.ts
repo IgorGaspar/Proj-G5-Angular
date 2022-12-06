@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
   public alertMessage:string = ""
   
   
+  //criação do login, utilizando localStorage que deixa o usuário logado até que ele seja removido
   logar() {
     if(this.user == "admin@radarg3.com.br" && this.password == "radarg3"){
       localStorage.setItem("logged", "true")

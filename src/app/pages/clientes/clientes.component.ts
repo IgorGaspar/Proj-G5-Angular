@@ -8,6 +8,7 @@ import { ViewClienteModalComponent } from 'src/app/pages/modals/cliente-modal/vi
 import { CreateClienteModalComponent } from 'src/app/pages/modals/cliente-modal/create-cliente-modal.component';
 import { EditClienteModalComponent } from 'src/app/pages/modals/cliente-modal/edit-cliente-modal.component';
 import { DeleteClienteModalComponent } from 'src/app/pages/modals/cliente-modal/delete-cliente-modal.component';
+import { LoginStatusService } from 'src/app/services/login-status.service';
 
 @Component({
   selector: 'app-clientes',
@@ -19,10 +20,13 @@ export class ClientesComponent implements OnInit {
   constructor(
     private http:HttpClient,
     private router:Router,
+    private loginStatusService: LoginStatusService,
     private modalService: NgbModal
   ) { }
-
+  
+  // Se o usuário não estiver logado, será redirecionado para a tela de login, senão, é exibida a tela de clientes
   ngOnInit(): void {
+    if(this.loginStatusService.redirectNãoLogado()) return 
     this.listarClientes()
   }
 

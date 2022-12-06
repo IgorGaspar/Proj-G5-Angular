@@ -8,6 +8,7 @@ import { ViewProdutoModalComponent } from 'src/app/pages/modals/produto-modal/vi
 import { CreateProdutoModalComponent } from 'src/app/pages/modals/produto-modal/create-produto-modal.component';
 import { EditProdutoModalComponent } from 'src/app/pages/modals/produto-modal/edit-produto-modal.component';
 import { DeleteProdutoModalComponent } from 'src/app/pages/modals/produto-modal/delete-produto-modal.component';
+import { LoginStatusService } from 'src/app/services/login-status.service';
 
 @Component({
   selector: 'app-produtos',
@@ -19,10 +20,12 @@ export class ProdutosComponent implements OnInit {
   constructor(
     private http:HttpClient,
     private router:Router,
+    private loginStatusService: LoginStatusService,
     private modalService: NgbModal
   ) { }
   
   ngOnInit(): void {
+    if(this.loginStatusService.redirectNãoLogado()) return
     this.listarProdutos()
   }
 

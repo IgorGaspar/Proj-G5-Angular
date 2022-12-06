@@ -10,7 +10,7 @@ import { AutenticacaoGuard } from './services/autenticacao.guard';
 import { ClienteObservableComponent } from './pages/observables/cliente-observable/cliente-observable.component';
 
 const routes: Routes = [
-  {path:'', component:HomeComponent},
+  {path:'', component:LoginComponent},
   {path:'login', component:LoginComponent},
   {path:'home', component:HomeComponent, canActivate: [AutenticacaoGuard]},
   {path:'clientes', component:ClientesComponent, canActivate: [AutenticacaoGuard]},

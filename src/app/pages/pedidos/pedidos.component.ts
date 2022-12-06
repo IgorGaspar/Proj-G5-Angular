@@ -9,6 +9,7 @@ import { CreatePedidoModalComponent } from 'src/app/pages/modals/pedido-modal/cr
 import { EditPedidoModalComponent } from 'src/app/pages/modals/pedido-modal/edit-pedido-modal.component';
 import { DeletePedidoModalComponent } from 'src/app/pages/modals/pedido-modal/delete-pedido-modal.component';
 import { PedidoProduto, PedidosProdutosModule } from 'src/app/modules/pedidosProdutos.module';
+import { LoginStatusService } from 'src/app/services/login-status.service';
 @Component({
   selector: 'app-pedidos',
   templateUrl: './pedidos.component.html',
@@ -19,11 +20,13 @@ export class PedidosComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private pedidosService: PedidosService,
+    private loginStatusService:LoginStatusService,
     private modalService: NgbModal
 
   ) { }
 
   ngOnInit(): void {
+    if(this.loginStatusService.redirectNãoLogado()) return
     this.listarPedidos()
     this.listarPedidosProdutos()
   }

@@ -22,6 +22,6 @@
         <a class="nav-link link-warning" routerLink="/pedidos">Pedidos</a>
       </li>
     </ul>
-    <button class="btn btn-outline-warning" type="button" (click)="loggout()">Sair</button>
+    <button *ngIf="loginStatusService.logged" class="btn btn-outline-warning" type="button" (click)="loggout()">Sair</button>
   </div>
 </nav>
