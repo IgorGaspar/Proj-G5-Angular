@@ -24,7 +24,7 @@
                 <thead>
                   <tr role="row" style="text-align: center;">
                     <th rowspan="1" colspan="1">{{pedido.cliente_id}}</th>
-                    <th rowspan="1" colspan="3">{{pedido.clientes}}</th>
+                    <th rowspan="1" colspan="3">{{pedido.cliente_nome}}</th>
                     <th rowspan="1" colspan="1">Data</th>
                     <th rowspan="1" colspan="1">{{pedido.data | date:'shortDate'}}</th>
                   </tr>
@@ -48,10 +48,10 @@
                 <tbody>
                   <tr class="odd" *ngFor="let pedidoProduto of pedido.pedidosProdutos">
                     <td>{{pedidoProduto.produto_id}}</td>
-                    <td colspan="2">nome do produto</td>
+                    <td colspan="2">{{pedidoProduto.produto_nome}}</td>
                     <td>{{pedidoProduto.quantidade}}</td>
-                    <td>R$ 5,00</td>
-                    <td>{{pedidoProduto.valor | currency}}</td>
+                    <td>{{pedidoProduto.produto_valor | currency}}</td>
+                    <td>{{pedidoProduto.valor * pedidoProduto.quantidade | currency}}</td>
                   </tr>
                 </tbody>
                 <tfoot>

@@ -18,4 +18,6 @@ export interface PedidoProduto {
   produto_id:number,
   valor:number,
   quantidade:number
+  produto_nome:string
+  produto_valor:number
 }

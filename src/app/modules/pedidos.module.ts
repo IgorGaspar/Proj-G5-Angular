@@ -22,11 +22,9 @@ export interface Pedido {
   valor_total:number,
   data:Date
   pedidosProdutos:PedidoProduto[]
-  clientes:Cliente[]
-  produtos:Produto[]
   cliente_nome:string
-  // produto_nome:string
-  // produto_valor:number
+  produto_nome:string
+  produto_valor:number
 }
 
 

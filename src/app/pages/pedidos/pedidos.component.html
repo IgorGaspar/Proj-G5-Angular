@@ -24,7 +24,7 @@
     <tbody>
       <tr *ngFor="let pedido of pedidos">
         <th scope="row">{{pedido.id}}</th>
-        <td class="col-6"></td>
+        <td class="col-6">{{pedido.cliente_nome}}</td>
         <td>{{pedido.qtd_item}}</td>
         <td>{{pedido.valor_total | currency}}</td>
         <td>{{pedido.data | date:'shortDate'}}</td>

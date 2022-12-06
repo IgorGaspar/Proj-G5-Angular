@@ -24,19 +24,21 @@ export class PedidosService {
   public async listaPedidos() {
     let pedidos: Pedido[] | undefined = await firstValueFrom(this.http.get<Pedido[]>(`${environment.api}/pedidos`)) //Puxa os Pedidos
     let pedidosProdutos: PedidoProduto[] = await this.listaPedidosProdutos() //Puxa os pedidosProdutos através do método abaixo.
-    let produtos: Produto[] = await this.produtosService.lista() //Puxa os produtos através do ProdutoService.
-    let clientes: Cliente[] = await this.clientesService.lista() //Puxa os clientes através do ClienteService.
+    let clientes:Cliente[] = await this.clientesService.lista() //Puxa os clientes através do ClienteService.
     pedidos.forEach(pedido => { //para cada pedido
       pedido.pedidosProdutos = pedidosProdutos.filter(x => x.pedido_id == pedido.id) //filtra o pedido.Produto de acordo com o pedido.id recebido
-      pedido.clientes = clientes.filter(x => x.id == pedido.cliente_id)
-      //pedido.produtos = produtos.filter(x => x.id == pedidosProdutos.produto_id)
+      pedido.cliente_nome = clientes.filter(x => x.id == pedido.cliente_id)[0].nome
     })
     return pedidos;
   }
 
-
   public async listaPedidosProdutos() {
     let pedidosProdutos: PedidoProduto[] | undefined = await firstValueFrom(this.http.get<PedidoProduto[]>(`${environment.api}/pedidosProdutos`))
+    let produtos:Produto[] = await this.produtosService.lista() //Puxa os produtos através do ProdutoService.
+    pedidosProdutos.forEach(pedidoProduto => { //para cada pedido
+      pedidoProduto.produto_nome = produtos.filter(x => x.id == pedidoProduto.produto_id)[0].nome //filtra o pedido.Produto de acordo com o pedido.id recebido
+      pedidoProduto.produto_valor = produtos.filter(x => x.id == pedidoProduto.produto_id)[0].valor
+    })
     return pedidosProdutos;
   }
 
