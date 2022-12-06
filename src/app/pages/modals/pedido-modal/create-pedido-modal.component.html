@@ -1,136 +1,129 @@
-<div class="modal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" id="modalAddPedido">
-  <div class="modal-dialog modal-dialog-centered modal-xl">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title">Cadastrar Pedido</h3>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="container-fluid">
-          <!-- Criar dois inputs com AutoComplete -->
-          <!--    <form action='' autocomplete='off'>
-            <div class='input-group mb-3'>
-              <input aria-describedby='button-addon2' aria-label='Country' class='form-control autocomplete'
-                id='myInput' name='myCountry' placeholder='Pesquisar Cliente' type='text'>
-              <div class='input-group-append'>
-                <button class='btn btn-outline-success' id='button-addon2' type='button'>Adicionar</button>
-              </div>
-            </div>
-          </form>
-          <form action='' autocomplete='off'>
-            <div class='input-group'>
-              <input aria-describedby='button-addon2' aria-label='Country' class='form-control autocomplete'
-                id='myInput' name='myCountry' placeholder='Pesquisar Produto' type='text'>
-              <div class='input-group-append'>
-                <input class='form-control' size="2" id='inputQtdProduto' name='qtdProduto' placeholder='Quantidade'
-                  type='number'>
-              </div>
-              <div class='input-group-append'>
-                <button class='btn btn-outline-success' id='button-addon2' type='button'>Adicionar</button>
-              </div>
-            </div>
-          </form> -->
-          <input type="search" name="simple_select_text" placeholder="type to search..." autocomplete="off"
-            class="form-control basicModalAutoSelect"><input type="hidden" name="simple_select">
-          <code class="basicModalAutoSelectSelected"></code>
-        </div>
-        <hr>
-        <!-- Primeiro deve aparecer somente o autocomplete do cliente. Após escolhido o cliente, o autocomplete muda para o de Produtos. -->
-        <div class="container">
-          <div class="row">
-            <div class="col-11">
-              <h5>Cliente:</h5>
-            </div>
-            <div class="col-sm" style="text-align: center;">
-              <h6>Ações:</h6>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-11">
-              <h6>José Silva</h6>
-            </div>
-            <div class="col-sm" style="text-align: center;">
-              <ul class="list-inline m-0">
-                <button class="btn btn-warning btn-sm rounded-0" type="button" data-toggle="tooltip"
-                  data-placement="top" title="Editar"><i class="fa fa-edit"></i></button>
-              </ul>
-            </div>
+<div class="modal-content">
+  <div class="modal-header">
+    <h3 class="modal-title">Editar Pedido</h3>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  </div>
+  <div class="modal-body">
+    <div class="container-fluid">
+      <!-- Criar dois inputs com AutoComplete -->
+      <form action='' autocomplete='off'>
+        <div class='input-group mb-3'>
+          <input aria-describedby='button-addon2' aria-label='Country' class='form-control autocomplete'
+            id='myInput' name='myCountry' placeholder='Pesquisar Cliente' type='text'>
+          <div class='input-group-append'>
+            <button class='btn btn-outline-success' id='button-addon2' type='button'>Adicionar</button>
           </div>
         </div>
-        <hr>
-        <h5>Produtos:</h5>
-        <div class="container-fluid">
-          <table class="table table-bordered dataTable">
-            <tr>
-              <th>ID</th>
-              <th class="col-9">Produto</th>
-              <th>Qtd</th>
-              <th>Valor</th>
-              <th>Ações</th>
-            </tr>
-            <tr>
-              <th>1</th>
-              <th>Paracetamol</th>
-              <th>2</th>
-              <th>R$ 5,00</th>
-              <th>
-                <ul class="list-inline m-0">
-                  <li class="list-inline-item">
-                    <button class="btn btn-warning btn-sm rounded-0" type="button" data-toggle="tooltip"
-                      data-placement="top" title="Editar"><i class="fa fa-edit"></i></button>
-                  </li>
-                  <li class="list-inline-item">
-                    <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip"
-                      data-placement="top" title="Deletar"><i class="fa fa-trash"></i></button>
-                  </li>
-                </ul>
-              </th>
-            </tr>
-            <tr>
-              <th>2</th>
-              <th>AAS</th>
-              <th>3</th>
-              <th>R$ 2,00</th>
-              <th>
-                <ul class="list-inline m-0">
-                  <li class="list-inline-item">
-                    <button class="btn btn-warning btn-sm rounded-0" type="button" data-toggle="tooltip"
-                      data-placement="top" title="Editar"><i class="fa fa-edit"></i></button>
-                  </li>
-                  <li class="list-inline-item">
-                    <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip"
-                      data-placement="top" title="Deletar"><i class="fa fa-trash"></i></button>
-                  </li>
-                </ul>
-              </th>
-            </tr>
-            <tr>
-              <th>3</th>
-              <th>Dipirona</th>
-              <th>1</th>
-              <th>R$ 3,50</th>
-              <th>
-                <ul class="list-inline m-0">
-                  <li class="list-inline-item">
-                    <button class="btn btn-warning btn-sm rounded-0" type="button" data-toggle="tooltip"
-                      data-placement="top" title="Editar"><i class="fa fa-edit"></i></button>
-                  </li>
-                  <li class="list-inline-item">
-                    <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip"
-                      data-placement="top" title="Deletar"><i class="fa fa-trash"></i></button>
-                  </li>
-                </ul>
-              </th>
-            </tr>
-          </table>
-          <hr>
-          <h4 style="text-align: right;"><b>Total: </b> R$ 19,50</h4>
+      </form>
+      <form action='' autocomplete='off'>
+        <div class='input-group'>
+          <input aria-describedby='button-addon2' aria-label='Country' class='form-control autocomplete'
+            id='myInput' name='myCountry' placeholder='Pesquisar Produto' type='text'>
+          <div class='input-group-append'>
+            <input class='form-control' size="2" id='inputQtdProduto' name='qtdProduto' placeholder='Quantidade'
+              type='number'>
+          </div>
+          <div class='input-group-append'>
+            <button class='btn btn-outline-success' id='button-addon2' type='button'>Adicionar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <hr>
+    <div class="container">
+      <div class="row">
+        <div class="col-11">
+          <h5>Cliente:</h5>
+        </div>
+        <div class="col-sm" style="text-align: center;">
+          <h6>Ações:</h6>
         </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-success">Salvar</button>
+      <div class="row">
+        <div class="col-11">
+          <h6>José Silva</h6>
+        </div>
+        <div class="col-sm" style="text-align: center;">
+          <ul class="list-inline m-0">
+            <button class="btn btn-warning btn-sm rounded-0" type="button" data-toggle="tooltip"
+              data-placement="top" title="Editar"><i class="fa fa-edit"></i></button>
+          </ul>
+        </div>
       </div>
     </div>
+
+    <hr>
+    <h5>Produtos:</h5>
+    <div class="container-fluid">
+      <table class="table table-bordered dataTable">
+        <tr>
+          <th>ID</th>
+          <th class="col-9">Produto</th>
+          <th>Qtd</th>
+          <th>Valor</th>
+          <th>Ações</th>
+        </tr>
+        <tr>
+          <th>1</th>
+          <th>Paracetamol</th>
+          <th>2</th>
+          <th>R$ 5,00</th>
+          <th>
+            <ul class="list-inline m-0">
+              <li class="list-inline-item">
+                <button class="btn btn-warning btn-sm rounded-0" type="button" data-toggle="tooltip"
+                  data-placement="top" title="Editar"><i class="fa fa-edit"></i></button>
+              </li>
+              <li class="list-inline-item">
+                <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip"
+                  data-placement="top" title="Deletar"><i class="fa fa-trash"></i></button>
+              </li>
+            </ul>
+          </th>
+        </tr>
+        <tr>
+          <th>2</th>
+          <th>AAS</th>
+          <th>3</th>
+          <th>R$ 2,00</th>
+          <th>
+            <ul class="list-inline m-0">
+              <li class="list-inline-item">
+                <button class="btn btn-warning btn-sm rounded-0" type="button" data-toggle="tooltip"
+                  data-placement="top" title="Editar"><i class="fa fa-edit"></i></button>
+              </li>
+              <li class="list-inline-item">
+                <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip"
+                  data-placement="top" title="Deletar"><i class="fa fa-trash"></i></button>
+              </li>
+            </ul>
+          </th>
+        </tr>
+        <tr>
+          <th>3</th>
+          <th>Dipirona</th>
+          <th>1</th>
+          <th>R$ 3,50</th>
+          <th>
+            <ul class="list-inline m-0">
+              <li class="list-inline-item">
+                <button class="btn btn-warning btn-sm rounded-0" type="button" data-toggle="tooltip"
+                  data-placement="top" title="Editar"><i class="fa fa-edit"></i></button>
+              </li>
+              <li class="list-inline-item">
+                <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip"
+                  data-placement="top" title="Deletar"><i class="fa fa-trash"></i></button>
+              </li>
+            </ul>
+          </th>
+        </tr>
+      </table>
+      <hr>
+      <h4 style="text-align: right;"><b>Total: </b> R$ 19,50</h4>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancelar</button>
+    <button type="button" class="btn btn-success">Salvar</button>
   </div>
 </div>

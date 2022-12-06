@@ -12,7 +12,6 @@ import { FormsModule } from '@angular/forms';
 import { ClientesComponent } from './pages/clientes/clientes.component';
 import { PedidosComponent } from './pages/pedidos/pedidos.component';
 import { ProdutosComponent } from './pages/produtos/produtos.component';
-import { CadastrapedidoComponent } from './pages/cadastrapedido/cadastrapedido.component';
 import { ClienteObservableComponent } from './pages/observables/cliente-observable/cliente-observable.component';
 import { ProdutoObservableComponent } from './pages/observables/produto-observable/produto-observable.component';
 import { PedidoObservableComponent } from './pages/observables/pedido-observable/pedido-observable.component';
@@ -33,6 +32,7 @@ import { DeletePedidoModalComponent } from './pages/modals/pedido-modal/delete-p
 import { ViewClienteModalComponent } from './pages/modals/cliente-modal/view-cliente-modal.component';
 import { HeaderComponent } from './pages/header/header.component';
 import { FooterComponent } from './pages/footer/footer.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 //Define o padrão para brasileiro
 registerLocaleData(ptBR)
@@ -45,7 +45,6 @@ registerLocaleData(ptBR)
     ClientesComponent,
     PedidosComponent,
     ProdutosComponent,
-    CadastrapedidoComponent,
     ClienteObservableComponent,
     ProdutoObservableComponent,
     PedidoObservableComponent,
@@ -66,6 +65,7 @@ registerLocaleData(ptBR)
     DeletePedidoModalComponent,
     HeaderComponent,
     FooterComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

@@ -21,7 +21,8 @@ export class HeaderComponent implements OnInit {
   
   loggout(){
     localStorage.removeItem("logged")
-    this.router.navigateByUrl("/login")
+    // this.router.navigateByUrl("/login")
+    window.location.replace('/login')
   }
 
 }
