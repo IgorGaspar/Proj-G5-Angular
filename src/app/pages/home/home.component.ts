@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Chart, registerables } from 'chart.js';
+import { LoginStatusService } from 'src/app/services/login-status.service';
 import { PedidosService } from 'src/app/services/pedidos.service';
 import { PedidosProdutosService } from 'src/app/services/pedidosProdutos.service';
 
@@ -17,15 +18,17 @@ export class HomeComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private router: Router,
+    private loginStatusService: LoginStatusService,
     private pedidosService: PedidosService
   ) {
+    
     Chart.register(...registerables);
   }
 
   @ViewChild("meuCanvas", { static: true }) elemento: ElementRef | undefined;
   @ViewChild("meuCanvas2", { static: true }) elementos: ElementRef | undefined;
-  
   ngOnInit() {
+    if(this.loginStatusService.redirectNãoLogado()) return      
     new Chart(this.elemento?.nativeElement, {
       type: 'bar',
 

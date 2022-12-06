@@ -8,7 +8,12 @@ import { ViewPedidoModalComponent } from '../modals/pedido-modal/view-pedido-mod
 import { CreatePedidoModalComponent } from 'src/app/pages/modals/pedido-modal/create-pedido-modal.component';
 import { EditPedidoModalComponent } from 'src/app/pages/modals/pedido-modal/edit-pedido-modal.component';
 import { DeletePedidoModalComponent } from 'src/app/pages/modals/pedido-modal/delete-pedido-modal.component';
+<<<<<<< HEAD
 import { PedidoProduto } from 'src/app/modules/pedidosProdutos.module';
+=======
+import { PedidoProduto, PedidosProdutosModule } from 'src/app/modules/pedidosProdutos.module';
+import { LoginStatusService } from 'src/app/services/login-status.service';
+>>>>>>> 4936a6c13bb0965a44a86fa540d662a6d8fe1e93
 @Component({
   selector: 'app-pedidos',
   templateUrl: './pedidos.component.html',
@@ -19,11 +24,13 @@ export class PedidosComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private pedidosService: PedidosService,
+    private loginStatusService:LoginStatusService,
     private modalService: NgbModal
 
   ) { }
 
   ngOnInit(): void {
+    if(this.loginStatusService.redirectNãoLogado()) return
     this.listarPedidos()
     this.listarPedidosProdutos()
   }

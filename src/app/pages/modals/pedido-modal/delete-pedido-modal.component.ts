@@ -33,18 +33,4 @@ export class DeletePedidoModalComponent implements OnInit {
     this.activeModal.close()
     window.location.replace('/pedidos')
   }
-
-// async excluir(pedido:Pedido){
-//     await this.pedidosService.excluirPedido(pedido.id)
-//     this.pedidos = await this.pedidosService.listaPedidos()
-//     this.activeModal.close()
-//     window.location.replace('/pedidos')
-// }
-
-// public excluirPedido(pedido:Pedido) {
-
-//    this.pedidosService.excluirPedido(this.pedido.id)
-//    this.activeModal.close() //Fecha o Modal
-//    window.location.replace('/pedidos') // Redireciona novamente para a página, fazendo o refresh
-//  }
 }
