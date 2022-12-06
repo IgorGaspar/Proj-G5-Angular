@@ -1,10 +1,136 @@
-# Pendências
 
-Lógica dos formulários e botões.
-Comunicação do Services com a API.
+<h1 align="center">Projeto</h1>
+<p align="center"><img src="https://user-images.githubusercontent.com/84486574/205916527-9fbebef8-de0d-4943-b8ef-f9d7bf5c3983.png" /> </p>
+
+![Badge EM FINALIZAÇÃO](http://img.shields.io/static/v1?label=STATUS&message=%20FINALIZADO&color=GREEN&style=for-the-badge)
+
+
+# Índice
+
+- [Sobre o Projeto](#sobre-o-projeto)
+- [Equipe do Projeto](#equipe-do-projeto)
+- [Funcionalidades](#funcionalidades)
+- [Tecnologias utilizadas](#tecnologias-utilizadas)
+- [Execução do Projeto](#execuçao-do-projeto)
+
+##
+
+<br>
+<h2> 👨🏻‍💻 Sobre projeto</h2>
+<p>Este projeto visa o desenvolvimento um sistema para gerenciar o Fluxo de caixa do lojista fazendo com que o mesmo tenha a possibilidade de fazer o gerenciamento do fluxo de entrada e saída do seu negócio</p>
+<br>
+
+##
+
+<h2> 👩‍💻👨‍💻 Equipe do projeto </h2>
+
+
+
+##
+
+<h2> :hammer: Funcionalidades</h2>
+
+- `Pagina login:` Página destinada ao login de usuário com senha para acesso as demais páginas do sistema;
+- `Página home:` Página inicial de apresentação de fluxo de caixa com gráficos e quantidade de cadastros;
+- `Página cadastro de produtos:`Página que apresenta a lista de produtos cadastrados e opções de cadastro, visualização, edição e exclusão de produtos;
+- `Página cadastro de clientes:`Página que apresenta a lista de clientes cadastrados e opções de cadastro, visualização, edição e exclusão de clientes;
+- `Página cadastro de pedidos dos clientes:`Página que apresenta a lista de pedidos cadastrados e opções de cadastro, visualização, edição e exclusão de pedidos;
+- `Página de fluxo de caixa:` Página home.
+
+## 
+
+<h2> 💻 Tecnologias utilizadas</h2>
+
+<div style="display: inline_block"><br>
+  <img align="center" alt="Ts" height="40" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-plain.svg">
+  <img align="center" alt="HTML" height="40" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
+  <img align="center" alt="CSS" height="40" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
+  <img align="center" alt="NodeJs" height="40" width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-plain.svg">
+  <img align="center" alt="NodeJs" height="40" width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-plain.svg">
+</div>
+
+##
+
+<h2> 🎲 Execução o projeto </h2>
+
+### Pré-requisitos
+
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). 
+Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
+
+
+
+```bash
+# Clone estes repositórios
+$ git clone <https://github.com/bruno-esilva/Proj-G3-Angular.git>
+$ git clone <https://github.com/bruno-esilva/Proj-G3-API.git>
+
+# Acesse a pasta do projeto no terminal/cmd
+$ cd Proj-G3-Angular
+$ cd Proj-G3-Angular
+
+# Instale as dependências
+$ npm install
+
+# Execute a aplicação em modo de desenvolvimento
+$ npm run dev (para a API)
+$ ng serve (para o angular)
+
+#Login
+usuário: admin@radarg3.com.br
+senha: radarg3
+
+
+```
+
+##
+
+<h2> 👀 Visualização do Projeto</h2>
+
+<h3>Tela de Login do usuário</h3>
+
+![tela_login](https://user-images.githubusercontent.com/84486574/205910663-2336cc70-6f5f-4899-bde8-be8a0aec62cf.png)
+
+<h3>Tela de Fluxo de caixa (Home)</h3>
+
+![tela_home_fluxo_de_caixa](https://user-images.githubusercontent.com/84486574/205910836-f5ce981f-ded0-4dd1-b56f-cd7cf107663a.png)
+
+<h3>Tela de Clientes)</h3>
+
+![tela_listar_clientes](https://user-images.githubusercontent.com/84486574/205910877-d873ba84-9b18-44ab-83b6-5935ac4a2733.png)
+
+<h3>Modal editar Clientes</h3>
+
+![modal_editar_clientes](https://user-images.githubusercontent.com/84486574/205910967-20dbdc1f-7cd4-4a1f-9668-26b520da7f55.png)
+
+<h3>Modal informações do Clientes</h3>
+
+![modal_dados_clientes](https://user-images.githubusercontent.com/84486574/205910986-32dc91d4-8fff-46b3-a627-847799a7263f.png)
+
+<h3>Tela de Produtos</h3>
+
+![tela_listar_produtos](https://user-images.githubusercontent.com/84486574/205910939-e214d640-8a54-4427-9e20-b7a25d3eb7ad.png)
+
+<h3>Modal informações do Produto</h3>
+
+![modal_informacoes_produto](https://user-images.githubusercontent.com/84486574/205910762-f4685a2b-c1f0-4fb8-aa74-5d7ba1c17208.png)
+
+<h3>Modal Editar Produto</h3>
+
+![modal_editar_produtos](https://user-images.githubusercontent.com/84486574/205910724-9dd4e4a6-0f8f-4329-a47c-4b30de453e60.png)
+
+<h3>Tela de Pedidos</h3>
+
+![tela_listar_pedidos](https://user-images.githubusercontent.com/84486574/205910905-297080d3-248c-47c0-9dda-f3add58c81ed.png)
+
+<h3>Modal de informações do Pedido</h3>
+
+![modal_visualizar_pedidos](https://user-images.githubusercontent.com/84486574/205910796-f01fbb20-cae3-40d6-a608-48f5d436e0a2.png)
+
+
 
 #Dependências
 npm install --save jquery
 npm install --save @ng-bootstrap/ng-bootstrap
 npm install --save chart.js
-
