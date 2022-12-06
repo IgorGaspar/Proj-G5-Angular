@@ -2,7 +2,7 @@
 <h1 align="center">Projeto</h1>
 <p align="center"><img src="https://user-images.githubusercontent.com/84486574/205916527-9fbebef8-de0d-4943-b8ef-f9d7bf5c3983.png" /> </p>
 
-![Badge EM FINALIZAÇÃO](http://img.shields.io/static/v1?label=STATUS&message=%20FINALIZADO&color=GREEN&style=for-the-badge)
+![Badge ENTREGUE](http://img.shields.io/static/v1?label=STATUS&message=%20ENTREGUE&color=GREEN&style=for-the-badge)
 
 
 # Índice
