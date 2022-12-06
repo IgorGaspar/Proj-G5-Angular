@@ -24,13 +24,15 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     
       new Chart(this.elemento?.nativeElement, {
-        type: 'bar',
+        type: 'bar', 
+
         data: {
-          labels: ["janeiro","fevereiro","marco","abril"],
+          labels: ["Jan","Fev","Mar","Abr","Mai","Jun","Jul","Ago","Set","Out","Nov","Dez",],
           datasets: [
             {
-              data:[65,43,65,43],
+              data:[65,43,65,43,65,43,65,43,65,43,65,43],
               backgroundColor:'rgb(80, 42, 110)',
+              label:'2022',
             }
           ]
         },
@@ -43,6 +45,7 @@ export class HomeComponent implements OnInit {
           {
             data:[400,43,65,43,100],
             backgroundColor: ['rgb(255, 99, 132)', 'rgb(255, 199, 132)', 'rgb(55, 99, 132)','rgb(80, 42, 110)','rgb(10, 42, 110)'],
+            
           }
         ]
       },
