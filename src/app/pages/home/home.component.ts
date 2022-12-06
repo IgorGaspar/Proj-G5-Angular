@@ -43,15 +43,17 @@ export class HomeComponent implements OnInit {
       data: {
         labels: ["janeiro","fevereiro","marco","abril"],
         datasets: [
-          {
+          {  
             data:[65,43,65,43],
+            label: 'testeS',
             backgroundColor:'#FFCC00',
           },{
             data:[65,54,43,32],
+            label: 'teste3',
             backgroundColor:'#00AEFF' ,
           }
         ]
-      },
+      }
    });
     } 
     
