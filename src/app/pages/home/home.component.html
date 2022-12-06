@@ -4,7 +4,9 @@
     <div class="card">
       <h5 class="card-header">Clientes Cadastrados</h5>
       <div class="card-body">
-        <h4 class="card-text"><app-cliente-observable></app-cliente-observable></h4>
+        <h4 class="card-text">
+          <app-cliente-observable></app-cliente-observable>
+        </h4>
       </div>
     </div>
   </div>
@@ -22,7 +24,9 @@
     <div class="card">
       <h5 class="card-header">Pedidos Cadastrados</h5>
       <div class="card-body">
-        <h4 class="card-text"><app-pedido-observable></app-pedido-observable></h4>
+        <h4 class="card-text">
+          <app-pedido-observable></app-pedido-observable>
+        </h4>
       </div>
     </div><br>
   </div>
@@ -32,20 +36,20 @@
   <!-- Gráfico -->
   <div class="container-fluid  text-center" style="margin-top: 2em;">
     <div class="card">
-    <div class="card-grafic row">
-    <div class="col-lg">
-      <div class="graficatual">
-      <h1>Ano atual</h1>
-        <canvas #meuCanvas></canvas>
+      <div class="card-grafic row">
+        <div class="col-md">
+          <div class="graficatual">
+            <h1>Ano atual</h1>
+            <canvas #meuCanvas></canvas>
+          </div>
+        </div>
+
+        <div class="col-md">
+          <div class="graficgeral">
+            <h1>Geral</h1>
+            <canvas #meuCanvas2></canvas>
+          </div>
+        </div>
       </div>
     </div>
-
-    <div class="col-lg">
-      <div class="graficgeral">
-      <h1>Geral</h1>
-      <canvas #meuCanvas2></canvas>
-    </div>
-    </div>
-    </div>
   </div>
-</div>

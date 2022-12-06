@@ -22,7 +22,6 @@ export class PedidosService {
   ) { }
 
   public async listaPedidos() {
-    debugger
     let pedidos: Pedido[] | undefined = await firstValueFrom(this.http.get<Pedido[]>(`${environment.api}/pedidos`)) //Puxa os Pedidos
     let pedidosProdutos: PedidoProduto[] = await this.listaPedidosProdutos() //Puxa os pedidosProdutos através do método abaixo.
     let produtos: Produto[] = await this.produtosService.lista() //Puxa os produtos através do ProdutoService.
