@@ -11,6 +11,7 @@
 - [Equipe do Projeto](#--equipe-do-projeto-)
 - [Funcionalidades](#-hammer-funcionalidades)
 - [Tecnologias utilizadas](#--tecnologias-utilizadas)
+- [Organização do Projeto](#-%EF%B8%8F-organização-do-projeto-)
 - [Execução do Projeto](#--execução-o-projeto-)
 - [Visualização do Projeto](#--visualização-do-projeto)
   - [Tela de Login](#tela-de-login-do-usuário)
@@ -23,13 +24,14 @@
     - [Modal - Editar Produtos](#modal-editar-produto)
   - [Tela de Pedidos](#tela-de-pedidos)
     - [Modal - Informações do Pedido](#modal-de-informações-do-pedido)
+    
 
 
 ##
 
 <br>
 <h2> 👨🏻‍💻 Sobre projeto</h2>
-<p>Este projeto visa o desenvolvimento de um sistema para gerenciar o Fluxo de caixa do lojista, fazendo com que o mesmo, tenha a possibilidade de fazer o gerenciamento do fluxo de entrada e saída do seu negócio, utilizando Angular e Rest API.</p>
+<p>Este projeto visa o desenvolvimento de um sistema, utilizando Angular e Rest API, para gerenciar o Fluxo de caixa do lojista, fazendo com que o mesmo, tenha a possibilidade de fazer o gerenciamento do fluxo de entrada e saída do seu negócio.</p>
 <br>
 
 ##
@@ -71,7 +73,7 @@
 
 <h2> ✍️ Organização do Projeto </h2>
 
-<p>Para a organização do projeto e melhor desenvolvimento, utilizamos metodologia ágil Kaban através da ferramento Trello, onde fragmentamos o projeto para melhor visualização em tarefas. Separamos como Tarefas 'A fazer', 'Em Andamento' e 'Concluído'. <a href="https://trello.com/invite/b/G8Pb9G9K/ATTIabf3f1461de567dea8a77db70eae780dFCA6F1B4/projeto-integrador-radar-g3">Clique aqui para visualizar o quadro</a></p>
+<p>Para a organização do projeto e melhor desenvolvimento, utilizamos metodologia ágil Kaban, através da ferramenta Trello, onde fragmentamos o projeto para melhor visualização de tarefas. Separamos como Tarefas 'A fazer', 'Em Andamento' e 'Concluído'. <a href="https://trello.com/invite/b/G8Pb9G9K/ATTIabf3f1461de567dea8a77db70eae780dFCA6F1B4/projeto-integrador-radar-g3">Clique aqui para visualizar o quadro</a></p>
 
 ![Trello](https://user-images.githubusercontent.com/84486574/205979493-e89c7b52-e6da-4245-9d93-962469c53fed.png)
 
@@ -155,8 +157,7 @@ senha: radarg3
 ![modal_visualizar_pedidos](https://user-images.githubusercontent.com/84486574/205910796-f01fbb20-cae3-40d6-a608-48f5d436e0a2.png)
 
 
+<h2> 🤝 Agradecimentos</h2>
 
-#Dependências
-npm install --save jquery
-npm install --save @ng-bootstrap/ng-bootstrap
-npm install --save chart.js
+<p>Agradecemos às empresas Febrafar e Farmacas em parceria com a Gama Academy, pela oportunidade de participarmos dessa iniciativa chamada Código do Futuro. Ao nosso Professor Danilo Aparecido, que tem compartilhado conosco, seu vasto conhecimento e nos tornando melhores, pelo menos 1% a cada dia e a Nossa Yellow Belt Carina Aguiar, que sempre se esforça para nos mantermos atualizados e nos ajudar no que precisarmos. </p>
+<p> <strong>A todos vocês, o nosso Muito Obrigado!</strong> </p>
