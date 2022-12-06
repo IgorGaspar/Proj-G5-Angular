@@ -7,11 +7,23 @@
 
 # Índice
 
-- [Sobre o Projeto](#sobre-o-projeto)
-- [Equipe do Projeto](#equipe-do-projeto)
-- [Funcionalidades](#funcionalidades)
-- [Tecnologias utilizadas](#tecnologias-utilizadas)
-- [Execução do Projeto](#execuçao-do-projeto)
+- [Sobre o Projeto](#--sobre-projeto)
+- [Equipe do Projeto](#--equipe-do-projeto-)
+- [Funcionalidades](#-hammer-funcionalidades)
+- [Tecnologias utilizadas](#--tecnologias-utilizadas)
+- [Execução do Projeto](#--execução-o-projeto-)
+- [Visualização do Projeto](#--visualização-do-projeto)
+  - [Tela de Login](#tela-de-login-do-usuário)
+  - [Tela Home(Fluxo de caixa](#tela-de-fluxo-de-caixa-home)
+  - [Tela de clientes](#tela-de-clientes)
+    - [Modal - Editar clientes](modal-editar-clientes)
+    - [Modal - Informações do cliente](#modal-informações-do-clientes)
+  - [Tela de Produtos](#tela-de-produtos)
+    - [Modal - Informações do Produto](#modal-informações-do-produto)
+    - [Modal - Editar Produtos](#modal-editar-produto)
+  - [Tela de Pedidos](#tela-de-pedidos)
+    - [Modal - Informações do Pedido](#modal-de-informações-do-pedido)
+
 
 ##
 
@@ -96,7 +108,7 @@ senha: radarg3
 
 ![tela_home_fluxo_de_caixa](https://user-images.githubusercontent.com/84486574/205910836-f5ce981f-ded0-4dd1-b56f-cd7cf107663a.png)
 
-<h3>Tela de Clientes)</h3>
+<h3>Tela de Clientes</h3>
 
 ![tela_listar_clientes](https://user-images.githubusercontent.com/84486574/205910877-d873ba84-9b18-44ab-83b6-5935ac4a2733.png)
 
