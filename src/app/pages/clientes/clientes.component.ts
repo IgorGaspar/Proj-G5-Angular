@@ -25,15 +25,16 @@ export class ClientesComponent implements OnInit {
   ) { }
   
   // Se o usuário não estiver logado, será redirecionado para a tela de login, senão, é exibida a tela de clientes
-  ngOnInit(): void {
+   ngOnInit(): void {
     if(this.loginStatusService.redirectNãoLogado()) return 
-    this.listarClientes()
+     this.listarClientes()
   }
 
   public clientes:Cliente[] | undefined = []
 
   public async listarClientes(){
     this.clientes = await new ClientesService(this.http).lista();
+    console.log(this.clientes)
   }
 
   modalViewCliente(cliente:Cliente){

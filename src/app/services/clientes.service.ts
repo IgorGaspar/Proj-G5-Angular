@@ -12,12 +12,14 @@ export class ClientesService {
   constructor(private http:HttpClient) { }
   
     public async lista(){
-      let clientes:Cliente[] | undefined = await firstValueFrom(this.http.get<Cliente[]>(`${environment.api}/clientes`))
+      let clientes: Cliente[] | undefined = await firstValueFrom(this.http.get<Cliente[]>(`${environment.api}/clientes`))
+      
       return  clientes;
     }
 
     public async adicionar(cliente:Cliente): Promise<Cliente | undefined> {
       let clienteAdd:Cliente | undefined = await firstValueFrom(this.http.post<Cliente>(`${environment.api}/clientes/`, cliente))
+      console.log(clienteAdd);
       return clienteAdd;
     }
 

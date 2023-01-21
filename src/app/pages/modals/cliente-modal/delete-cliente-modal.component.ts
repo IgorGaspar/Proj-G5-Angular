@@ -25,7 +25,6 @@ export class DeleteClienteModalComponent implements OnInit {
     }
 
     public excluirCliente() {
-
       this.clienteService.excluir(this.cliente.id)
       this.activeModal.close() //Fecha o Modal
       window.location.replace('/clientes') // Redireciona novamente para a página, fazendo o refresh
