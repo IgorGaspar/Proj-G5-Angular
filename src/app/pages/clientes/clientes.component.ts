@@ -28,6 +28,7 @@ export class ClientesComponent implements OnInit {
   ngOnInit(): void {
     if(this.loginStatusService.redirectNãoLogado()) return 
     this.listarClientes()
+    
   }
 
   public clientes:Cliente[] | undefined = []
