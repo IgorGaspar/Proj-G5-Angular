@@ -38,9 +38,7 @@
 
 <h2> 👩‍💻👨‍💻 Equipe do projeto </h2>
 
-| [![beatriz](https://user-images.githubusercontent.com/84486574/205963393-9dea6ffe-7053-445c-879b-d563dd8ad23d.jpeg "Beatriz Miotto")](https://www.linkedin.com/in/beatriz-miotto-8025b7200/ "Beatriz Miotto")  | [![bruno](https://user-images.githubusercontent.com/84486574/205963595-df585edf-7d6b-4a26-8915-ca98fb8bde88.jpeg "Bruno Ernandes da Silva")](https://www.linkedin.com/in/brunoernandesdasilva/ "Bruno Ernandes da Silva")  | [![daniela](https://user-images.githubusercontent.com/84486574/205963742-d12de6e4-a8bd-4b37-9d12-cbd490c7e5c3.jpeg "Daniela Martins Costa")](https://www.linkedin.com/in/daniela-martins-costa "Daniela Martins Costa")  | [![gabriel](https://user-images.githubusercontent.com/84486574/205961082-33be448b-d365-4d77-8019-a7f3dc033a31.jpeg "Gabriel Santos Cavalcante")](https://www.linkedin.com/in/gabriel-santos-cavalcante-b07b7221b/ "Gabriel Santos Cavalcante")  | [![igor](https://user-images.githubusercontent.com/84486574/205964033-e89a15cd-f0c0-4221-a291-9966d65140a2.jpeg "Igor Fontes Gaspar")](https://www.linkedin.com/in/igorfgaspar/ "Igor Fontes Gaspar")  |[![pedro](https://user-images.githubusercontent.com/84486574/205964693-2d41dcb3-a68e-4ac4-a452-7087535f5b79.jpeg "Pedro Mendes Alonso")](https://www.linkedin.com/in/pedro-m-alonso-1b4762241/ "Pedro M. Alonso")  |
-| :------------: | :------------: | :------------: | :------------: | :------------: | :------------: |
-| Beatriz Miotto  | Bruno E. Silva  |  Daniela M. Costa | Gabriel S. Cavalcante  | Igor F. Gaspar  | Pedro M. Alonso  |
+
 
 
 ##
