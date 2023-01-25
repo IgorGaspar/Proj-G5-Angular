@@ -1,27 +1,23 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
-
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule
-  ]
+  imports: [CommonModule],
 })
-export class ClientesModule { }
+export class ClientesModule {}
 
 export interface Cliente {
-  id:number 
-  nome:string 
-  telefone:number 
-  email:string  
-  cpf:number 
-  cep:number 
-  logradouro:string 
-  numero:number 
-  bairro:string 
-  cidade:string 
-  estado:string 
-  complemento:string  
+  id: number;
+  nome: string;
+  telefone: string;
+  email: string;
+  cpf: string;
+  cep: string;
+  logradouro: string;
+  numero: number;
+  bairro: string;
+  cidade: string;
+  estado: string;
+  complemento: string;
 }
