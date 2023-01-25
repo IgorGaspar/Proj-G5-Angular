@@ -46,7 +46,7 @@ export class ClientesService {
   public async buscar(id: Number): Promise<Cliente | undefined> {
     return await firstValueFrom(
       this.http.get<Cliente | undefined>(
-        `${environment.api}/cliente/${id}`,
+        `${environment.api}/clientes/${id}`,
         AppConstants.headerToken
       )
     );
