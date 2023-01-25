@@ -1,3 +1,4 @@
+import { Retorno } from 'src/app/modules/retorno.module';
 import { firstValueFrom } from 'rxjs';
 import { HttpClient } from "@angular/common/http";
 import { environment } from "src/environments/environment";
@@ -13,7 +14,8 @@ export class ProdutosService {
   constructor(private http:HttpClient) { }
 
   public async lista(){
-    let produtos:Produto[] | undefined = await firstValueFrom(this.http.get<Produto[]>(`${environment.api}/produtos`))
+    let retorno:Retorno | undefined = await firstValueFrom(this.http.get<Retorno>(`${environment.api}/produtos`))
+    let produtos: Produto[] | undefined = retorno.dados;
     return  produtos;
   }
 

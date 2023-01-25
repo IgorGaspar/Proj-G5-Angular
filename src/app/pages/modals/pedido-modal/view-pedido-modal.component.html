@@ -23,7 +23,7 @@
                 </thead>
                 <thead>
                   <tr role="row" style="text-align: center;">
-                    <th rowspan="1" colspan="1">{{pedido.cliente_id}}</th>
+                    <th rowspan="1" colspan="1">{{pedido.clienteId}}</th>
                     <th rowspan="1" colspan="3">{{pedido.cliente_nome}}</th>
                     <th rowspan="1" colspan="1">Data</th>
                     <th rowspan="1" colspan="1">{{pedido.data | date:'shortDate'}}</th>
@@ -57,7 +57,7 @@
                 <tfoot>
                   <tr>
                     <th rowspan="1" colspan="5" style="text-align: right;">Valor Total</th>
-                    <th rowspan="1" colspan="1">{{pedido.valor_total | currency}}</th>
+                    <th rowspan="1" colspan="1">{{pedido.valorTotal | currency}}</th>
                   </tr>
                 </tfoot>
               </table>

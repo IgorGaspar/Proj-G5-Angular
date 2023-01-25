@@ -20,11 +20,10 @@ export class ViewPedidoModalComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
+    this.buscarProdutoPedido();
   }
   
-  public buscarProdutoPedido() {
-    this.pedidosService.buscarProduto(this.pedido.id)
-    console.log(this.buscarProdutoPedido)
+  public async buscarProdutoPedido() {
   }
 
 }

@@ -20,6 +20,7 @@ export class PedidosComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private pedidosService: PedidosService,
+    private pedidoProdutoService: PedidosProdutosService,
     private loginStatusService:LoginStatusService,
     private modalService: NgbModal
 
@@ -41,7 +42,7 @@ export class PedidosComponent implements OnInit {
   }
 
   public async listarPedidosProdutos() {
-    this.pedidosProdutos = await this.pedidosService.listaPedidosProdutos()
+    this.pedidosProdutos = await this.pedidoProdutoService.listaPedidosProdutos(this.pedidos[0].id)
   }
 
 
