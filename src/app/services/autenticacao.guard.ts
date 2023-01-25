@@ -28,16 +28,13 @@ export class AutenticacaoGuard implements CanActivate {
     | boolean
     | UrlTree {
     if (
-      this.loginStatusService.logged ||
-      localStorage.getItem("token") != null
+      this.loginStatusService.logged != null
     ) {
       console.log("tá logado");
       return true;
     }
 
-    this.router.navigateByUrl("/login");
-    console.log(`${environment.api}/autoriza`);
-    
+    this.router.navigateByUrl("/login");    
     return false;
   }
 }

@@ -3,7 +3,11 @@
     <ul class="nav">
       <li>
         <a class="navbar-brand" routerLink="/home">
-          <img src="../assets/img/logo_radar_g3_3.png" height="55px" class="active navbar-brand">
+          <img
+            src="../assets/img/logo_radar_g3_3.png"
+            height="55px"
+            class="active navbar-brand"
+          />
         </a>
       </li>
       <!-- <li class="nav-item mb-0 h5">
@@ -22,6 +26,13 @@
         <a class="nav-link link-warning" routerLink="/pedidos">Pedidos</a>
       </li>
     </ul>
-    <button *ngIf="loginStatusService.logged" class="btn btn-outline-warning" type="button" (click)="loggout()">Sair</button>
+    <button
+      *ngIf="loginStatusService.logged"
+      class="btn btn-outline-warning"
+      type="button"
+      (click)="loggout()"
+    >
+      Sair
+    </button>
   </div>
 </nav>

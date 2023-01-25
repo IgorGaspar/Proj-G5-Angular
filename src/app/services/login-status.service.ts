@@ -34,7 +34,7 @@ export class LoginStatusService {
 
   // Para deslogar
   public logout(){
-    localStorage.removeItem("logged")
+    localStorage.removeItem("token")
     this.logged = false
     this.router.navigateByUrl("/login")
   }
