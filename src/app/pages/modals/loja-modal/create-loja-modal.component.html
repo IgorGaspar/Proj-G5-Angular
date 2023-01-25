@@ -1,0 +1,168 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h3 class="modal-title">Cadastrar Loja</h3>
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="modal"
+      aria-label="Close"
+      (click)="activeModal.dismiss()"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <form class="row g-3" #formLoja="ngForm">
+      <div class="col-auto">
+        <label for="nome">Nome</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nome"
+          name="nome?"
+          [(ngModel)]="loja.nome"
+          #nome="ngModel"
+        />
+      </div>
+      <br />
+      <div class="col-auto">
+        <label for="observacao">Observação</label>
+        <input
+          type="text"
+          class="form-control"
+          id="observacao"
+          name="observacao"
+          [(ngModel)]="loja.observacao"
+          #nome="ngModel"
+        />
+      </div>
+      <br />
+      <div class="col-auto">
+        <label for="cep">CEP</label>
+        <input
+          type="text"
+          maxlength="8"
+          class="form-control"
+          id="cep"
+          name="cep"
+          [(ngModel)]="loja.cep"
+          #cep="ngModel"
+        />
+      </div>
+      <br />
+      <div class="col-auto">
+        <label for="logradouro">Logradouro</label>
+        <input
+          type="text"
+          class="form-control"
+          id="logradouro"
+          name="logradouro"
+          [(ngModel)]="loja.logradouro"
+          #logradouro="ngModel"
+        />
+      </div>
+      <br />
+      <div class="col-auto">
+        <label for="numero">Numero</label>
+        <input
+          type="text"
+          class="form-control"
+          id="numero"
+          name="numero"
+          [(ngModel)]="loja.numero"
+          #numero="ngModel"
+        />
+      </div>
+      <br />
+      <div class="col-auto">
+        <label for="bairro">Bairro</label>
+        <input
+          type="text"
+          class="form-control"
+          id="bairro"
+          name="bairro"
+          [(ngModel)]="loja.bairro"
+          #bairro="ngModel"
+        />
+      </div>
+      <br />
+      <div class="col-auto">
+        <label for="cidade">Cidade</label>
+        <input
+          type="text"
+          class="form-control"
+          id="cidade"
+          name="cidade"
+          [(ngModel)]="loja.cidade"
+          #nome="ngModel"
+        />
+      </div>
+      <br />
+      <div class="col-auto">
+        <label for="estado">Estado</label>
+        <input
+          type="text"
+          class="form-control"
+          id="estado"
+          name="estado"
+          [(ngModel)]="loja.estado"
+          #estado="ngModel"
+        />
+      </div>
+      <br />
+      <div class="col-auto">
+        <label for="complemento">Complemento</label>
+        <input
+          type="text"
+          class="form-control"
+          id="complemento"
+          name="complemento"
+          [(ngModel)]="loja.complemento"
+          #complemento="ngModel"
+        />
+      </div>
+      <br />
+      <div class="col-auto">
+        <label for="complemento">Latitude</label>
+        <input
+          type="number"
+          class="form-control"
+          id="latitude"
+          name="latitude"
+          [(ngModel)]="loja.latitude"
+          #complemento="ngModel"
+        />
+      </div>
+      <br />
+      <div class="col-auto">
+        <label for="complemento">Longitude</label>
+        <input
+          type="number"
+          class="form-control"
+          id="longitude"
+          name="longitude"
+          [(ngModel)]="loja.longitude"
+          #complemento="ngModel"
+        />
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <div class="modal-footer">
+      <button
+        type="button"
+        class="btn btn-warning"
+        data-bs-dismiss="modal"
+        (click)="activeModal.close()"
+      >
+        Cancelar
+      </button>
+      <button
+        type="button"
+        class="btn btn-success"
+        routerLink="/"
+        (click)="cadastrarLoja()"
+      >
+        Salvar
+      </button>
+    </div>
+  </div>
+</div>

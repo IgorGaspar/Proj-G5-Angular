@@ -1,3 +1,7 @@
+import { EditLojaModalComponent } from './pages/modals/loja-modal/edit-loja-modal.component';
+import { ViewLojaModalComponent } from './pages/modals/loja-modal/view-loja-modal.component';
+import { DeleteLojaModalComponent } from './pages/modals/loja-modal/delete-loja-modal.component';
+import { CreateLojaModalComponent } from './pages/modals/loja-modal/create-loja-modal.component';
 import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -34,6 +38,7 @@ import { HeaderComponent } from './pages/header/header.component';
 import { FooterComponent } from './pages/footer/footer.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { LojasComponent } from './pages/lojas/lojas.component';
+import { LojaObservableComponent } from './pages/observables/loja-observable/loja-observable.component';
 
 //Define o padrão para brasileiro
 registerLocaleData(ptBR)
@@ -67,7 +72,12 @@ registerLocaleData(ptBR)
     HeaderComponent,
     FooterComponent,
     PageNotFoundComponent,
-    LojasComponent
+    LojasComponent,
+    LojaObservableComponent,
+    ViewLojaModalComponent,
+    EditLojaModalComponent,
+    CreateLojaModalComponent,
+    DeleteLojaModalComponent,
   ],
   imports: [
     BrowserModule,

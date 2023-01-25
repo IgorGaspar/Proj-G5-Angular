@@ -1,0 +1,43 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h3 class="modal-title">Dados da Loja</h3>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="activeModal.dismiss()"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="container" style="text-align: center">
+            <h5>Informações:</h5>
+            <hr />
+          </div>
+          <p><b>Nome:</b> {{ loja.nome }}</p>
+          <p><b>Telefone:</b> {{ loja.observacao }}</p>
+        </div>
+        <div class="col">
+          <div class="container" style="text-align: center">
+            <h5>Endereço:</h5>
+            <hr />
+          </div>
+          <p><b>CEP:</b> {{ loja.cep | cep }}</p>
+          <p><b>Logradouro:</b> {{ loja.logradouro }}</p>
+          <p><b>Número:</b> {{ loja.numero }}</p>
+          <p><b>Bairro:</b> {{ loja.bairro }}</p>
+          <p><b>Cidade:</b> {{ loja.cidade }}</p>
+          <p><b>Estado:</b> {{ loja.estado }}</p>
+          <p><b>Complemento:</b> {{ loja.complemento }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-success" (click)="activeModal.close()">
+      Ok
+    </button>
+  </div>
+</div>
