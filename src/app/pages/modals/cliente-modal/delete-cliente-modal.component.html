@@ -1,15 +1,28 @@
 <div class="modal-content">
   <div class="modal-header">
     <h3 class="modal-title">Excluir Cliente</h3>
-    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-      (click)="activeModal.dismiss()"></button>
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="modal"
+      aria-label="Close"
+      (click)="activeModal.dismiss()"
+    ></button>
   </div>
   <div class="modal-body">
     <p>Tem certeza que deseja excluir esse cliente?</p>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-warning" data-bs-dismiss="modal"
-      (click)="activeModal.close()">Cancelar</button>
-    <button type="button" class="btn btn-danger" (click)="excluirCliente()">Excluir</button>
+    <button
+      type="button"
+      class="btn btn-warning"
+      data-bs-dismiss="modal"
+      (click)="activeModal.close()"
+    >
+      Cancelar
+    </button>
+    <button type="button" class="btn btn-danger" (click)="excluirCliente()">
+      Excluir
+    </button>
   </div>
 </div>
