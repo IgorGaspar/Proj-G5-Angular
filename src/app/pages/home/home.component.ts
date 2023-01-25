@@ -3,15 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Chart, registerables } from 'chart.js';
-import { Pedido } from 'src/app/modules/pedidos.module';
 import { LoginStatusService } from 'src/app/services/login-status.service';
 import { PedidosService } from 'src/app/services/pedidos.service';
-import { PedidosProdutosService } from 'src/app/services/pedidosProdutos.service';
-import { Retorno } from 'src/app/modules/retorno.module';
-import { environment } from 'src/environments/environment';
-import { firstValueFrom } from 'rxjs';
-
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -26,9 +19,6 @@ export class HomeComponent implements OnInit {
     {ano:2022, numeroPedidos:0},
     {ano:2023, numeroPedidos:0}
   ]
-
-  public teste: number = 123;
-
   constructor(
     private http: HttpClient,
     private router: Router,

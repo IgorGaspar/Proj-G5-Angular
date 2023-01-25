@@ -33,6 +33,7 @@ import { ViewClienteModalComponent } from './pages/modals/cliente-modal/view-cli
 import { HeaderComponent } from './pages/header/header.component';
 import { FooterComponent } from './pages/footer/footer.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { LojasComponent } from './pages/lojas/lojas.component';
 
 //Define o padrão para brasileiro
 registerLocaleData(ptBR)
@@ -65,7 +66,8 @@ registerLocaleData(ptBR)
     DeletePedidoModalComponent,
     HeaderComponent,
     FooterComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    LojasComponent
   ],
   imports: [
     BrowserModule,

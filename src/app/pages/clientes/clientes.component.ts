@@ -33,6 +33,7 @@ export class ClientesComponent implements OnInit {
   public clientes:Cliente[] | undefined = []
 
   public async listarClientes(){
+    
     this.clientes = await new ClientesService(this.http).lista();
     console.log(this.clientes)
   }
