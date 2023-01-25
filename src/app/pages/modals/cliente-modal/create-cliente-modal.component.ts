@@ -34,9 +34,9 @@ export class CreateClienteModalComponent implements OnInit {
   }
 
   public cadastrarCliente() {
-    let id = (this.cadastros + 1)
+    console.log(this.cliente);
     this.clienteService.adicionar({
-      id: id,
+      id: this.cliente.id,
       nome: this.cliente.nome,
       telefone: this.cliente.telefone,
       email: this.cliente.email,
@@ -50,7 +50,7 @@ export class CreateClienteModalComponent implements OnInit {
       complemento: this.cliente.complemento
     })  
     this.activeModal.close() //Fecha o Modal
-    window.location.replace('/clientes') // Redireciona novamente para a página, fazendo o refresh  
+    //window.location.replace('/clientes') // Redireciona novamente para a página, fazendo o refresh  
   }
   
 }

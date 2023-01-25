@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
 export class ClientesModule { }
 
 export interface Cliente {
-  id:number 
+  id:any 
   nome:string 
   telefone:number 
   email:string  
