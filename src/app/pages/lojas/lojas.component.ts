@@ -24,6 +24,8 @@ export class LojasComponent implements OnInit {
   ngOnInit(): void {
     if (this.loginStatusService.redirectNãoLogado()) return;
     this.listarLojas();
+    console.log("lojas")
+    console.log(this.lojas)
   }
 
   public lojas: Loja[] | undefined = [];

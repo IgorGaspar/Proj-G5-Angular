@@ -45,9 +45,9 @@ export class ProdutosService {
     return produtoUpd;
   }
 
-  public async buscar(id: Number): Promise<Produto | undefined> {
+  public async buscar(id: Number): Promise<Produto> {
     return await firstValueFrom(
-      this.http.get<Produto | undefined>(
+      this.http.get<Produto>(
         `${environment.api}/produtos/${id}`,
         AppConstants.headerToken
       )
