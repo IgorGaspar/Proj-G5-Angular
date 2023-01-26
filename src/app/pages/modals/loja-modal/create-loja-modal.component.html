@@ -1,6 +1,6 @@
 <div class="modal-content">
   <div class="modal-header">
-    <h3 class="modal-title">Cadastrar Cliente</h3>
+    <h3 class="modal-title">Cadastrar Loja</h3>
     <button
       type="button"
       class="btn-close"
@@ -10,7 +10,7 @@
     ></button>
   </div>
   <div class="modal-body">
-    <form class="row g-3" #formCliente="ngForm">
+    <form class="row g-3" #formLoja="ngForm">
       <div class="col-auto">
         <label for="nome">Nome</label>
         <input
@@ -18,46 +18,20 @@
           class="form-control"
           id="nome"
           name="nome?"
-          [(ngModel)]="cliente.nome"
+          [(ngModel)]="loja.nome"
           #nome="ngModel"
         />
       </div>
       <br />
       <div class="col-auto">
-        <label for="telefone">Telefone</label>
+        <label for="observacao">Observação</label>
         <input
-          type="tel"
-          maxlength="11"
+          type="text"
           class="form-control"
-          id="telefone"
-          name="telefone"
-          [(ngModel)]="cliente.telefone"
-          #telefone="ngModel"
-        />
-      </div>
-      <br />
-      <div class="col-auto">
-        <label for="email">E-mail</label>
-        <input
-          type="email"
-          class="form-control"
-          id="email"
-          name="email"
-          [(ngModel)]="cliente.email"
-          #email="ngModel"
-        />
-      </div>
-      <br />
-      <div class="col-auto">
-        <label for="cpf">CPF</label>
-        <input
-          type="texte"
-          maxlength="11"
-          class="form-control"
-          id="cpf"
-          name="cpf"
-          [(ngModel)]="cliente.cpf"
-          #cpf="ngModel"
+          id="observacao"
+          name="observacao"
+          [(ngModel)]="loja.observacao"
+          #nome="ngModel"
         />
       </div>
       <br />
@@ -69,7 +43,7 @@
           class="form-control"
           id="cep"
           name="cep"
-          [(ngModel)]="cliente.cep"
+          [(ngModel)]="loja.cep"
           #cep="ngModel"
         />
       </div>
@@ -81,7 +55,7 @@
           class="form-control"
           id="logradouro"
           name="logradouro"
-          [(ngModel)]="cliente.logradouro"
+          [(ngModel)]="loja.logradouro"
           #logradouro="ngModel"
         />
       </div>
@@ -93,7 +67,7 @@
           class="form-control"
           id="numero"
           name="numero"
-          [(ngModel)]="cliente.numero"
+          [(ngModel)]="loja.numero"
           #numero="ngModel"
         />
       </div>
@@ -105,7 +79,7 @@
           class="form-control"
           id="bairro"
           name="bairro"
-          [(ngModel)]="cliente.bairro"
+          [(ngModel)]="loja.bairro"
           #bairro="ngModel"
         />
       </div>
@@ -117,7 +91,7 @@
           class="form-control"
           id="cidade"
           name="cidade"
-          [(ngModel)]="cliente.cidade"
+          [(ngModel)]="loja.cidade"
           #nome="ngModel"
         />
       </div>
@@ -129,7 +103,7 @@
           class="form-control"
           id="estado"
           name="estado"
-          [(ngModel)]="cliente.estado"
+          [(ngModel)]="loja.estado"
           #estado="ngModel"
         />
       </div>
@@ -141,13 +115,38 @@
           class="form-control"
           id="complemento"
           name="complemento"
-          [(ngModel)]="cliente.complemento"
+          [(ngModel)]="loja.complemento"
+          #complemento="ngModel"
+        />
+      </div>
+      <br />
+      <div class="col-auto">
+        <label for="complemento">Latitude</label>
+        <input
+          type="number"
+          class="form-control"
+          id="latitude"
+          name="latitude"
+          [(ngModel)]="loja.latitude"
+          #complemento="ngModel"
+        />
+      </div>
+      <br />
+      <div class="col-auto">
+        <label for="complemento">Longitude</label>
+        <input
+          type="number"
+          class="form-control"
+          id="longitude"
+          name="longitude"
+          [(ngModel)]="loja.longitude"
           #complemento="ngModel"
         />
       </div>
     </form>
   </div>
   <div class="modal-footer">
+    <div class="modal-footer">
       <button
         type="button"
         class="btn btn-warning"
@@ -160,7 +159,7 @@
         type="button"
         class="btn btn-success"
         routerLink="/"
-        (click)="cadastrarCliente()"
+        (click)="cadastrarLoja()"
       >
         Salvar
       </button>

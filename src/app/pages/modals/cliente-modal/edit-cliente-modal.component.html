@@ -1,59 +1,162 @@
 <div class="modal-content">
   <div class="modal-header">
     <h3 class="modal-title">Editar Cliente</h3>
-    <button type="button" class="btn-close" (click)="activeModal.dismiss()" aria-label="Close"></button>
+    <button
+      type="button"
+      class="btn-close"
+      (click)="activeModal.dismiss()"
+      aria-label="Close"
+    ></button>
   </div>
   <div class="modal-body">
     <form class="row g-3">
       <div class="col-auto">
         <label for="nome">Nome</label>
-        <input type="text" class="form-control" id="nome" name="nome?" [(ngModel)]="cliente.nome" #nome="ngModel">
-      </div><br>
+        <input
+          type="text"
+          class="form-control"
+          id="nome"
+          name="nome?"
+          [(ngModel)]="cliente.nome"
+          #nome="ngModel"
+        />
+      </div>
+      <br />
       <div class="col-auto">
         <label for="telefone">Telefone</label>
-        <input type="text" maxlength="11" class="form-control" id="telefone" name="telefone" [(ngModel)]="cliente.telefone" #telefone="ngModel">
-      </div><br>
+        <input
+          type="tel"
+          maxlength="11"
+          class="form-control"
+          id="telefone"
+          name="telefone"
+          [(ngModel)]="cliente.telefone"
+          #telefone="ngModel"
+        />
+      </div>
+      <br />
       <div class="col-auto">
         <label for="email">E-mail</label>
-        <input type="email" class="form-control" id="email" name="email" [(ngModel)]="cliente.email" #email="ngModel">
-      </div><br>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          [(ngModel)]="cliente.email"
+          #email="ngModel"
+        />
+      </div>
+      <br />
       <div class="col-auto">
         <label for="cpf">CPF</label>
-        <input type="text" maxlength="11" class="form-control" id="cpf" name="cpf?" [(ngModel)]="cliente.cpf" #cpf="ngModel">
-      </div><br>
+        <input
+          type="number"
+          maxlength="11"
+          class="form-control"
+          id="cpf"
+          name="cpf?"
+          [(ngModel)]="cliente.cpf"
+          #cpf="ngModel"
+        />
+      </div>
+      <br />
       <div class="col-auto">
         <label for="cep">CEP</label>
-        <input type="text" maxlength="8" class="form-control" id="cep" name="cep" [(ngModel)]="cliente.cep" #cep="ngModel">
-      </div><br>
+        <input
+          type="text"
+          maxlength="8"
+          class="form-control"
+          id="cep"
+          name="cep"
+          [(ngModel)]="cliente.cep"
+          #cep="ngModel"
+        />
+      </div>
+      <br />
       <div class="col-auto">
         <label for="logradouro">Logradouro</label>
-        <input type="text" class="form-control" id="logradouro" name="logradouro" [(ngModel)]="cliente.logradouro" #logradouro="ngModel">
-      </div><br>
+        <input
+          type="text"
+          class="form-control"
+          id="logradouro"
+          name="logradouro"
+          [(ngModel)]="cliente.logradouro"
+          #logradouro="ngModel"
+        />
+      </div>
+      <br />
       <div class="col-auto">
         <label for="numero">Numero</label>
-        <input type="number" class="form-control" id="numero" name="numero" [(ngModel)]="cliente.numero" #numero="ngModel">
-      </div><br>
+        <input
+          type="text"
+          class="form-control"
+          id="numero"
+          name="numero"
+          [(ngModel)]="cliente.numero"
+          #numero="ngModel"
+        />
+      </div>
+      <br />
       <div class="col-auto">
         <label for="bairro">Bairro</label>
-        <input type="text" class="form-control" id="bairro" name="bairro" [(ngModel)]="cliente.bairro" #bairro="ngModel">
-      </div><br>
+        <input
+          type="text"
+          class="form-control"
+          id="bairro"
+          name="bairro"
+          [(ngModel)]="cliente.bairro"
+          #bairro="ngModel"
+        />
+      </div>
+      <br />
       <div class="col-auto">
         <label for="cidade">Cidade</label>
-        <input type="text" class="form-control" id="cidade" name="cidade" [(ngModel)]="cliente.cidade" #cidade="ngModel">
-      </div><br>
+        <input
+          type="text"
+          class="form-control"
+          id="cidade"
+          name="cidade"
+          [(ngModel)]="cliente.cidade"
+          #cidade="ngModel"
+        />
+      </div>
+      <br />
       <div class="col-auto">
         <label for="estado">Estado</label>
-        <input type="text" class="form-control" id="estado" name="estado" [(ngModel)]="cliente.estado" #estado="ngModel">
-      </div><br>
+        <input
+          type="text"
+          class="form-control"
+          id="estado"
+          name="estado"
+          [(ngModel)]="cliente.estado"
+          #estado="ngModel"
+        />
+      </div>
+      <br />
       <div class="col-auto">
         <label for="complemento">Complemento</label>
-        <input type="text" class="form-control" id="complemento" name="complemento" [(ngModel)]="cliente.complemento" #complemento="ngModel">
+        <input
+          type="text"
+          class="form-control"
+          id="complemento"
+          name="complemento"
+          [(ngModel)]="cliente.complemento"
+          #complemento="ngModel"
+        />
       </div>
     </form>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-warning" data-bs-dismiss="modal"
-      (click)="activeModal.close()">Cancelar</button>
-    <button type="button" class="btn btn-success" (click)="editarCliente()">Salvar</button>
+    <button
+      type="button"
+      class="btn btn-warning"
+      data-bs-dismiss="modal"
+      (click)="activeModal.close()"
+    >
+      Cancelar
+    </button>
+    <button type="button" class="btn btn-success" (click)="editarCliente()">
+      Salvar
+    </button>
   </div>
 </div>

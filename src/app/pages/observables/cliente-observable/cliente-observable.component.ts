@@ -1,35 +1,30 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, Injectable, OnInit } from '@angular/core';
-import { ClientesService } from 'src/app/services/clientes.service';
-import { Router } from '@angular/router';
+import { HttpClient } from "@angular/common/http";
+import { Component, Injectable, OnInit } from "@angular/core";
+import { ClientesService } from "src/app/services/clientes.service";
+import { Router } from "@angular/router";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
-
 @Component({
-  selector: 'app-cliente-observable',
-  templateUrl: './cliente-observable.component.html',
-  styleUrls: ['./cliente-observable.component.css']
+  selector: "app-cliente-observable",
+  templateUrl: "./cliente-observable.component.html",
+  styleUrls: ["./cliente-observable.component.css"],
 })
-
 export class ClienteObservableComponent implements OnInit {
-
   constructor(
-    private http:HttpClient,
+    private http: HttpClient,
     private router: Router,
-    private ClientesService:ClientesService
-    ) {      }
+    private ClientesService: ClientesService
+  ) {}
 
   ngOnInit(): void {
-    this.clientesCadastrados()
+    this.clientesCadastrados();
   }
 
-  public qtdClientesCadastrados:number = 0
-
+  public qtdClientesCadastrados: number = 0;
   public async clientesCadastrados(){
     let conta = await new ClientesService(this.http).InformacoesCliente()
     this.qtdClientesCadastrados = conta ? conta.totalRegistros : 0;
   }
 }
-
