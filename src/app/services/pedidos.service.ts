@@ -87,10 +87,20 @@ export class PedidosService {
     firstValueFrom(this.http.delete(`${environment.api}/pedidos/${id}`));
   }
 
-  public async buscarProdutoPorAno(ano: number): Promise<Pedido[]>{
-    let retorno: Retorno = await firstValueFrom(this.http.get<Retorno>(`${environment.api}/pedidos?ano=${ano}`)) 
+  public async buscarPedidoPorAno(ano: number): Promise<Pedido[]>{
+    let retorno: Retorno = await firstValueFrom(this.http.get<Retorno>(`${environment.api}/pedidos?ano=${ano}`,AppConstants.headerToken)) 
     let pedidos: Pedido[] = retorno.dados;
     return pedidos;
+  }
+
+  public async TotalPedidos(){
+    let retorno:Retorno | undefined = await firstValueFrom(
+      this.http.get<Retorno>(
+        `${environment.api}/pedidos`,
+        AppConstants.headerToken
+      )
+    );
+    return retorno.totalRegistros;
   }
 
   //Método para pegar o ID de um item do array

@@ -62,4 +62,14 @@ export class ProdutosService {
       )
     );
   }
+
+  public async TotalProdutos(){
+    let retorno:Retorno | undefined = await firstValueFrom(
+      this.http.get<Retorno>(
+        `${environment.api}/produtos`,
+        AppConstants.headerToken
+      )
+    );
+    return retorno.totalRegistros;
+  }
 }
