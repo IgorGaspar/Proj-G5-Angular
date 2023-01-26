@@ -1,7 +1,15 @@
 <br>
 <div class="container-fluid" tabindex="0">
   <div class="container-fluid">
-    <button type="submit" class="btn btn-success mb-3" (click)="modalCreateProduto()">Cadastrar</button>
+    <div class="row">
+      <div class="col-sm-8 col-md-10">
+        <button type="submit" class="btn btn-success mb-3" (click)="modalCreateProduto()">Cadastrar</button>
+      </div>
+      <div class="col-sm-4 col-md-2">
+        <a class="btn btn-success mb-3" (click)="paginaAnterior()"><</a>
+        <a class="btn btn-success mb-3 mx-1" (click)="proximaPagina()">></a>
+      </div>
+    </div>
   </div>
 
   <hr>
@@ -14,7 +22,6 @@
         <tr>
           <th scope="col">ID</th>
           <th scope="col">Nome</th>
-          <th scope="col">Função</th>
           <th scope="col">Descrição</th>
           <th scope="col">Valor</th>
           <th scope="col">Estoque</th>
@@ -25,10 +32,9 @@
         <tr *ngFor="let produto of produtos">
           <th scope="row">{{produto.id}}</th>
           <td class="col-2">{{produto.nome}}</td>
-          <td class="col-2">{{produto.tipo}}</td>
           <td class="col-6 text-truncate" style="max-width: 200px;">{{produto.descricao}}</td>
           <td>{{produto.valor | currency}}</td>
-          <td>{{produto.qtd_estoque}}</td>
+          <td>{{produto.quantidadeEstoque}}</td>
           <td>
             <div class="btn-toolbar" role="toolbar" aria-label="Toolbar com grupos de botões">
               <div class="btn-group mr-2" role="group">

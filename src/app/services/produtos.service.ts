@@ -12,10 +12,10 @@ import { AppConstants } from "../app-constants";
 export class ProdutosService {
   constructor(private http: HttpClient) {}
 
-  public async lista() {
+  public async lista(pagina: number) {
     let retorno:Retorno | undefined = await firstValueFrom(
       this.http.get<Retorno>(
-        `${environment.api}/produtos`,
+        `${environment.api}/produtos?page=${pagina}&take=11`,
         AppConstants.headerToken
       )
     );
@@ -63,13 +63,14 @@ export class ProdutosService {
     );
   }
 
-  public async TotalProdutos(){
+  public async InformacoesProdutos(){
     let retorno:Retorno | undefined = await firstValueFrom(
       this.http.get<Retorno>(
         `${environment.api}/produtos`,
         AppConstants.headerToken
       )
     );
-    return retorno.totalRegistros;
+    console.log(retorno.maximoPaginas);
+    return {totalRegistros: retorno.totalRegistros, numeroPaginas: retorno.maximoPaginas};
   }
 }

@@ -23,11 +23,9 @@ export class EditProdutoModalComponent implements OnInit {
     this.produtoService.atualizar({ //Usa o serviço "adicionar" do ProdutoService de acordo com as variáveis abaixo.
       id: this.produto.id,
       nome: this.produto.nome,
-      tipo: this.produto.tipo,
       descricao: this.produto.descricao,
-      composicao: this.produto.composicao,
       valor: this.produto.valor,
-      qtd_estoque: this.produto.qtd_estoque
+      quantidadeEstoque: this.produto.quantidadeEstoque
     })  
     this.activeModal.close() //Fecha o Modal
     window.location.replace('/produtos') // Redireciona novamente para a página, fazendo o refresh

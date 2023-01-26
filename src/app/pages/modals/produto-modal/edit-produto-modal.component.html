@@ -10,24 +10,17 @@
         <input type="text" class="form-control" id="nome" name="nome?" [(ngModel)]="produto.nome" #nome="ngModel">
       </div><br>
       <div class="col-auto">
-        <label for="tipo">Tipo</label>
-        <input type="text" class="form-control" id="tipo" name="tipo" [(ngModel)]="produto.tipo" #tipo="ngModel">
-      </div><br>
-      <div class="col-auto">
         <label for="descricao">Descrição</label>
         <input type="textarea" class="form-control" id="descricao" name="descricao" [(ngModel)]="produto.descricao" #descricao="ngModel">
       </div><br>
-      <div class="col-auto">
-        <label for="composicao">Composição</label>
-        <input type="text" class="form-control" id="composicao" name="composicao" [(ngModel)]="produto.composicao" #composicao="ngModel">
-      </div><br>
+
       <div class="col-auto">
         <label for="valor">Valor</label>
         <input type="number" class="form-control" id="valor" name="valor" [(ngModel)]="produto.valor" #valor="ngModel">
       </div><br>
       <div class="col-auto">
         <label for="estoque">Estoque</label>
-        <input type="number" class="form-control" id="estoque" name="estoque" [(ngModel)]="produto.qtd_estoque" #qtd_estoque="ngModel">
+        <input type="number" class="form-control" id="estoque" name="estoque" [(ngModel)]="produto.quantidadeEstoque" #qtd_estoque="ngModel">
       </div><br>
     </form>
   </div>

@@ -40,7 +40,7 @@ export class PedidosService {
         AppConstants.headerToken
       )
     );
-    let produtos:Produto[] = await this.produtosService.lista() 
+    let produtos:Produto[] = await this.produtosService.lista(1) 
        // pedidosProdutos.forEach(pedidoProduto => { //para cada pedido
       //   pedidoProduto.produto_nome = produtos.filter(x => x.id == pedidoProduto.produto_id)[0].nome //filtra o pedido.Produto de acordo com o pedido.id recebido
       //   pedidoProduto.produto_valor = produtos.filter(x => x.id == pedidoProduto.produto_id)[0].valor

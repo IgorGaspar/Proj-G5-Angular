@@ -1,7 +1,15 @@
 <br>
 <div class="container-fluid" tabindex="0">
   <div class="container-fluid">
-    <button type="submit" class="btn btn-success mb-3" (click)="modalCreateCliente()">Cadastrar</button>
+    <div class="row">
+      <div class="col-sm-8 col-md-10">
+        <button type="submit" class="btn btn-success mb-3 " (click)="modalCreateCliente()">Cadastrar</button>
+      </div>
+      <div class="col-sm-4 col-md-2">
+        <a class="btn btn-success mb-3" (click)="paginaAnterior()"><</a>
+        <a class="btn btn-success mb-3 mx-1" (click)="proximaPagina()">></a>
+      </div>
+    </div>
   </div>
   <hr>
 
@@ -38,16 +46,6 @@
             </div>
           </td>
         </tr>
-        <nav class="mt-5">
-          <ul class="pagination justify-content-center">
-            <li class="page-item">
-              <a class="page-link" (click)="paginaAnterior()">Anterior</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" (click)="proximaPagina()">Proxima</a>
-            </li>
-          </ul>
-        </nav>
       </tbody>
     </table>
   </div>
