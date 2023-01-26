@@ -70,9 +70,9 @@ export class PedidosService {
     return pedidoUpd;
   }
 
-  public async buscar(id: Number): Promise<Pedido | undefined> {
+  public async buscar(id: Number): Promise<Pedido> {
     return await firstValueFrom(
-      this.http.get<Pedido | undefined>(`${environment.api}/pedidos/${id}`)
+      this.http.get<Pedido>(`${environment.api}/pedidos/${id}`, AppConstants.headerToken)
     );
   }
   public async buscarProduto( pedido_id: Number): Promise<PedidoProduto | undefined> {
