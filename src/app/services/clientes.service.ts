@@ -12,9 +12,9 @@ import { AppConstants } from "./../app-constants";
 export class ClientesService {
   constructor(private http: HttpClient) {}
   
-    public async lista(): Promise<Cliente[] | undefined>{
+    public async lista(pagina:number): Promise<Cliente[] | undefined>{
       let data = await firstValueFrom(
-        this.http.get<Retorno>(`${environment.api}/clientes?page=1&take=2`,
+        this.http.get<Retorno>(`${environment.api}/clientes?page=${pagina}&take=10`,
           AppConstants.headerToken
         )
       );
@@ -30,6 +30,7 @@ export class ClientesService {
         AppConstants.headerToken
       )
     );
+    console.log(clienteAdd);
     return clienteAdd;
   }
 
@@ -60,5 +61,16 @@ export class ClientesService {
         AppConstants.headerToken
       )
     );
+  }
+
+  public async InformacoesCliente(){
+    let retorno:Retorno | undefined = await firstValueFrom(
+      this.http.get<Retorno>(
+        `${environment.api}/clientes?take=10`,
+        AppConstants.headerToken
+      )
+    );
+    console.log(retorno.maximoPaginas);
+    return {totalRegistros: retorno.totalRegistros, numeroPaginas: retorno.maximoPaginas};
   }
 }

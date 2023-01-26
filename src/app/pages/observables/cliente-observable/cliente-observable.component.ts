@@ -28,7 +28,7 @@ export class ClienteObservableComponent implements OnInit {
   public qtdClientesCadastrados:number = 0
 
   public async clientesCadastrados(){
-    let conta = await new ClientesService(this.http).lista()
+    let conta = await new ClientesService(this.http).lista(1)
     this.qtdClientesCadastrados = conta ? conta.length : 0;
   }
 }

@@ -24,7 +24,7 @@ export class PedidoObservableComponent implements OnInit {
   public qtdPedidosCadastrados:number = 0
 
   public async pedidosCadastrados(){
-    let conta = await this.PedidosService.TotalPedidos()
-    this.qtdPedidosCadastrados = conta ? conta : 0;
+    let conta = await this.PedidosService.InformacoesPedidos()
+    this.qtdPedidosCadastrados = conta ? conta.totalRegistros : 0;
   }
 }

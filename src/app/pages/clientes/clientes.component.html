@@ -23,7 +23,6 @@
       </thead>
       <tbody>
         <tr *ngFor="let cliente of clientes">
-          
           <th scope="row">{{cliente.id}}</th>
           <td class="col-4">{{cliente.nome}}</td>
           <td>{{cliente.telefone }}</td>
@@ -39,6 +38,16 @@
             </div>
           </td>
         </tr>
+        <nav class="mt-5">
+          <ul class="pagination justify-content-center">
+            <li class="page-item">
+              <a class="page-link" (click)="paginaAnterior()">Anterior</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" (click)="proximaPagina()">Proxima</a>
+            </li>
+          </ul>
+        </nav>
       </tbody>
     </table>
   </div>

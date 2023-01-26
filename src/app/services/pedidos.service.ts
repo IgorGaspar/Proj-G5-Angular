@@ -23,10 +23,10 @@ export class PedidosService {
     private pedidoProdutoService: PedidosProdutosService
   ) { }
 
-  public async listaPedidos() {
+  public async listaPedidos(pagina:number) {
     let dados: Retorno | undefined = await firstValueFrom(
       this.http.get<Retorno>(
-        `${environment.api}/pedidos`,
+        `${environment.api}/pedidos?page=${pagina}`,
         AppConstants.headerToken
       )
     );
@@ -93,14 +93,14 @@ export class PedidosService {
     return pedidos;
   }
 
-  public async TotalPedidos(){
+  public async InformacoesPedidos(){
     let retorno:Retorno | undefined = await firstValueFrom(
       this.http.get<Retorno>(
         `${environment.api}/pedidos`,
         AppConstants.headerToken
       )
     );
-    return retorno.totalRegistros;
+    return {totalRegistros: retorno.totalRegistros, numeroPaginas: retorno.maximoPaginas};
   }
 
   //Método para pegar o ID de um item do array

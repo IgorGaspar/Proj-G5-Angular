@@ -29,7 +29,7 @@ export class CreateClienteModalComponent implements OnInit {
   }
 
   public async clientesCadastrados(){
-    let conta = await new ClientesService (this.http).lista()
+    let conta = await new ClientesService (this.http).lista(1)
     this.cadastros = conta ? conta.length : 0
   }
 
@@ -49,8 +49,8 @@ export class CreateClienteModalComponent implements OnInit {
       estado: this.cliente.estado,
       complemento: this.cliente.complemento
     })  
-    this.activeModal.close() //Fecha o Modal
-    //window.location.replace('/clientes') // Redireciona novamente para a página, fazendo o refresh  
+    //this.activeModal.close() //Fecha o Modal
+   // window.location.replace('/clientes') // Redireciona novamente para a página, fazendo o refresh  
   }
   
 }
