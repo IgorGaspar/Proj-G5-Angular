@@ -27,13 +27,21 @@ export class ClientesComponent implements OnInit {
   // Se o usuário não estiver logado, será redirecionado para a tela de login, senão, é exibida a tela de clientes
    ngOnInit(): void {
     if(this.loginStatusService.redirectNãoLogado()) return 
-     this.listarClientes()
+     this.listarClientes(1)
+     this.listarInformacoesCliente()
   }
 
   public clientes:Cliente[] | undefined = []
 
-  public async listarClientes(){
-    this.clientes = await new ClientesService(this.http).lista();
+
+
+  private paginaAtual: number= 1;
+  private numeroPaginas: number = 1
+
+
+  public async listarClientes(pagina: number){
+    
+    this.clientes = await new ClientesService(this.http).lista(pagina);
     console.log(this.clientes)
   }
 
@@ -55,6 +63,20 @@ export class ClientesComponent implements OnInit {
   modalDeleteCliente(cliente:Cliente){
     const modalRef = this.modalService.open(DeleteClienteModalComponent);
     modalRef.componentInstance.cliente = cliente;  
+  }
+
+  public async listarInformacoesCliente(){
+    let pagina = await new ClientesService(this.http).InformacoesCliente();
+    this.numeroPaginas = pagina.numeroPaginas;
+  }
+
+  proximaPagina(){
+    console.log(this.numeroPaginas)
+    if(this.paginaAtual<this.numeroPaginas) this.listarClientes((this.paginaAtual = this.paginaAtual + 1))
+  }
+
+  paginaAnterior(){
+    if(this.paginaAtual>1) this.listarClientes((this.paginaAtual = this.paginaAtual - 1))
   }
 
 }

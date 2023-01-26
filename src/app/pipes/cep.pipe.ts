@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 export class CepPipe implements PipeTransform {
 
-  transform(cep: Number): String {
+  transform(cep: String): String {
     let cepFormatado = cep.toString();
     return cepFormatado.replace(/(\d{5})(\d{3})/, "$1-$2");
   }

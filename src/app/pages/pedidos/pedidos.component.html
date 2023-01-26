@@ -1,7 +1,15 @@
 <div class="container-fluid">
   <br>
   <div class="container-fluid">
-    <button type="submit" class="btn btn-success mb-3" (click)="modalCreatePedido()">Novo Pedido</button>
+    <div class="row">
+      <div class="col-sm-8 col-md-10">
+        <button type="submit" class="btn btn-success mb-3" (click)="modalCreatePedido()">Novo Pedido</button>
+      </div>
+      <div class="col-sm-4 col-md-2">
+        <a class="btn btn-success mb-3" (click)="paginaAnterior()"><</a>
+        <a class="btn btn-success mb-3 mx-1" (click)="proximaPagina()">></a>
+      </div>
+    </div>
   </div>
  
   <!-- Tabela Exibição Geral de Pedidos -->
@@ -9,7 +17,7 @@
   <div class="container-fluid text-center" *ngIf="pedidos && pedidos.length == 0">
     <h5>Não há pedidos cadastrados.</h5>
   </div>
-  <table class="table table-striped table-hover" *ngIf="pedidos && pedidos.length > 1">
+  <table class="table table-striped table-hover" *ngIf="pedidos && pedidos.length >=1">
     <thead>
       <tr>
         <th scope="col">ID</th>
@@ -25,7 +33,7 @@
         <th scope="row">{{pedido.id}}</th>
         <td class="col-6">{{pedido.cliente_nome}}</td>
         <td>{{pedido.qtd_item}}</td>
-        <td>{{pedido.valor_total | currency}}</td>
+        <td>{{pedido.valorTotal | currency}}</td>
         <td>{{pedido.data | date:'shortDate'}}</td>
         <td>
           <div class="btn-toolbar" role="toolbar" aria-label="Toolbar com grupos de botões">

@@ -8,12 +8,14 @@ import { ProdutosComponent } from './pages/produtos/produtos.component';
 import { ClientesComponent } from './pages/clientes/clientes.component';
 import { AutenticacaoGuard } from './services/autenticacao.guard';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { LojasComponent } from './pages/lojas/lojas.component';
 
 const routes: Routes = [
   {path:'', component:LoginComponent},
   {path:'login', component:LoginComponent},
   {path:'home', component:HomeComponent, canActivate: [AutenticacaoGuard]},
   {path:'clientes', component:ClientesComponent, canActivate: [AutenticacaoGuard]},
+  {path:'lojas', component:LojasComponent, canActivate:[AutenticacaoGuard]},
   {path:'pedidos', component:PedidosComponent, canActivate: [AutenticacaoGuard]},
   {path:'produtos', component:ProdutosComponent, canActivate: [AutenticacaoGuard]},
   {path:'**', component:PageNotFoundComponent, canActivate: [AutenticacaoGuard]}

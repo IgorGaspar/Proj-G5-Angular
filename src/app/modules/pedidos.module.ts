@@ -17,9 +17,9 @@ export class PedidosModule { }
 
 export interface Pedido {
   id:number,
-  cliente_id:number,
+  clienteId:number,
   qtd_item:number,
-  valor_total:number,
+  valorTotal:number,
   data:Date
   pedidosProdutos:PedidoProduto[]
   cliente_nome:string

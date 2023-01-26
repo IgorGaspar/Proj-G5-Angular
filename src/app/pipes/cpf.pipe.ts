@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 export class CpfPipe implements PipeTransform {
 
-  transform(cpf: Number): String {
+  transform(cpf: String): String {
     let cpfFormatado = cpf.toString();
     return cpfFormatado.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
   }

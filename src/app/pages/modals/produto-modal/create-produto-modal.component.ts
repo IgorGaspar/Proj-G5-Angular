@@ -29,22 +29,20 @@ export class CreateProdutoModalComponent implements OnInit {
   
   //Método para verificar quantos produtos já estão cadastrados.
   public async produtosCadastrados(){
-    let conta = await new ProdutosService(this.http).lista()
-    this.cadastros = conta ? conta.length : 0;
+    let conta = await new ProdutosService(this.http).InformacoesProdutos()
+    this.cadastros = conta ? conta.totalRegistros : 0;
   }
 
   public cadastrarProduto() {
-    let id = (this.cadastros + 1) //Soma 1 à quantidade de produtos já cadastrados para gerar o próximo ID
+   //Soma 1 à quantidade de produtos já cadastrados para gerar o próximo ID
     this.produtoService.adicionar({ //Usa o serviço "adicionar" do ProdutoService de acordo com as variáveis abaixo.
-      id: id,
+      id: 0,
       nome: this.produto.nome,
-      tipo: this.produto.tipo,
       descricao: this.produto.descricao,
-      composicao: this.produto.composicao,
       valor: this.produto.valor,
-      qtd_estoque: this.produto.qtd_estoque
+      quantidadeEstoque: this.produto.quantidadeEstoque
     })  
-    this.activeModal.close() //Fecha o Modal
-    window.location.replace('/produtos') // Redireciona novamente para a página, fazendo o refresh
+    //this.activeModal.close() //Fecha o Modal
+    //window.location.replace('/produtos') // Redireciona novamente para a página, fazendo o refresh
   }
 }
