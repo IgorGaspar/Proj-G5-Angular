@@ -1,3 +1,4 @@
+import { ClientesService } from './../../services/clientes.service';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -10,6 +11,7 @@ import { EditPedidoModalComponent } from 'src/app/pages/modals/pedido-modal/edit
 import { DeletePedidoModalComponent } from 'src/app/pages/modals/pedido-modal/delete-pedido-modal.component';
 import { PedidoProduto, PedidosProdutosModule } from 'src/app/modules/pedidosProdutos.module';
 import { LoginStatusService } from 'src/app/services/login-status.service';
+import { ProdutosService } from 'src/app/services/produtos.service';
 @Component({
   selector: 'app-pedidos',
   templateUrl: './pedidos.component.html',
@@ -21,7 +23,9 @@ export class PedidosComponent implements OnInit {
     private http: HttpClient,
     private pedidosService: PedidosService,
     private pedidoProdutoService: PedidosProdutosService,
+    private produtoService: ProdutosService,
     private loginStatusService:LoginStatusService,
+    private clienteService:ClientesService,
     private modalService: NgbModal
 
   ) { }
@@ -42,6 +46,16 @@ export class PedidosComponent implements OnInit {
 
   public async listarPedidos(pagina: number) {
     this.pedidos = await this.pedidosService.listaPedidos(pagina)
+    this.pedidos.map(async pedido => {
+      let cliente = await this.clienteService.buscar(pedido.clienteId);
+      if(cliente != null) pedido.cliente_nome = cliente.nome
+      pedido.pedidosProdutos= await this.pedidoProdutoService.listaPedidosProdutos(pedido.id);
+      pedido.qtd_item = pedido.pedidosProdutos.reduce((acumalador, produto)=>{
+        return acumalador + produto.quantidade
+      },0)
+    })
+    
+    console.log()
 
   }
   public async listarInformacoesPedido(){
@@ -49,7 +63,7 @@ export class PedidosComponent implements OnInit {
     this.numeroPaginas = pagina.numeroPaginas;
   }
   public async listarPedidosProdutos() {
-    this.pedidosProdutos = await this.pedidoProdutoService.listaPedidosProdutos(this.pedidos[0].id)
+    //this.pedidosProdutos = await this.pedidoProdutoService.listaPedidosProdutos(this.pedidos[0].id)
   }
 
   modalViewPedido(pedido: Pedido) {
@@ -94,7 +108,7 @@ export class PedidosComponent implements OnInit {
 
   public buscarProdutoPorPedido(pedido:Pedido) {
     this.idPedido = this.getIDPedido(pedido);
-    return this.pedidosProdutos.filter(pedidoProduto => pedidoProduto.pedido_id == this.idPedido)[0];
+    return this.pedidosProdutos.filter(pedidoProduto => pedidoProduto.pedidoId == this.idPedido)[0];
   }
   
 

@@ -46,12 +46,12 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr class="odd" *ngFor="let pedidoProduto of pedido.pedidosProdutos">
-                    <td>{{pedidoProduto.produto_id}}</td>
-                    <td colspan="2">{{pedidoProduto.produto_nome}}</td>
-                    <td>{{pedidoProduto.quantidade}}</td>
-                    <td>{{pedidoProduto.produto_valor | currency}}</td>
-                    <td>{{pedidoProduto.valor * pedidoProduto.quantidade | currency}}</td>
+                  <tr class="odd" *ngFor="let pedidoProduto of produtos">
+                    <td>{{pedidoProduto.id}}</td>
+                    <td colspan="2">{{pedidoProduto.nome}}</td>
+                    <td>{{pedidoProduto.quantidadeEstoque}}</td>
+                    <td>{{pedidoProduto.valor| currency}}</td>
+                    <td>{{pedidoProduto.valor * pedidoProduto.quantidadeEstoque | currency}}</td>
                   </tr>
                 </tbody>
                 <tfoot>

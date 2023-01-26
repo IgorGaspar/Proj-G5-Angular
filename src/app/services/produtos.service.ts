@@ -70,7 +70,6 @@ export class ProdutosService {
         AppConstants.headerToken
       )
     );
-    console.log(retorno.maximoPaginas);
     return {totalRegistros: retorno.totalRegistros, numeroPaginas: retorno.maximoPaginas};
   }
 }

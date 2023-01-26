@@ -1,3 +1,4 @@
+import { Produto } from './../../../modules/produtos.module';
 import { PedidosProdutosService } from './../../../services/pedidosProdutos.service';
 import { HttpClient } from '@angular/common/http';
 import { ClientesService } from './../../../services/clientes.service';
@@ -18,7 +19,7 @@ export class ViewPedidoModalComponent implements OnInit {
   @Input() pedido!:Pedido;
 
   public pedidos:Pedido| undefined
-
+  public produtos :Produto[] | undefined = []
 
   constructor(
     private http: HttpClient,
@@ -39,8 +40,8 @@ export class ViewPedidoModalComponent implements OnInit {
     cliente?.nome != null ? this.pedidos.cliente_nome = cliente.nome : "";
     let pedidosProdutos: PedidoProduto[] = await this.pedidoProdutoService.listaPedidosProdutos(this.pedido.id);
     pedidosProdutos.map(async pedidoProduto => {
-      let data= await this.produtoService.buscar(pedidoProduto.pedido_id); 
-      
+     let data= await this.produtoService.buscar(pedidoProduto.produtoId); 
+     if(data != null) this.produtos?.push(data);
     })
    
   }

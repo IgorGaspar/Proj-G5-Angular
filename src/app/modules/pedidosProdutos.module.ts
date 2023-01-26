@@ -14,8 +14,8 @@ export class PedidosProdutosModule { }
 
 export interface PedidoProduto {
   id:number,
-  pedido_id:number,
-  produto_id:number,
+  pedidoId:number,
+  produtoId:number,
   valor:number,
   quantidade:number
   produto_nome:string
