@@ -1,12 +1,13 @@
 # FRONT - PROJETO RADAR - GRUPO 5
 
 <div align="center"><h1> :computer: # Equipe: </h1><div>
+![Imagem do WhatsApp de 2023-0d1-26 à(s) 16 02 10]()
 
 <table align="center">
   <tr>
     <td align="center">
       <a href="https://www.linkedin.com/in/ariane-sobreira-09a4a592/">
-        <img src="https://media.licdn.com/dms/image/C4E03AQFkA5kEN8zOmA/profile-displayphoto-shrink_800_800/0/1517495667590?e=2147483647&v=beta&t=ORI3wgMwyqX4BsLL7rvhW7SGzLIy1HmszK_VpgtSJIE" width="100px;" alt="Foto da Ariane Sobreira"/><br>
+        <img src="https://user-images.githubusercontent.com/95004377/214927397-9d7c3ae2-deab-4471-8617-d41fd30db718.jpg" height="110px" width="100px;" alt="Foto da Ariane Sobreira"/><br>
         <sub>
           <b>Ariane Sobreira</b>
         </sub>
@@ -38,7 +39,7 @@
     </td>
     <td align="center">
       <a href="https://www.linkedin.com/in/lucas-de-grande-540111223/">
-        <img src="https://media.licdn.com/dms/image/C4D03AQHM_m2h44qztw/profile-displayphoto-shrink_800_800/0/1661395917594?e=2147483647&v=beta&t=xbNV7FppbSo1z-9TM-9v38FDHbVIQlbyVJJyO9ZCBCI" width="100px;" alt="Foto do Lucas de Grande"/><br>
+        <img src="https://user-images.githubusercontent.com/95004377/214928295-e28dffd0-3419-46d9-93ef-d52c1994d9c2.jpg" width="100px;" alt="Foto do Lucas de Grande"/><br>
         <sub>
           <b>Lucas de Grande</b>
         </sub>
