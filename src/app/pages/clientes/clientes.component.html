@@ -1,11 +1,20 @@
 <br>
 <div class="container-fluid" tabindex="0">
   <div class="container-fluid">
-    <button type="submit" class="btn btn-success mb-3" (click)="modalCreateCliente()">Cadastrar</button>
+    <div class="row">
+      <div class="col-sm-8 col-md-10">
+        <button type="submit" class="btn btn-success mb-3 " (click)="modalCreateCliente()">Cadastrar</button>
+      </div>
+      <div class="col-sm-4 col-md-2">
+        <a class="btn btn-success mb-3" (click)="paginaAnterior()"><</a>
+        <a class="btn btn-success mb-3 mx-1" (click)="proximaPagina()">></a>
+      </div>
+    </div>
   </div>
   <hr>
 
   <div class="container-fluid">
+    
     <div class="container-fluid text-center" *ngIf="clientes && clientes.length == 0">
       <h5>Não há clientes cadastrados.</h5>
     </div>
@@ -24,9 +33,9 @@
         <tr *ngFor="let cliente of clientes">
           <th scope="row">{{cliente.id}}</th>
           <td class="col-4">{{cliente.nome}}</td>
-          <td>{{cliente.telefone | telefone}}</td>
+          <td>{{cliente.telefone }}</td>
           <td class="col-2">{{cliente.email}}</td>
-          <td>{{cliente.cpf | cpf}}</td>
+          <td>{{cliente.cpf }}</td>
           <td>
             <div class="btn-toolbar" role="toolbar" aria-label="Toolbar com grupos de botões">
               <div class="btn-group mr-2" role="group">

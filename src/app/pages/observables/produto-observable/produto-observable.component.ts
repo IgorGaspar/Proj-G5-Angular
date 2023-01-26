@@ -30,7 +30,7 @@ export class ProdutoObservableComponent implements OnInit {
   public qtdProdutosCadastrados:number = 0
 
   public async produtosCadastrados(){
-    let conta = await new ProdutosService(this.http).lista()
-    this.qtdProdutosCadastrados = conta ? conta.length : 0;
+    let conta = await new ProdutosService(this.http).InformacoesProdutos()
+    this.qtdProdutosCadastrados = conta ? conta.totalRegistros : 0;
   }
 }

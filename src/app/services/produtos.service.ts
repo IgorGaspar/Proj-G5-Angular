@@ -1,4 +1,5 @@
-import { firstValueFrom } from "rxjs";
+import { Retorno } from 'src/app/modules/retorno.module';
+import { firstValueFrom } from 'rxjs';
 import { HttpClient } from "@angular/common/http";
 import { environment } from "src/environments/environment";
 import { Produto } from "../modules/produtos.module";
@@ -11,13 +12,14 @@ import { AppConstants } from "../app-constants";
 export class ProdutosService {
   constructor(private http: HttpClient) {}
 
-  public async lista() {
-    let produtos: Produto[] | undefined = await firstValueFrom(
-      this.http.get<Produto[]>(
-        `${environment.api}/produtos`,
+  public async lista(pagina: number) {
+    let retorno:Retorno | undefined = await firstValueFrom(
+      this.http.get<Retorno>(
+        `${environment.api}/produtos?page=${pagina}&take=11`,
         AppConstants.headerToken
       )
     );
+    let produtos: Produto[] | undefined = retorno.dados;
     return produtos;
   }
 
@@ -59,5 +61,16 @@ export class ProdutosService {
         AppConstants.headerToken
       )
     );
+  }
+
+  public async InformacoesProdutos(){
+    let retorno:Retorno | undefined = await firstValueFrom(
+      this.http.get<Retorno>(
+        `${environment.api}/produtos`,
+        AppConstants.headerToken
+      )
+    );
+    console.log(retorno.maximoPaginas);
+    return {totalRegistros: retorno.totalRegistros, numeroPaginas: retorno.maximoPaginas};
   }
 }

@@ -26,13 +26,17 @@ export class ProdutosComponent implements OnInit {
   
   ngOnInit(): void {
     if(this.loginStatusService.redirectNãoLogado()) return
-    this.listarProdutos()
+    this.listarProdutos(1)
+    this.listarInformacoesProdutos()
   }
 
   public produtos:Produto[] | undefined = []
 
-  public async listarProdutos(){
-    this.produtos = await new ProdutosService(this.http).lista();
+  private paginaAtual: number= 1;
+  private numeroPaginas: number = 1
+
+  public async listarProdutos(pagina: number){
+    this.produtos = await new ProdutosService(this.http).lista(pagina);
   }
 
   modalViewProduto(produto:Produto){
@@ -52,6 +56,20 @@ export class ProdutosComponent implements OnInit {
   modalDeleteProduto(produto:Produto){
     const modalRef = this.modalService.open(DeleteProdutoModalComponent);
     modalRef.componentInstance.produto = produto;
+  }
+
+  private async listarInformacoesProdutos(){
+    let pagina = await new ProdutosService(this.http).InformacoesProdutos();
+    this.numeroPaginas = pagina.numeroPaginas;
+    console.log(pagina.numeroPaginas)
+  }
+
+  proximaPagina(){
+    if(this.paginaAtual<=this.numeroPaginas) this.listarProdutos((this.paginaAtual = this.paginaAtual + 1))
+  }
+
+  paginaAnterior(){
+    if(this.paginaAtual>1) this.listarProdutos((this.paginaAtual = this.paginaAtual - 1))
   }
 
 }

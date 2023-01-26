@@ -1,12 +1,14 @@
-import { HttpClient } from "@angular/common/http";
-import { Injectable } from "@angular/core";
-import { firstValueFrom } from "rxjs";
-import { environment } from "src/environments/environment";
+import { PedidosProdutosService } from 'src/app/services/pedidosProdutos.service';
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { firstValueFrom } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Pedido } from "../modules/pedidos.module";
-import { PedidoProduto } from "../modules/pedidosProdutos.module";
-import { ClientesService } from "./clientes.service";
-import { ProdutosService } from "./produtos.service";
-import { Produto } from "../modules/produtos.module";
+import { PedidoProduto } from '../modules/pedidosProdutos.module';
+import { ClientesService } from './clientes.service';
+import { ProdutosService } from './produtos.service';
+import { Produto } from '../modules/produtos.module';
+import { Retorno } from '../modules/retorno.module';
 import { Cliente } from "../modules/clientes.module";
 import { AppConstants } from "../app-constants";
 
@@ -17,47 +19,32 @@ export class PedidosService {
   constructor(
     private http: HttpClient,
     private clientesService: ClientesService,
-    private produtosService: ProdutosService
-  ) {}
+    private produtosService: ProdutosService,
+    private pedidoProdutoService: PedidosProdutosService
+  ) { }
 
-  public async listaPedidos() {
-    let pedidos: Pedido[] | undefined = await firstValueFrom(
-      this.http.get<Pedido[]>(
-        `${environment.api}/pedidos`,
-        AppConstants.headerToken
-      )
-    ); //Puxa os Pedidos
-    let pedidosProdutos: PedidoProduto[] = await this.listaPedidosProdutos(); //Puxa os pedidosProdutos através do método abaixo.
-    let clientes: Cliente[] = await this.clientesService.lista(); //Puxa os clientes através do ClienteService.
-    pedidos.forEach((pedido) => {
-      //para cada pedido
-      pedido.pedidosProdutos = pedidosProdutos.filter(
-        (x) => x.pedido_id == pedido.id
-      ); //filtra o pedido.Produto de acordo com o pedido.id recebido
-      pedido.cliente_nome = clientes.filter(
-        (x) => x.id == pedido.cliente_id
-      )[0].nome;
-    });
-    return pedidos;
-  }
-
-  public async listaPedidosProdutos() {
-    let pedidosProdutos: PedidoProduto[] | undefined = await firstValueFrom(
-      this.http.get<PedidoProduto[]>(
-        `${environment.api}/pedidosProdutos`,
+  public async listaPedidos(pagina:number) {
+    let dados: Retorno | undefined = await firstValueFrom(
+      this.http.get<Retorno>(
+        `${environment.api}/pedidos?page=${pagina}`,
         AppConstants.headerToken
       )
     );
-    let produtos: Produto[] = await this.produtosService.lista(); //Puxa os produtos através do ProdutoService.
-    pedidosProdutos.forEach((pedidoProduto) => {
-      //para cada pedido
-      pedidoProduto.produto_nome = produtos.filter(
-        (x) => x.id == pedidoProduto.produto_id
-      )[0].nome; //filtra o pedido.Produto de acordo com o pedido.id recebido
-      pedidoProduto.produto_valor = produtos.filter(
-        (x) => x.id == pedidoProduto.produto_id
-      )[0].valor;
-    });
+    let pedidos: Pedido[] = dados.dados;
+    return pedidos;
+  }
+  public async listaPedidosProdutos(produtoId: number) {
+    let pedidosProdutos: PedidoProduto[] | undefined = await firstValueFrom(
+      this.http.get<PedidoProduto[]>(
+        `${environment.api}/pedidoProdutos?pedidoId=${produtoId}`,
+        AppConstants.headerToken
+      )
+    );
+    let produtos:Produto[] = await this.produtosService.lista(1) 
+       // pedidosProdutos.forEach(pedidoProduto => { //para cada pedido
+      //   pedidoProduto.produto_nome = produtos.filter(x => x.id == pedidoProduto.produto_id)[0].nome //filtra o pedido.Produto de acordo com o pedido.id recebido
+      //   pedidoProduto.produto_valor = produtos.filter(x => x.id == pedidoProduto.produto_id)[0].valor
+      // })
     return pedidosProdutos;
   }
 
@@ -83,15 +70,12 @@ export class PedidosService {
     return pedidoUpd;
   }
 
-  public async buscar(id: Number): Promise<Pedido | undefined> {
+  public async buscar(id: Number): Promise<Pedido> {
     return await firstValueFrom(
-      this.http.get<Pedido | undefined>(`${environment.api}/pedidos/${id}`)
+      this.http.get<Pedido>(`${environment.api}/pedidos/${id}`, AppConstants.headerToken)
     );
   }
-
-  public async buscarProduto(
-    pedido_id: Number
-  ): Promise<PedidoProduto | undefined> {
+  public async buscarProduto( pedido_id: Number): Promise<PedidoProduto | undefined> {
     return await firstValueFrom(
       this.http.get<PedidoProduto | undefined>(
         `${environment.api}/pedidosProdutos/${pedido_id}`
@@ -101,6 +85,22 @@ export class PedidosService {
 
   public excluirPedido(id: Number) {
     firstValueFrom(this.http.delete(`${environment.api}/pedidos/${id}`));
+  }
+
+  public async buscarPedidoPorAno(ano: number): Promise<Pedido[]>{
+    let retorno: Retorno = await firstValueFrom(this.http.get<Retorno>(`${environment.api}/pedidos?ano=${ano}`,AppConstants.headerToken)) 
+    let pedidos: Pedido[] = retorno.dados;
+    return pedidos;
+  }
+
+  public async InformacoesPedidos(){
+    let retorno:Retorno | undefined = await firstValueFrom(
+      this.http.get<Retorno>(
+        `${environment.api}/pedidos`,
+        AppConstants.headerToken
+      )
+    );
+    return {totalRegistros: retorno.totalRegistros, numeroPaginas: retorno.maximoPaginas};
   }
 
   //Método para pegar o ID de um item do array

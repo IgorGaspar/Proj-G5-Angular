@@ -20,6 +20,7 @@ export class PedidosComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private pedidosService: PedidosService,
+    private pedidoProdutoService: PedidosProdutosService,
     private loginStatusService:LoginStatusService,
     private modalService: NgbModal
 
@@ -27,28 +28,29 @@ export class PedidosComponent implements OnInit {
 
   ngOnInit(): void {
     if(this.loginStatusService.redirectNãoLogado()) return
-    this.listarPedidos()
+    this.listarPedidos(this.paginaAtual)
     this.listarPedidosProdutos()
+    this.listarInformacoesPedido()
   }
   public pedidos: Pedido[] = [] // | undefined = []
   public pedidosProdutos: PedidoProduto[] = []//| undefined = []
   public produtosPorCliente: PedidoProduto[] = [] //  | undefined = []
-  
+
+  private paginaAtual: number= 1;
+  private numeroPaginas: number = 1
   
 
-  public async listarPedidos() {
-    this.pedidos = await this.pedidosService.listaPedidos()
+  public async listarPedidos(pagina: number) {
+    this.pedidos = await this.pedidosService.listaPedidos(pagina)
+
   }
-
+  public async listarInformacoesPedido(){
+    let pagina = await this.pedidosService.InformacoesPedidos();
+    this.numeroPaginas = pagina.numeroPaginas;
+  }
   public async listarPedidosProdutos() {
-    this.pedidosProdutos = await this.pedidosService.listaPedidosProdutos()
+    this.pedidosProdutos = await this.pedidoProdutoService.listaPedidosProdutos(this.pedidos[0].id)
   }
-
-
-  // public async listarProdutosDoPedido(this.produtos.id) {
-  //   this.produtosPorCliente = await new PedidosService(this.http).buscarProduto()
-  // }
-
 
   modalViewPedido(pedido: Pedido) {
     const modalRef = this.modalService.open(ViewPedidoModalComponent);
@@ -95,19 +97,14 @@ export class PedidosComponent implements OnInit {
     return this.pedidosProdutos.filter(pedidoProduto => pedidoProduto.pedido_id == this.idPedido)[0];
   }
   
-  public imprimeConsole(pedido:Pedido){
-    console.log(this.buscarProdutoPorPedido(pedido))
+
+  proximaPagina(){
+    if(this.paginaAtual<this.numeroPaginas) this.listarPedidos((this.paginaAtual = this.paginaAtual + 1))
   }
-  // public capturaPedidoProduto(pedidoProduto:PedidoProduto) {
-  //   return this.pedidosProdutos.indexOf(pedidoProduto)    
-  // }
-  
-  // public buscarProdutoPedido(pedido:Pedido){
-  //   debugger
-  //   this.idPedido = this.getIDPedido(pedido) //Coloca na variável ID pedido o ID encontrado na função getIDPedido
-  //   return  this.buscarProdutoPorPedido(this.idPedido)
-  //  // const result = this.buscarProdutoPorPedido(idPedido)
-  // }
+
+  paginaAnterior(){
+    if(this.paginaAtual>1) this.listarPedidos((this.paginaAtual = this.paginaAtual - 1))
+  }
 }
 
 

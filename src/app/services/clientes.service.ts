@@ -1,25 +1,26 @@
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { firstValueFrom } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { Cliente } from '../modules/clientes.module';
+import { Retorno } from '../modules/retorno.module';
 import { AppConstants } from "./../app-constants";
-import { HttpClient } from "@angular/common/http";
-import { Injectable } from "@angular/core";
-import { firstValueFrom } from "rxjs";
-import { environment } from "src/environments/environment";
-import { Cliente } from "../modules/clientes.module";
 
 @Injectable({
   providedIn: "root",
 })
 export class ClientesService {
   constructor(private http: HttpClient) {}
-
-  public async lista() {
-    let clientes: Cliente[] | undefined = await firstValueFrom(
-      this.http.get<Cliente[]>(
-        `${environment.api}/clientes`,
-        AppConstants.headerToken
-      )
-    );
-    return clientes;
-  }
+  
+    public async lista(pagina:number): Promise<Cliente[] | undefined>{
+      let data = await firstValueFrom(
+        this.http.get<Retorno>(`${environment.api}/clientes?page=${pagina}&take=10`,
+          AppConstants.headerToken
+        )
+      );
+      let clientes: Cliente[] | undefined = data.dados;
+      return clientes;
+    }
 
   public async adicionar(cliente: Cliente): Promise<Cliente | undefined> {
     let clienteAdd: Cliente | undefined = await firstValueFrom(
@@ -29,6 +30,7 @@ export class ClientesService {
         AppConstants.headerToken
       )
     );
+    console.log(clienteAdd);
     return clienteAdd;
   }
 
@@ -59,5 +61,16 @@ export class ClientesService {
         AppConstants.headerToken
       )
     );
+  }
+
+  public async InformacoesCliente(){
+    let retorno:Retorno | undefined = await firstValueFrom(
+      this.http.get<Retorno>(
+        `${environment.api}/clientes?take=10`,
+        AppConstants.headerToken
+      )
+    );
+    console.log(retorno.maximoPaginas);
+    return {totalRegistros: retorno.totalRegistros, numeroPaginas: retorno.maximoPaginas};
   }
 }

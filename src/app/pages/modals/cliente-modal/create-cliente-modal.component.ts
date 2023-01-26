@@ -25,15 +25,14 @@ export class CreateClienteModalComponent implements OnInit {
     this.clientesCadastrados();
   }
 
-  public async clientesCadastrados() {
-    let conta = await new ClientesService(this.http).lista();
-    this.cadastros = conta ? conta.length : 0;
+  public async clientesCadastrados(){
+    let conta = await new ClientesService (this.http).lista(1)
+    this.cadastros = conta ? conta.length : 0
   }
-
   public cadastrarCliente() {
-    let id = this.cadastros + 1;
+    console.log(this.cliente);
     this.clienteService.adicionar({
-      id: id,
+      id: this.cliente.id,
       nome: this.cliente.nome,
       telefone: this.cliente.telefone,
       email: this.cliente.email,
