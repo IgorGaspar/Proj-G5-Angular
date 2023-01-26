@@ -47,10 +47,10 @@
                 </thead>
                 <tbody>
                   <tr class="odd" *ngFor="let pedidoProduto of pedido.pedidosProdutos">
-                    <td>{{pedidoProduto.produto_id}}</td>
+                    <td>{{pedidoProduto.produtoId}}</td>
                     <td colspan="2">{{pedidoProduto.produto_nome}}</td>
                     <td>{{pedidoProduto.quantidade}}</td>
-                    <td>{{pedidoProduto.produto_valor | currency}}</td>
+                    <td>{{pedidoProduto.valor | currency}}</td>
                     <td>{{pedidoProduto.valor * pedidoProduto.quantidade | currency}}</td>
                   </tr>
                 </tbody>

@@ -1,3 +1,4 @@
+import { Retorno } from './../modules/retorno.module';
 import { AppConstants } from "../app-constants";
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
@@ -12,12 +13,13 @@ export class LojasService {
   constructor(private http: HttpClient) {}
 
   public async lista() {
-    let lojas: Loja[] | undefined = await firstValueFrom(
-      this.http.get<Loja[]>(
+    let retorno: Retorno= await firstValueFrom(
+      this.http.get<Retorno>(
         `${environment.api}/lojas`,
         AppConstants.headerToken
       )
     );
+    let lojas = retorno.dados;
     return lojas;
   }
 

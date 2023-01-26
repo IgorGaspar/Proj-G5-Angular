@@ -1,3 +1,4 @@
+import { ClientesService } from './../../services/clientes.service';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -22,6 +23,7 @@ export class PedidosComponent implements OnInit {
     private pedidosService: PedidosService,
     private pedidoProdutoService: PedidosProdutosService,
     private loginStatusService:LoginStatusService,
+    private clienteService: ClientesService,
     private modalService: NgbModal
 
   ) { }
@@ -42,6 +44,12 @@ export class PedidosComponent implements OnInit {
 
   public async listarPedidos(pagina: number) {
     this.pedidos = await this.pedidosService.listaPedidos(pagina)
+    this.pedidos.map(async pedido=>{
+      let cliente = await this.clienteService.buscar(pedido.clienteId);
+      if(cliente != null) pedido.cliente_nome = cliente.nome;
+      let pedidoProdutos: PedidoProduto[] = await this.pedidoProdutoService.listaPedidosProdutos(pedido.id);
+      pedido.qtd_item = pedidoProdutos.length
+    })
 
   }
   public async listarInformacoesPedido(){
@@ -49,7 +57,7 @@ export class PedidosComponent implements OnInit {
     this.numeroPaginas = pagina.numeroPaginas;
   }
   public async listarPedidosProdutos() {
-    this.pedidosProdutos = await this.pedidoProdutoService.listaPedidosProdutos(this.pedidos[0].id)
+    //this.pedidosProdutos = await this.pedidoProdutoService.listaPedidosProdutos(this.pedidos[0].id)
   }
 
   modalViewPedido(pedido: Pedido) {
@@ -94,7 +102,7 @@ export class PedidosComponent implements OnInit {
 
   public buscarProdutoPorPedido(pedido:Pedido) {
     this.idPedido = this.getIDPedido(pedido);
-    return this.pedidosProdutos.filter(pedidoProduto => pedidoProduto.pedido_id == this.idPedido)[0];
+    return this.pedidosProdutos.filter(pedidoProduto => pedidoProduto.pedidoId == this.idPedido)[0];
   }
   
 

@@ -7,6 +7,7 @@ import { Pedido } from 'src/app/modules/pedidos.module';
 import { PedidosService } from 'src/app/services/pedidos.service';
 import { PedidoProduto } from 'src/app/modules/pedidosProdutos.module';
 import { ProdutosService } from 'src/app/services/produtos.service';
+import { Produto } from 'src/app/modules/produtos.module';
 
 
 @Component({
@@ -18,7 +19,7 @@ export class ViewPedidoModalComponent implements OnInit {
   @Input() pedido!:Pedido;
 
   public pedidos:Pedido| undefined
-
+  public produtos: Produto[] | undefined
 
   constructor(
     private http: HttpClient,
@@ -39,10 +40,10 @@ export class ViewPedidoModalComponent implements OnInit {
     cliente?.nome != null ? this.pedidos.cliente_nome = cliente.nome : "";
     let pedidosProdutos: PedidoProduto[] = await this.pedidoProdutoService.listaPedidosProdutos(this.pedido.id);
     pedidosProdutos.map(async pedidoProduto => {
-      let data= await this.produtoService.buscar(pedidoProduto.pedido_id); 
-      
+      let data= await this.produtoService.buscar(pedidoProduto.produtoId); 
+      pedidoProduto.produto_nome = data?.nome
     })
-   
+   this.pedido.pedidosProdutos = pedidosProdutos;
   }
 
 }
